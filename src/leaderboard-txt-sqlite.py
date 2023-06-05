@@ -274,11 +274,64 @@ def get_fcst(station, filepath, variable, date_list,filehours):
             variable = "PCPTOT"
 
         # pulls out a list of the files for the given station+variable+hour wanted   
-        for hour in filehours:
+        if "_KF" in variable:
+            variable = variable[:-3]
+            sql_con = sqlite3.connect(filepath + "fcst.KF_MH/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
+            fcst = np.array(cursor.fetchall())
+        
+        elif variable == "ENS_LR" and "_KF" in variable:
+            variable = variable[:-3]
+            sql_con = sqlite3.connect(filepath + "fcst.LR.KF_MH.t/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
+            fcst = np.array(cursor.fetchall())
+        
+        elif variable == "ENS_lr" and "_KF" in variable:
+            variable = variable[:-3]
+            sql_con = sqlite3.connect(filepath + "fcst.lr.KF_MH.t/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
+            fcst = np.array(cursor.fetchall())
+        
+        elif variable == "ENS_hr" and "_KF" in variable:
+            variable = variable[:-3]
+            sql_con = sqlite3.connect(filepath + "fcst.hr.KF_MH.t/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
+            fcst = np.array(cursor.fetchall())
+        
+        elif variable == "ENS_hr":
+            sql_con = sqlite3.connect(filepath + "fcst.hr.t/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
+            fcst = np.array(cursor.fetchall())
+           
+        elif variable == "ENS_LR":
+            sql_con = sqlite3.connect(filepath + "fcst.LR.t/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
+            fcst = np.array(cursor.fetchall())
+           
+        elif variable == "ENS_lr":
+            sql_con = sqlite3.connect(filepath + "fcst.lr.t/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
+            fcst = np.array(cursor.fetchall())
 
+        else:
             sql_con = sqlite3.connect(filepath + "fcst.t/" + station + ".sqlite")
             cursor = sql_con.cursor()
-            cursor.execute("SELECT * from All WHERE Date=date_list")
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
             fcst = np.array(cursor.fetchall())
         return(fcst)
 
@@ -353,7 +406,8 @@ def get_all_obs(variable, date_list_obs):
             
             sql_con = sqlite3.connect(obs_directory + station + ".sqlite")
             cursor = sql_con.cursor()
-            cursor.execute("SELECT * from All WHERE Date=date_list_obs")
+            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+            cursor.execute(sql_query)
             obs = np.array(cursor.fetchall())
         
         #want the 13th point (12 UTC) on day 8 (7.5) ..jk
