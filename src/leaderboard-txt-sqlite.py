@@ -2,21 +2,20 @@
 
 """
 Created in 2021
-
 @author: evagnegy
+
+Edited in June 2023 by rmckinney to ingest sql data 
 
 Input: start date (YYMMDD), end date (YYMMDD), variable, domain size
     Start and end date must be 7 or 28-31 day stretch
-    variable options: SFCTC_KF, SFCTC, PCPTOT, APCP6, APCP24, SFCWSPD_KF, SFCWSPD
+    variable options: SFCTC_KF, SFCTC, PCPTOT, PCPT6, PCPT24, SFCWSPD_KF, SFCWSPD
     domain options: large, small
     
 The stats round the obs and forecasts to one decimal before doing statistics 
     - this can be changed in the (get_statistics) function
     - obs vary from integers to two decimals while forecasts have two decimals
         - temperature is sometimes integers while wind is sometimes every 10º or even 45º
-
 """
-
 import os
 import pandas as pd
 import numpy as np
@@ -28,33 +27,29 @@ import copy
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 from scipy import stats
+import sqlite3
 
 import warnings
 warnings.filterwarnings("ignore",category=RuntimeWarning)
+
 ###########################################################
 ### -------------------- FILEPATHS ------------------------
 ###########################################################
 
+#location where obs files are (all sql databases should be in this directory)
+obs_filepath = "/verification/Observations/"
 
-#path to save the log/output
-#logfilepath = "/home/egnegy/python_plotting/log/leaderboard_textfile.log"
-
-#location where obs files are (all textfiles should be in this directory)
-obs_filepath = "/scratch/egnegy/verification/testing_stations/output/station_obs/"
-#GVRD_obs_filepath = "/scratch/egnegy/verification/testing_stations/output/station_obs2/"
-
-#location where forecast files are (immediately within this directory should be model folders, then grid folders, then the textfiles)
-fcst_filepath = "/scratch/egnegy/verification/testing_stations/output/model_fcsts/"
+#location where forecast files are (immediately within this directory should be model folders, then grid folders, then the sql databases)
+fcst_filepath = "/verifcation/Forecasts"
 
 #description file for stations
-station_file = '/home/egnegy/ensemble-verification/testing_stations/input/station_list_master.txt'
+station_file = '/home/verif/verif-get-data/input/station_list_master.txt'
 
 #description file for models
-models_file = '/home/egnegy/ensemble-verification/testing_stations/input/model_list.txt'
+models_file = '/home/verif/verif-get-data/input/model_list.txt'
 
 #folder where the stats save
-textfile_folder = '/scratch/egnegy/verification/testing_stations/statistics/'
-
+textfile_folder = '/verification/Statistics/'
 
 ###########################################################
 ### ---------------------- INPUT --------------------------
@@ -91,8 +86,8 @@ if len(sys.argv) == 5:
 
 
     input_variable = sys.argv[3]
-    if input_variable not in ['SFCTC_KF', 'SFCTC', 'PCPTOT', 'APCP6', 'APCP24', 'SFCWSPD_KF', 'SFCWSPD']:
-        raise Exception("Invalid variable input entries. Current options: SFCTC_KF, SFCTC, PCPTOT, APCP6, APCP24, SFCWSPD_KF, SFCWSPD. Case sensitive.")
+    if input_variable not in ['SFCTC_KF', 'SFCTC', 'PCPTOT', 'PCPT6', 'PCPT24', 'SFCWSPD_KF', 'SFCWSPD']:
+        raise Exception("Invalid variable input entries. Current options: SFCTC_KF, SFCTC, PCPTOT, PCPT6, PCPT24, SFCWSPD_KF, SFCWSPD. Case sensitive.")
 
     input_domain = sys.argv[4]
     if input_domain not in ['large','small']:
@@ -124,8 +119,6 @@ if input_domain == "large":
 else:
     all_stations = np.array(station_df.query("`Small domain`==1")["Station ID"],dtype=str)
     
-#GVRD_stations = np.array(station_df.query("`Station agency`=='GVRD'")["Station ID"],dtype=str)
-
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
 ###########################################################
@@ -143,8 +136,6 @@ def remove_missing_data(fcst, obs):
             obs[i] = np.nan
                 
     return(fcst,obs) 
-
-
 
 # makes a list of the dates you want from start to end, used to make sure the models and obs have the right dates
 # obs get their own list because it will be different days than the initializition dates from the models for anything
@@ -166,12 +157,6 @@ def listofdates(obs = False):
 
     return(date_list)
 
-
-# checks if station collects the current variable 
-# returns True if yes, False if no
-# this is used since some stations only collect a few variables
-# if its on precipitation, it checks if its in any of the PCPT files
-# EDIT: CURRENTLY JUST USING PCPTOT
 def check_variable(variable, station):
 
     flag = False
@@ -191,12 +176,12 @@ def check_variable(variable, station):
         if str(station) in stations_with_PCPTOT:
             flag=True
             
-    elif variable == "APCP6":
+    elif variable == "PCPT6":
         
         if str(station) in stations_with_PCPTOT or str(station) in stations_with_PCPT6:
             flag=True            
  
-    elif variable == "APCP24":
+    elif variable == "PCPT24":
         
         if str(station) in stations_with_PCPTOT or str(station) in stations_with_PCPT24:
             flag=True        
@@ -253,17 +238,19 @@ def get_filehours(hour1,hour2):
         
     return(hours_list)
     
-
 # checks to see if the right amount of dates exist, which is used for when new models/stations are added
 # default station exists for when a new model is added (instead of new station)
 def check_dates(filepath, variable, station='3510'):
     
     flag = True
 
-    if "APCP" in variable:
+    if "PCPT" in variable:
         variable = "PCPTOT"
-            
-    check_dates = np.loadtxt(filepath + station + "." + variable + ".001.txt",usecols=0,dtype=str)
+    
+    sql_con = sqlite3.connect(filepath + "/fcst.t/" + station + ".sqlite")
+    cursor = sql_con.cursor()
+    cursor.execute("SELECT DISTINCT Date from All")
+    check_dates = np.array(cursor.fetchall())
 
 
     if np.size(check_dates) < delta+1:
@@ -276,43 +263,24 @@ def check_dates(filepath, variable, station='3510'):
         flag = False
         
     return(flag)
-    
+
 # returns the fcst data for the given model/grid
 def get_fcst(station, filepath, variable, date_list,filehours):
     
         fcst = []
         
 
-        if "APCP" in variable:
+        if "PCPT" in variable:
             variable = "PCPTOT"
 
-         
         # pulls out a list of the files for the given station+variable+hour wanted   
         for hour in filehours:
-            file = station + "." + variable + "." + hour + ".txt"
 
-            all_dates = np.loadtxt(filepath + file,usecols=0,dtype=str)
-
-
-
-            # gets the indices for the dates we want to select
-            indices = []
-            [indices.append(list(all_dates).index(date)) for date in date_list]
-
-            select_dates = all_dates[indices]
-
-            if all(select_dates != date_list):
-                raise Exception("fcst error: " + filepath + file + " has the wrong dates")
-            
-            # collects all fcst data for the given dates range
-            # contains a list for every hour, each containing all of the wanted dates for that hour  
-            
-            open_fcst = np.loadtxt(filepath + file,usecols=1,dtype=str)[indices]
-            new_fcst = np.where(open_fcst == "?", np.nan, open_fcst) #sometimes ENS reads as ?
-                        
-            fcst.append(new_fcst.astype(np.float))
-      
-        return(fcst)       
+            sql_con = sqlite3.connect(filepath + "fcst.t/" + station + ".sqlite")
+            cursor = sql_con.cursor()
+            cursor.execute("SELECT * from All WHERE Date=date_list")
+            fcst = np.array(cursor.fetchall())
+        return(fcst)
 
 
 def get_all_obs(variable, date_list_obs):
@@ -325,18 +293,18 @@ def get_all_obs(variable, date_list_obs):
         station_list = copy.deepcopy(stations_with_SFCWSPD) 
     
     elif variable == "PCPTOT":
-        if input_variable == "APCP6":
+        if input_variable == "PCPT6":
             station_list = [st for st in stations_with_PCPTOT if st not in stations_with_PCPT6 ]
-        elif input_variable == "APCP24":
+        elif input_variable == "PCPT24":
             station_list = [st for st in stations_with_PCPTOT if st not in stations_with_PCPT24 ]
         else:
             station_list = copy.deepcopy(stations_with_PCPTOT)        
     
-    elif variable == "APCP6":
+    elif variable == "PCPT6":
         station_list = copy.deepcopy(stations_with_PCPT6) 
         variable = "PCPT6"
     
-    elif variable == "APCP24":
+    elif variable == "PCPT24":
         station_list = copy.deepcopy(stations_with_PCPT24) 
         variable = "PCPT24"
         
@@ -362,7 +330,6 @@ def get_all_obs(variable, date_list_obs):
         
     for station in station_list:
         
-
         print("      Now on station " + station)
         
         if station not in all_stations:
@@ -370,42 +337,24 @@ def get_all_obs(variable, date_list_obs):
             continue
    
         obs = []
-            
-        if "APCP" in input_variable:
-            if check_dates(fcst_filepath + '/ENS/', "PCPTOT", station) == False:
+
+        if "PCPT" in input_variable:
+            if check_dates(fcst_filepath + 'ENS/' + variable + '/fcst.t/', "PCPTOT", station) == False:
                 print("   Skipping station " + station + " (not enough dates yet)")
                 continue
         else:
-            if check_dates(fcst_filepath + '/ENS/', variable, station) == False:
+            if check_dates(fcst_filepath + 'ENS/' + variable + '/fcst.t/', variable, station) == False:
                 print("   Skipping station " + station + " (not enough dates yet)")
                 continue
         
-# =============================================================================
-#         if station in GVRD_stations:
-#             obs_directory = GVRD_obs_filepath
-#             print(station + "  hi")
-#         else:
-#             obs_directory = obs_filepath
-# =============================================================================
-            
         obs_directory = obs_filepath
         
-        # gets the list of hour files for the given station/variable/hour
         for hour in filehours_obs:
-            file = station + "." + variable + "_OBS." + hour + ".txt"
-                
-            all_dates = np.loadtxt(obs_directory + file,usecols=0,dtype=str)
-                
-            # gets the indices for the dates we want to select
-            indices = []
-            [indices.append(list(all_dates).index(date)) for date in date_list_obs]
-    
-            select_dates = all_dates[indices]
-    
-            if all(select_dates != date_list_obs):
-                raise Exception("obs error: " + file + " has the wrong dates")
-                            
-            obs.append((np.loadtxt(obs_directory + file,usecols=1)[indices]))
+            
+            sql_con = sqlite3.connect(obs_directory + station + ".sqlite")
+            cursor = sql_con.cursor()
+            cursor.execute("SELECT * from All WHERE Date=date_list_obs")
+            obs = np.array(cursor.fetchall())
         
         #want the 13th point (12 UTC) on day 8 (7.5) ..jk
         #extra_point = obs[12][delta+7]
@@ -455,8 +404,8 @@ def make_textfile(time_domain, var, model, MAE, RMSE, corr, len_fcst, numstation
    
         
         
-    f1 = open(textfile_folder +  model + "MAE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-    read_f1 = np.loadtxt(textfile_folder +  model + "MAE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+    f1 = open(textfile_folder +  model + '/' + input_domain + '/' + var + '/' + "MAE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+    read_f1 = np.loadtxt(textfile_folder +  model + '/' + input_domain + '/' + var + '/' + "MAE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f1 and date_entry2 not in read_f1:
         f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
         
@@ -467,8 +416,8 @@ def make_textfile(time_domain, var, model, MAE, RMSE, corr, len_fcst, numstation
         f1.close()    
             
     
-    f2 = open(textfile_folder +  model + "RMSE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-    read_f2 = np.loadtxt(textfile_folder +  model + "RMSE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+    f2 = open(textfile_folder +  model + '/' + input_domain + '/' + var + '/' + "RMSE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+    read_f2 = np.loadtxt(textfile_folder +  model + '/' + input_domain + '/' + var + '/' + "RMSE_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f2 and date_entry2 not in read_f2:
         f2.write(str(date_entry1) + " " + str(date_entry2) + "   ")
         
@@ -479,8 +428,8 @@ def make_textfile(time_domain, var, model, MAE, RMSE, corr, len_fcst, numstation
         f2.close()  
     
     
-    f3 = open(textfile_folder +  model + "spcorr_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt","a+") 
-    read_f3 = np.loadtxt(textfile_folder +  model + "spcorr_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+    f3 = open(textfile_folder +  model + '/' + input_domain + '/' + var + '/' + "spcorr_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt","a+") 
+    read_f3 = np.loadtxt(textfile_folder +  model + '/' + input_domain + '/' + var + '/' + "spcorr_" + savetype + "_" + var + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f3 and date_entry2 not in read_f3:
         f3.write(str(date_entry1) + " " + str(date_entry2) + "   ")
         
@@ -493,12 +442,12 @@ def make_textfile(time_domain, var, model, MAE, RMSE, corr, len_fcst, numstation
 
 def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,filehours,all_fcst_KF,maxhour):
 
-    if variable == "APCP6":
+    if variable == "PCPT6":
         if int(end)==int(maxhour):
             trimmed_fcst = all_fcst[start+1:end-5] 
         else:
             trimmed_fcst = all_fcst[start+1:end+1]  
-    elif variable == "APCP24":
+    elif variable == "PCPT24":
         if int(end)==int(maxhour):
             trimmed_fcst = all_fcst[start+1:end-23] 
         else:
@@ -510,15 +459,15 @@ def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,file
     fcst_final = np.array(trimmed_fcst).T
     fcst_flat = fcst_final.flatten() 
     
-    if variable == "APCP6":
+    if variable == "PCPT6":
         fcst_flat = np.reshape(fcst_flat, (-1, 6)).sum(axis=-1) #must be divisible by 6
-    if variable == "APCP24":
+    if variable == "PCPT24":
         fcst_flat = np.reshape(fcst_flat, (-1, 24)).sum(axis=-1) #must be divisible by 6
         
     
     obs_flat = np.array(obs_df[station])
     
-    if "APCP" in variable:
+    if "PCPT" in variable:
         #removes the last point from every day if its at the maxhour, since it doesnt exist for fcst
         if int(end)==int(maxhour): 
             
@@ -570,12 +519,12 @@ def get_statistics(maxhour,hour,length,fcst_allstations,obs_allstations,num_stat
             RMSE = math.sqrt(MSE)
             corr = stats.spearmanr(obs_rounded,fcst_rounded)[0]
             
-            if variable == "APCP6":
+            if variable == "PCPT6":
                 if int(maxhour) == int(hour):
                     total_length = int(((length*(delta+1))/6)-(delta+1))
                 else:
                     total_length = int((length*(delta+1))/6)
-            elif variable == "APCP24":
+            elif variable == "PCPT24":
                 if int(maxhour) == int(hour):
                     total_length = int(((length*(delta+1))/24)-(delta+1))
                 else:
@@ -592,12 +541,12 @@ def get_statistics(maxhour,hour,length,fcst_allstations,obs_allstations,num_stat
 def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,model_filepath):
 
     if int(maxhour) >= hour:  
-        if variable == "APCP6":
+        if variable == "PCPT6":
             if int(maxhour) == int(hour):
                 total_length = int(((length*(delta+1))/6)-(delta+1))
             else:
                 total_length = int((length*(delta+1))/6)
-        elif variable == "APCP24":
+        elif variable == "PCPT24":
             if int(maxhour) == int(hour):
                 total_length = int(((length*(delta+1))/24)-(delta+1))
             else:
@@ -608,8 +557,8 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
         len_fcst = "0/" + str(total_length)
         numstations = "0/" + str(totalstations)
         
-        f1 = open(textfile_folder +  model_filepath + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-        read_f1 = np.loadtxt(textfile_folder +  model_filepath + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+        f1 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+        read_f1 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f1 and date_entry2 not in read_f1:
             f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
             
@@ -620,8 +569,8 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
             f1.close()    
                 
         
-        f2 = open(textfile_folder +  model_filepath + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-        read_f2 = np.loadtxt(textfile_folder +  model_filepath + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+        f2 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+        read_f2 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f2 and date_entry2 not in read_f2:
             f2.write(str(date_entry1) + " " + str(date_entry2) + "   ")
             
@@ -632,8 +581,8 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
             f2.close()  
             
         
-        f3 = open(textfile_folder +  model_filepath + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
-        read_f3 = np.loadtxt(textfile_folder +  model_filepath + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+        f3 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
+        read_f3 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f3 and date_entry2 not in read_f3:
             f3.write(str(date_entry1) + " " + str(date_entry2) + "   ")
             
@@ -642,9 +591,6 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
             f3.write(numstations + "\n")
             
             f3.close()  
-
-
-
 
 def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7):
     
@@ -674,6 +620,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
     
     totalstations = 0
     num_stations = 0
+    
     for station in stations_in_domain:
 
         if station not in all_stations:
@@ -717,7 +664,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
         fcst_final_all = np.array(all_fcst).T
         fcst_flat_all = fcst_final_all.flatten()
         
-        if input_variable != "APCP24":
+        if input_variable != "PCPT24":
             obs_flat_all = np.array(obs_df_180hr[station])
             
     
@@ -739,7 +686,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
         #start = [48, 0,  72, 96,  0,   120, 144, 0]
         #end =   [72, 84, 96, 120, 120, 144, 168, 180]
       
-        if int(maxhour) >= 180 and input_variable!="APCP24":
+        if int(maxhour) >= 180 and input_variable!="PCPT24":
             fcst_NaNs_180hr, obs_flat_180hr = trim_fcst(all_fcst,obs_df_180hr,station,0,180,variable,filepath,date_list,filehours,all_fcst_KF,maxhour)                            
             fcst_allstations_180hr.append(fcst_NaNs_180hr)
             obs_allstations_180hr.append(obs_flat_180hr)
@@ -756,7 +703,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
             obs_allstations_day6.append(obs_flat_day6)
             
         if int(maxhour) >= 120:
-            if input_variable!="APCP24":
+            if input_variable!="PCPT24":
                 fcst_NaNs_120hr, obs_flat_120hr = trim_fcst(all_fcst,obs_df_120hr,station,0,120,variable,filepath,date_list,filehours,all_fcst_KF,maxhour)  
                 fcst_allstations_120hr.append(fcst_NaNs_120hr)
                 obs_allstations_120hr.append(obs_flat_120hr)
@@ -770,7 +717,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
             fcst_allstations_day4.append(fcst_NaNs_day4)
             obs_allstations_day4.append(obs_flat_day4)
             
-        if int(maxhour) >= 84 and input_variable!="APCP24":            
+        if int(maxhour) >= 84 and input_variable!="PCPT24":            
             fcst_NaNs_84hr,  obs_flat_84hr  = trim_fcst(all_fcst,obs_df_84hr,station,0,84,variable,filepath,date_list,filehours,all_fcst_KF,maxhour)  
             fcst_allstations_84hr.append(fcst_NaNs_84hr)
             obs_allstations_84hr.append(obs_flat_84hr)
@@ -780,7 +727,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
             fcst_allstations_day3.append(fcst_NaNs_day3)
             obs_allstations_day3.append(obs_flat_day3)
             
-        if input_variable!="APCP24":
+        if input_variable!="PCPT24":
             fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour)  
             fcst_allstations_60hr.append(fcst_NaNs_60hr)
             obs_allstations_60hr.append(obs_flat_60hr)
@@ -797,7 +744,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
     if num_stations == 0:
         print("   NO FORECAST DATA FOR " + model + grid)
         
-        if input_variable!="APCP24":
+        if input_variable!="PCPT24":
             model_not_available(maxhour,180,180,totalstations,'180hr',variable,model_filepath)
             model_not_available(maxhour,120,120,totalstations,'120hr',variable,model_filepath)
             model_not_available(maxhour,84,84,totalstations,'84hr',variable,model_filepath)
@@ -812,7 +759,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
         model_not_available(maxhour,24,24,totalstations,'day1',variable,model_filepath)
         
     else:
-        if input_variable!="APCP24":
+        if input_variable!="PCPT24":
             get_statistics(maxhour,180,180,fcst_allstations_180hr,obs_allstations_180hr,num_stations,totalstations,'180hr',variable,model_filepath)
             get_statistics(maxhour,120,120,fcst_allstations_120hr,obs_allstations_120hr,num_stations,totalstations,'120hr',variable,model_filepath)
             get_statistics(maxhour,84,84,fcst_allstations_84hr,obs_allstations_84hr,num_stations,totalstations,'84hr',variable,model_filepath)
@@ -826,8 +773,7 @@ def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, 
         get_statistics(maxhour,72,24,fcst_allstations_day3,obs_allstations_day3,num_stations,totalstations,'day3',variable,model_filepath) 
         get_statistics(maxhour,48,24,fcst_allstations_day2,obs_allstations_day2,num_stations,totalstations,'day2',variable,model_filepath)
         get_statistics(maxhour,24,24,fcst_allstations_day1,obs_allstations_day1,num_stations,totalstations,'day1',variable,model_filepath)
-
-def APCP_obs_df_6(date_list_obs):
+def PCPT_obs_df_6(date_list_obs):
     
     # get the hourly precip values
     obs_df_60hr_1,obs_df_84hr_1,obs_df_120hr_1,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = get_all_obs('PCPTOT', date_list_obs)
@@ -921,7 +867,7 @@ def APCP_obs_df_6(date_list_obs):
 
     return(obs_df_60hr_all,obs_df_84hr_all,obs_df_120hr_all,obs_df_180hr_all,obs_df_day1_all,obs_df_day2_all,obs_df_day3_all,obs_df_day4_all,obs_df_day5_all,obs_df_day6_all,obs_df_day7_all)
       
-def APCP_obs_df_24(date_list_obs):
+def PCPT_obs_df_24(date_list_obs):
     
     # get the hourly precip values
     _,_,_,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = get_all_obs('PCPTOT', date_list_obs)
@@ -957,7 +903,7 @@ def APCP_obs_df_24(date_list_obs):
 
      
     #grab the 6-hr accum precip values
-    _,_,_,obs_df_180hr_24,obs_df_day1_24,obs_df_day2_24,obs_df_day3_24,obs_df_day4_24,obs_df_day5_24,obs_df_day6_24,obs_df_day7_24 = get_all_obs("APCP24", date_list_obs)
+    _,_,_,obs_df_180hr_24,obs_df_day1_24,obs_df_day2_24,obs_df_day3_24,obs_df_day4_24,obs_df_day5_24,obs_df_day6_24,obs_df_day7_24 = get_all_obs("PCPT24", date_list_obs)
         
     
     # grab the extra hour on the last outlook day
@@ -991,17 +937,17 @@ def APCP_obs_df_24(date_list_obs):
     
     return(obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1_all,obs_df_day2_all,obs_df_day3_all,obs_df_day4_all,obs_df_day5_all,obs_df_day6_all,obs_df_day7_all)
       
-    
+
 def main(args):
     #sys.stdout = open(logfilepath, "w") #opens log file
     
     date_list = listofdates()
     date_list_obs = listofdates(obs=True)
           
-    if input_variable == "APCP6":       
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = APCP_obs_df_6(date_list_obs)
-    elif input_variable == "APCP24":       
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = APCP_obs_df_24(date_list_obs)
+    if input_variable == "PCPT6":       
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_6(date_list_obs)
+    elif input_variable == "PCPT24":       
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_24(date_list_obs)
     else:
         obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = get_all_obs(input_variable, date_list_obs)
    
@@ -1016,10 +962,10 @@ def main(args):
            filehours = get_filehours(1, int(maxhour))
            #ENS only has one grid (and its not saved in a g folder)
            if "ENS" in model:
-               filepath = fcst_filepath + model + '/'
+               filepath = fcst_filepath + model + '/' + input_variable + '/'
                gridname = ""
            else:
-               filepath = fcst_filepath + model + '/' + grid + '/'
+               filepath = fcst_filepath + model + '/' + grid + '/' + input_variable + '/'
                gridname = "_" + grid
                
 
