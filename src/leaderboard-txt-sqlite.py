@@ -276,68 +276,16 @@ def get_fcst(station, filepath, variable, date_list,filehours):
             variable = "PCPTOT"
 
         # pulls out a list of the files for the given station+variable+hour wanted   
-        if "_KF" in variable:
-            variable = variable[:-3]
-            sql_con = sqlite3.connect(filepath + "fcst.KF_MH/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
         
-        elif variable == "ENS_LR" and "_KF" in variable:
-            variable = variable[:-3]
-            sql_con = sqlite3.connect(filepath + "fcst.LR.KF_MH.t/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
-        
-        elif variable == "ENS_lr" and "_KF" in variable:
-            variable = variable[:-3]
-            sql_con = sqlite3.connect(filepath + "fcst.lr.KF_MH.t/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
-        
-        elif variable == "ENS_hr" and "_KF" in variable:
-            variable = variable[:-3]
-            sql_con = sqlite3.connect(filepath + "fcst.hr.KF_MH.t/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
-        
-        elif variable == "ENS_hr":
-            sql_con = sqlite3.connect(filepath + "fcst.hr.t/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
-           
-        elif variable == "ENS_LR":
-            sql_con = sqlite3.connect(filepath + "fcst.LR.t/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
-           
-        elif variable == "ENS_lr":
-            sql_con = sqlite3.connect(filepath + "fcst.lr.t/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
+        sql_con = sqlite3.connect(filepath + station + ".sqlite")
+        cursor = sql_con.cursor()
+        sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+        cursor.execute(sql_query)
+        fcst = cursor.fetchall()
+        fcst_result = [y[0] for y in fcst]
 
-        else:
-            sql_con = sqlite3.connect(filepath + "fcst.t/" + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            fcst = np.array(cursor.fetchall())
-        
         cursor.close()
-        return(fcst)
+        return(fcst_result)
 
 
 def get_all_obs(variable, date_list_obs):
@@ -1023,10 +971,25 @@ def main(args):
            filehours = get_filehours(1, int(maxhour))
            #ENS only has one grid (and its not saved in a g folder)
            if "ENS" in model:
-               filepath = fcst_filepath + model + '/' + input_variable + '/'
+               filepath = fcst_filepath + model + '/' + input_variable + '/fcst.t/'
                gridname = ""
+           elif model == "ENS_LR":
+               filepath = fcst_filepath +model + '/' + input_variable + '/fcst.LR.t/'
+           elif model == "ENS_hr":
+               filepath = fcst_filepath +model + '/' + input_variable + '/fcst.hr.t/'
+           elif model == "ENS_lr":
+               filepath = fcst_filepath +model + '/' + input_variable + '/fcst.lr.t/'    
+           elif model =="ENS_hr" and '_KF' in input_variable:
+               filepath = fcst_filepath +model + '/' + input_variable + "fcst.hr.KF_MH.t/"  
+           elif model =="ENS_lr" and '_KF' in input_variable:
+               filepath = fcst_filepath +model + '/' + input_variable + "fcst.lr.KF_MH.t/"  
+           elif model =="ENS_LR" and '_KF' in input_variable:
+               filepath = fcst_filepath +model + '/' + input_variable + "fcst.LR.KF_MH.t/"          
+           elif "_KF" in input_variable:
+               filepath = fcst_filepath +model + '/' + grid + '/' + input_variable + "fcst.KF_MH.t/"          
+               gridname = "_" + grid
            else:
-               filepath = fcst_filepath + model + '/' + grid + '/' + input_variable + '/'
+               filepath = fcst_filepath + model + '/' + grid + '/' + input_variable + '/fcst.t/'
                gridname = "_" + grid
                
 
