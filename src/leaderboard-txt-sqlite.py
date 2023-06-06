@@ -271,6 +271,8 @@ def get_fcst(station, filepath, variable, date_list,filehours):
     
         fcst = []
         
+        if int(station) < 1000:
+            station = "0" + str(station)
 
         if "PCPT" in variable:
             variable = "PCPTOT"
@@ -603,7 +605,7 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
 
 def get_rankings(variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7):
     
-        
+    
     model_filepath = model + '/' + grid + '/'
     
     #makes model/grid folder if it doesn't exist
