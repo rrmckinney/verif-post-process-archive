@@ -242,6 +242,9 @@ def get_filehours(hour1,hour2):
 # default station exists for when a new model is added (instead of new station)
 def check_dates(filepath, variable, station='3510'):
     
+    if int(station) < 1000:
+        station = "0" + str(station)
+
     flag = True
 
     if "PCPT" in variable:
