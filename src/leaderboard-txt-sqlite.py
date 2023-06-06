@@ -279,7 +279,7 @@ def get_fcst(station, filepath, variable, date_list,filehours):
         
         sql_con = sqlite3.connect(filepath + station + ".sqlite")
         cursor = sql_con.cursor()
-        sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+        sql_query = "SELECT * from 'All' WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
         cursor.execute(sql_query)
         fcst = cursor.fetchall()
         fcst_result = [y[0] for y in fcst]

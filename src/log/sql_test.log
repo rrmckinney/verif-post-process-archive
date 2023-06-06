@@ -326,4 +326,8 @@ Reading observational dataframe for SFCTC..
       Now on station 0704
       Now on station 0691
       Now on station 0694
-/verification/Forecasts/MM5/g2/SFCTC/3510.sqlite
+/verification/Forecasts/MM5/g2/SFCTC/fcst.t/3510.sqlite
+Now on.. MM5_g2 for SFCTC
+/verification/Forecasts/MM5/g2/SFCTC/fcst.t/3320.sqlite
+   Skipping station 3320 (No KF data)
+/verification/Forecasts/MM5/g2/SFCTC/fcst.t/604.sqlite
