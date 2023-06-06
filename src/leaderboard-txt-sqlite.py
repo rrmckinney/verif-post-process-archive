@@ -40,7 +40,7 @@ warnings.filterwarnings("ignore",category=RuntimeWarning)
 obs_filepath = "/verification/Observations/"
 
 #location where forecast files are (immediately within this directory should be model folders, then grid folders, then the sql databases)
-fcst_filepath = "/verifcation/Forecasts"
+fcst_filepath = "/verification/Forecasts/"
 
 #description file for stations
 station_file = '/home/verif/verif-get-data/input/station_list_master.txt'
@@ -188,12 +188,12 @@ def check_variable(variable, station):
             
     return(flag)
 
-
+""" No ldnger need as all obs now in same file
 
 # this puts obs in the same format as the fcsts
 # currently only works for hours 1-180
 def reorder_obs(obs_old):
-
+"
     obs = []
  
     for i in range(24): #1-24
@@ -221,7 +221,7 @@ def reorder_obs(obs_old):
         obs.append(obs_old[i][7:delta+8])  
     
     return(obs)
-
+"""
 #lists the hour filenames that we are running for
 def get_filehours(hour1,hour2):
     
@@ -247,21 +247,23 @@ def check_dates(filepath, variable, station='3510'):
     if "PCPT" in variable:
         variable = "PCPTOT"
     
-    sql_con = sqlite3.connect(filepath + "/fcst.t/" + station + ".sqlite")
+    sql_path = filepath + station + ".sqlite"
+    print(sql_path)
+    sql_con = sqlite3.connect(sql_path)
     cursor = sql_con.cursor()
-    cursor.execute("SELECT DISTINCT Date from All")
-    check_dates = np.array(cursor.fetchall())
+    cursor.execute("SELECT DISTINCT Date from 'All'")
+    sql_result = cursor.fetchall()
+    sql_result = [x[0] for x in sql_result]
 
-
-    if np.size(check_dates) < delta+1:
-         print("    Not enough dates available for this model/station/variable")
-         flag = False
-        
-
-    elif start_date not in check_dates:
-        print("    Model collection started " + check_dates[0] + ", which is after input start_date")
+    if len(sql_result) < delta+1:
+        print("    Not enough dates available for this model/station/variable")
         flag = False
-        
+
+    elif int(start_date) < (sql_result[0]):
+        print("    Model collection started " + str(sql_result[0]) + ", which is after input start_date")
+        flag = False
+    
+    cursor.close()
     return(flag)
 
 # returns the fcst data for the given model/grid
@@ -333,6 +335,8 @@ def get_fcst(station, filepath, variable, date_list,filehours):
             sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
             cursor.execute(sql_query)
             fcst = np.array(cursor.fetchall())
+        
+        cursor.close()
         return(fcst)
 
 
@@ -382,13 +386,16 @@ def get_all_obs(variable, date_list_obs):
     #extra_point_df = pd.DataFrame()
         
     for station in station_list:
-        
+
+        if int(station) < 1000:
+            station = "0" + str(station)
+
         print("      Now on station " + station)
         
         if station not in all_stations:
             #print("   Skipping station " + station)
             continue
-   
+        
         obs = []
 
         if "PCPT" in input_variable:
@@ -402,18 +409,18 @@ def get_all_obs(variable, date_list_obs):
         
         obs_directory = obs_filepath
         
-        for hour in filehours_obs:
             
-            sql_con = sqlite3.connect(obs_directory + station + ".sqlite")
-            cursor = sql_con.cursor()
-            sql_query = "SELECT * from All WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
-            cursor.execute(sql_query)
-            obs = np.array(cursor.fetchall())
-        
+        sql_con = sqlite3.connect(obs_directory + variable + "/" + station + ".sqlite")
+        cursor = sql_con.cursor()
+        sql_query = "SELECT * from 'All' WHERE date BETWEEN " + str(start_date) + " AND " + str(end_date)
+        cursor.execute(sql_query)
+        obs = cursor.fetchall()
+        all_obs = [r[2] for r in obs]    
+        cursor.close()
         #want the 13th point (12 UTC) on day 8 (7.5) ..jk
         #extra_point = obs[12][delta+7]
         
-        all_obs = reorder_obs(obs)  #180 x 7  (30)  #hr180
+      
         hr60_obs = all_obs[:60]     #84 x 7   (30) 
         hr84_obs = all_obs[:84]     #84 x 7   (30)     
         hr120_obs = all_obs[:120]   #120 x 7  (30) 
