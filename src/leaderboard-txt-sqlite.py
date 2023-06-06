@@ -242,9 +242,6 @@ def get_filehours(hour1,hour2):
 # default station exists for when a new model is added (instead of new station)
 def check_dates(filepath, variable, station='3510'):
     
-    if int(station) < 1000:
-        station = "0" + str(station)
-
     flag = True
 
     if "PCPT" in variable:
@@ -571,8 +568,8 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
         len_fcst = "0/" + str(total_length)
         numstations = "0/" + str(totalstations)
         
-        f1 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-        read_f1 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+        f1 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+        read_f1 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f1 and date_entry2 not in read_f1:
             f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
             
@@ -583,8 +580,8 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
             f1.close()    
                 
         
-        f2 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-        read_f2 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+        f2 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+        read_f2 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f2 and date_entry2 not in read_f2:
             f2.write(str(date_entry1) + " " + str(date_entry2) + "   ")
             
@@ -595,8 +592,8 @@ def model_not_available(maxhour,hour,length,totalstations,time_domain,variable,m
             f2.close()  
             
         
-        f3 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
-        read_f3 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + var + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+        f3 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
+        read_f3 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f3 and date_entry2 not in read_f3:
             f3.write(str(date_entry1) + " " + str(date_entry2) + "   ")
             
