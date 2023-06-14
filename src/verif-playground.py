@@ -1,7 +1,13 @@
-offset = 60
+offset = [60, 100, 30, 45, 78]
 
-while offset > 24:
-    offset = offset - 24
+x=0
+for i in offset:
+    while i > 24:
+        i = i - 24
+        print(i)
+    offset[x] = i
+    x = x+1
+
 
     
 print(offset)
