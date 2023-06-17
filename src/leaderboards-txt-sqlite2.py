@@ -12,7 +12,7 @@ Input: start date (YYMMDD), end date (YYMMDD), variable, domain size
 The stats round the obs and forecasts to one decimal before doing statistics 
     - this can be changed in the (get_statistics) function
     - obs vary from integers to two decimals while forecasts have two decimals
-        - temperature is sometimes integers while wind is sometimes every 10º or even 45º
+        - temperature is sometimes integers while wind is sometimes every 10º or every 45º
 """
 import os
 import pandas as pd
@@ -26,7 +26,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 from scipy import stats
 import sqlite3
-from utl/funcs.py import 
+from utl.funcs import *
 import warnings
 warnings.filterwarnings("ignore",category=RuntimeWarning)
 
@@ -50,20 +50,19 @@ models_file = '/home/verif/verif-get-data/input/model_list.txt'
 #folder where the stats save
 textfile_folder = '/verification/Statistics/'
 
-
 ###########################################################
-### ---------------------- INPUT --------------------------
+### -------------------- INPUT ----------------------------
 ###########################################################
 
 # takes an input date for the first and last day you want calculations for, must be a range of 7 or 30 days apart
 if len(sys.argv) == 5:
     date_entry1 = sys.argv[1]    #input date YYMMDD
-    start_date = str(date_entry1) + '00'  
-    input_startdate = datetime.datetime.strptime(start_date, "%y%m%d%H").date()
+    start_date = str(date_entry1) 
+    input_startdate = datetime.datetime.strptime(start_date, "%y%m%d").date()
     
     date_entry2 = sys.argv[2]    #input date YYMMDD
-    end_date = str(date_entry2) + '00'  
-    input_enddate = datetime.datetime.strptime(end_date, "%y%m%d%H").date()
+    end_date = str(date_entry2)
+    input_enddate = datetime.datetime.strptime(end_date, "%y%m%d").date()
     
     #subtract 6 to match boreas time, might need to change in future
     today = datetime.datetime.now() - datetime.timedelta(hours=6) 
@@ -97,8 +96,6 @@ if len(sys.argv) == 5:
 else:
     raise Exception("Invalid input entries. Needs 2 YYMMDD entries for start and end dates, a variable name, and domain size")
 
-
-
 # list of model names as strings (names as they are saved in www_oper and my output folders)
 models = np.loadtxt(models_file,usecols=0,dtype='str')
 grids = np.loadtxt(models_file,usecols=1,dtype='str') #list of grid sizings (g1, g2, g3 etc) for each model
@@ -119,20 +116,22 @@ if input_domain == "large":
 else:
     all_stations = np.array(station_df.query("`Small domain`==1")["Station ID"],dtype=str)
     
-
+###########################################################
+### -------------------- MAIN FUNCTION --------------------
+###########################################################
 
 def main(args):
     #sys.stdout = open(logfilepath, "w") #opens log file
-    
+
     date_list = listofdates()
     date_list_obs = listofdates(obs=True)
           
     if input_variable == "PCPT6":       
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_6(date_list_obs)
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_6(date_list_obs, delta, input_variable)
     elif input_variable == "PCPT24":       
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_24(date_list_obs)
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_24(date_list_obs, delta, input_variable)
     else:
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = get_all_obs(input_variable, date_list_obs)
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = get_all_obs(stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, input_variable, start_date, end_date, date_list_obs)
    
     for i in range(len(models)):
        model = models[i] #loops through each model
@@ -167,7 +166,7 @@ def main(args):
                gridname = "_" + grid
                
 
-           if check_dates(filepath, input_variable) == False:
+           if check_dates(start_date, delta, filepath, input_variable) == False:
                print("   Skipping model " + model + gridname + " (check_dates flag)")
                continue
        
@@ -178,9 +177,7 @@ def main(args):
            print("Now on.. " + model + gridname + " for " + input_variable)
 
            
-           get_rankings(input_variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7)
-
-    #sys.stdout.close() #close log file
+           get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
 
 if __name__ == "__main__":
     main(sys.argv)
