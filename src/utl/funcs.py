@@ -72,10 +72,10 @@ def get_filehours(hour1,hour2):
     
     hours_list = []
     for i in range(hour1,hour2+1):
+        i = i - 1
         if i < 10:
-            hour = "00" + str(i)
-        elif i < 100:
             hour = "0" + str(i)
+
         else:
             hour = str(i)
         
@@ -159,7 +159,7 @@ def make_df(date_list_obs, start_date, end_date):
     
     return(df_new)
 
-def get_all_obs(stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, variable, start_date, end_date, date_list_obs):
+def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, variable, start_date, end_date, date_list_obs):
     
     print("Reading observational dataframe for " + variable + ".. ")
     
@@ -691,12 +691,13 @@ def get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_st
         get_statistics(delta,model,input_domain, savetype, date_entry1, date_entry2,maxhour,48,24,fcst_allstations_day2,obs_allstations_day2,num_stations,totalstations,'day2',variable,model_filepath)
         get_statistics(delta,model,input_domain, savetype, date_entry1, date_entry2,maxhour,24,24,fcst_allstations_day1,obs_allstations_day1,num_stations,totalstations,'day1',variable,model_filepath)
 
-def PCPT_obs_df_6(date_list_obs, delta, input_variable):
+def PCPT_obs_df_6(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6,\
+                  stations_with_PCPT24, all_stations, start_date, end_date):
 
-
-    
     # get the hourly precip values
-    obs_df_60hr_1,obs_df_84hr_1,obs_df_120hr_1,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = get_all_obs('PCPTOT', date_list_obs)
+    obs_df_60hr_1,obs_df_84hr_1,obs_df_120hr_1,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = delta, \
+        stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, "PCPTOT", \
+            start_date, end_date, date_list_obs
         
     
     # grab the extra hour on the last outlook day
@@ -742,7 +743,9 @@ def PCPT_obs_df_6(date_list_obs, delta, input_variable):
 
 
     #grab the 6-hr accum precip values
-    obs_df_60hr_6,obs_df_84hr_6,obs_df_120hr_6,obs_df_180hr_6,obs_df_day1_6,obs_df_day2_6,obs_df_day3_6,obs_df_day4_6,obs_df_day5_6,obs_df_day6_6,obs_df_day7_6 = get_all_obs(input_variable, date_list_obs)
+    obs_df_60hr_6,obs_df_84hr_6,obs_df_120hr_6,obs_df_180hr_6,obs_df_day1_6,obs_df_day2_6,obs_df_day3_6,obs_df_day4_6,obs_df_day5_6,\
+        obs_df_day6_6,obs_df_day7_6 = get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+                                                  stations_with_PCPT24, all_stations, "PCPT6", start_date, end_date, date_list_obs)
         
     # grab the extra hour on the last outlook day
     obs_df_60hr_6 = obs_df_60hr_6.append(obs_df_180hr_6.iloc[180*delta + 60],ignore_index=True)
@@ -785,12 +788,16 @@ def PCPT_obs_df_6(date_list_obs, delta, input_variable):
     obs_df_day6_all = pd.concat([obs_df_day6_1_trimmed, obs_df_day6_6_trimmed],axis=1)
     obs_df_day7_all = pd.concat([obs_df_day7_1_trimmed, obs_df_day7_6_trimmed],axis=1)
 
-    return(obs_df_60hr_all,obs_df_84hr_all,obs_df_120hr_all,obs_df_180hr_all,obs_df_day1_all,obs_df_day2_all,obs_df_day3_all,obs_df_day4_all,obs_df_day5_all,obs_df_day6_all,obs_df_day7_all)
+    return(obs_df_60hr_all,obs_df_84hr_all,obs_df_120hr_all,obs_df_180hr_all,obs_df_day1_all,obs_df_day2_all,obs_df_day3_all,obs_df_day4_all,\
+           obs_df_day5_all,obs_df_day6_all,obs_df_day7_all)
 
-def PCPT_obs_df_24(date_list_obs, delta, input_variable):
+def PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+                   stations_with_PCPT24,all_stations,start_date, end_date):
     
     # get the hourly precip values
-    _,_,_,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = get_all_obs('PCPTOT', date_list_obs)
+    _,_,_,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = \
+        get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, \
+                    all_stations, "PCPTOT", start_date, end_date, date_list_obs)
             
     # grab the extra hour on the last outlook day
     obs_df_day1_1 = obs_df_day1_1.append(obs_df_180hr_1.iloc[180*delta + 24],ignore_index=True)
@@ -823,7 +830,9 @@ def PCPT_obs_df_24(date_list_obs, delta, input_variable):
 
      
     #grab the 6-hr accum precip values
-    _,_,_,obs_df_180hr_24,obs_df_day1_24,obs_df_day2_24,obs_df_day3_24,obs_df_day4_24,obs_df_day5_24,obs_df_day6_24,obs_df_day7_24 = get_all_obs("PCPT24", date_list_obs)
+    _,_,_,obs_df_180hr_24,obs_df_day1_24,obs_df_day2_24,obs_df_day3_24,obs_df_day4_24,obs_df_day5_24,obs_df_day6_24,obs_df_day7_24 = \
+        get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, \
+                    all_stations, "PCPT24", start_date, end_date, date_list_obs)
         
     
     # grab the extra hour on the last outlook day

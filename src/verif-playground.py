@@ -46,6 +46,7 @@ for day in date_list_obs:
 
     #dates = pd.to_datetime(date_list_obs+ ' ' + filehours_obs, format='%y%m%d %H')
     df = pd.DataFrame({'date':dates, 'time': filehours_obs})
+    print(df)
     df['datetime'] = pd.to_datetime(df['date'] + ' ' +df['time'],format = '%y%m%d %H')
 
     df_new = pd.concat([df_new, df])
