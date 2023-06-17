@@ -52,18 +52,18 @@ textfile_folder = '/verification/Statistics/'
 #   past hours 0-24
 def listofdates(start_date, end_date, obs = False):
     if obs == False:
-        start = datetime.datetime.strptime(start_date, "%y%m%d%H").date()
-        end = datetime.datetime.strptime(end_date, "%y%m%d%H").date()
+        start = datetime.datetime.strptime(start_date, "%y%m%d").date()
+        end = datetime.datetime.strptime(end_date, "%y%m%d").date()
 
     elif obs == True:
         startday = 0 #forhour 1
         endday = 7 #for hour 180
         
-        start = datetime.datetime.strptime(start_date, "%y%m%d%H").date() + timedelta(days=startday)
-        end = datetime.datetime.strptime(end_date, "%y%m%d%H").date() + timedelta(days=endday)
+        start = datetime.datetime.strptime(start_date, "%y%m%d").date() + timedelta(days=startday)
+        end = datetime.datetime.strptime(end_date, "%y%m%d").date() + timedelta(days=endday)
     
     numdays = (end-start).days 
-    date_list = [(start + datetime.timedelta(days=x)).strftime("%y%m%d%H") for x in range(numdays+1)]
+    date_list = [(start + datetime.timedelta(days=x)).strftime("%y%m%d") for x in range(numdays+1)]
 
     return(date_list)
 
@@ -72,13 +72,11 @@ def get_filehours(hour1,hour2):
     
     hours_list = []
     for i in range(hour1,hour2+1):
+        i= i-1
         if i < 10:
-            hour = "00" + str(i)
-        elif i < 100:
             hour = "0" + str(i)
         else:
             hour = str(i)
-        
         hours_list.append(hour)
         
     return(hours_list)
@@ -125,7 +123,6 @@ def check_dates(start_date, delta, filepath, variable, station='3510'):
         variable = "PCPTOT"
     
     sql_path = filepath + station + ".sqlite"
-    print(sql_path)
     sql_con = sqlite3.connect(sql_path)
     cursor = sql_con.cursor()
     cursor.execute("SELECT DISTINCT Date from 'All'")
@@ -159,7 +156,7 @@ def make_df(date_list_obs, start_date, end_date):
     
     return(df_new)
 
-def get_all_obs(stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, variable, start_date, end_date, date_list_obs):
+def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, variable, start_date, end_date, date_list_obs):
     
     print("Reading observational dataframe for " + variable + ".. ")
     
@@ -216,11 +213,11 @@ def get_all_obs(stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT
             continue
 
         if "PCPT" in variable:
-            if check_dates(fcst_filepath + 'ENS/' + variable + '/fcst.t/', "PCPTOT", station) == False:
+            if check_dates(start_date, delta, fcst_filepath + 'ENS/' + variable + '/fcst.t/', "PCPTOT", variable, station) == False:
                 print("   Skipping station " + station + " (not enough dates yet)")
                 continue
         else:
-            if check_dates(fcst_filepath + 'ENS/' + variable + '/fcst.t/', variable, station) == False:
+            if check_dates(start_date, delta, fcst_filepath + 'ENS/' + variable + '/fcst.t/', variable, station) == False:
                 print("   Skipping station " + station + " (not enough dates yet)")
                 continue        
         
@@ -558,7 +555,7 @@ def get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_st
             #print("   Skipping station " + station + " (no " + variable + " data)")
             continue
     
-        if check_dates(filepath, variable, station) == False:
+        if check_dates(start_date, delta, filepath, variable, station) == False:
             print("   Skipping station " + station + " (not enough dates yet)")
             continue
 
