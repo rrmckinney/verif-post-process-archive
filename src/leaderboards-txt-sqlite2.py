@@ -127,11 +127,15 @@ def main(args):
     date_list_obs = listofdates(start_date, end_date, obs=True)
           
     if input_variable == "PCPT6":       
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_6(date_list_obs, delta, input_variable)
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = \
+            PCPT_obs_df_6(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6,\
+                  stations_with_PCPT24, all_stations, start_date, end_date)
     elif input_variable == "PCPT24":       
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_24(date_list_obs, delta, input_variable)
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = \
+            PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+                   stations_with_PCPT24,all_stations,start_date, end_date)
     else:
-        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = get_all_obs(stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, input_variable, start_date, end_date, date_list_obs)
+        obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, input_variable, start_date, end_date, date_list_obs)
    
     for i in range(len(models)):
        model = models[i] #loops through each model
