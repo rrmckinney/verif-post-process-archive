@@ -556,7 +556,7 @@ def get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_st
             #print("   Skipping station " + station + " (no " + variable + " data)")
             continue
     
-        if check_dates(start_date, delta, filepath, variable, station) == False:
+        if check_dates(date_entry1, delta, filepath, variable, station) == False:
             print("   Skipping station " + station + " (not enough dates yet)")
             continue
 
