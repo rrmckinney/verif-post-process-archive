@@ -123,8 +123,8 @@ else:
 def main(args):
     #sys.stdout = open(logfilepath, "w") #opens log file
 
-    date_list = listofdates()
-    date_list_obs = listofdates(obs=True)
+    date_list = listofdates(start_date, end_date, obs=False)
+    date_list_obs = listofdates(start_date, end_date, obs=True)
           
     if input_variable == "PCPT6":       
         obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = PCPT_obs_df_6(date_list_obs, delta, input_variable)
