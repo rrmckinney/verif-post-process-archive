@@ -69,13 +69,12 @@ def listofdates(start_date, end_date, obs = False):
 
 #lists the hour filenames that we are running for
 def get_filehours(hour1,hour2):
-    
+     
     hours_list = []
     for i in range(hour1,hour2+1):
+        i = i-1
         if i < 10:
-            i = i - 1
             hour = "0" + str(i)
-
         else:
             hour = str(i)
         hours_list.append(hour)
@@ -116,45 +115,39 @@ def check_variable(variable, station, stations_with_SFCTC, stations_with_SFCWSPD
 
 # checks to see if the right amount of dates exist, which is used for when new models/stations are added
 # default station exists for when a new model is added (instead of new station)
-def check_dates(start_date, delta, filepath, variable, station='3510'):
-    
+def check_dates(start_date, delta, filepath, variable, station):
     flag = True
-
+    
+    if len(station) < 4:
+        station = "0" +station
     if "PCPT" in variable:
         variable = "PCPTOT"
     
     sql_path = filepath + station + ".sqlite"
     sql_con = sqlite3.connect(sql_path)
+    print(sql_path)
     cursor = sql_con.cursor()
     cursor.execute("SELECT DISTINCT Date from 'All'")
     sql_result = cursor.fetchall()
     sql_result = [x[0] for x in sql_result]
-
+    
     if len(sql_result) < delta+1:
-        print("    Not enough dates available for this model/station/variable")
+        print( "  Not enough dates available for this model/station/variable")
         flag = False
-
-    elif int(start_date) < (sql_result[0]):
+    elif int("20" + start_date) < int(sql_result[0]):
         print("    Model collection started " + str(sql_result[0]) + ", which is after input start_date")
         flag = False
-    
     cursor.close()
+    
     return(flag)
+
 def make_df(date_list_obs, start_date, end_date):
     date_list_obs = listofdates(start_date, end_date, obs=True)
-    df_new = pd.DataFrame()
+    df = pd.DataFrame()
 
-    for day in date_list_obs:
+    df['Date'] = pd.to_datetime(date_list_obs,format = '%y%m%d')
 
-        dates = [day] * 24
-        filehours_obs = get_filehours(1,24)
-
-        #dates = pd.to_datetime(date_list_obs+ ' ' + filehours_obs, format='%y%m%d %H')
-        df = pd.DataFrame({'date':dates, 'time': filehours_obs})
-        df['datetime'] = pd.to_datetime(df['date'] + ' ' +df['time'],format = '%y%m%d %H')
-
-        df_new = pd.concat([df_new, df])
-    
+    df_new = df.set_index('Date') 
     return(df_new)
 
 def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, variable, start_date, end_date, date_list_obs):
@@ -201,18 +194,16 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
     obs_df_day5 = pd.DataFrame()  
     obs_df_day6 = pd.DataFrame()  
     obs_df_day7 = pd.DataFrame() 
-
+    
     for station in station_list:
-
-        if int(station) < 1000:
-            station = "0" + str(station)
-
-        print("      Now on station " + station)
-        
+        print( "    Now on station " + station) 
+         
         if station not in all_stations:
             #print("   Skipping station " + station)
             continue
-
+        if len(station) < 4:
+            station = "0" +station
+        
         if "PCPT" in variable:
             if check_dates(start_date, delta, fcst_filepath + 'ENS/' + variable + '/fcst.t/', "PCPTOT", variable, station) == False:
                 print("   Skipping station " + station + " (not enough dates yet)")
@@ -223,30 +214,30 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
                 continue        
         
         for hour in filehours_obs:
-            hour = int(hour)-1
+            if float(hour) < 1000:
+                    hour = str(hour).lstrip('0')
             sql_con = sqlite3.connect(obs_filepath + variable + "/" + station + ".sqlite")
-            sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" +str(date_list_obs[0][:-2]) + " AND 20" + str(date_list_obs[len(date_list_obs)-1][:-2]) + ' AND time == ' + str(hour) + '00'        
+            sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" +str(date_list_obs[0]) + " AND 20" + str(date_list_obs[len(date_list_obs)-1]) + ' AND time == ' + str(hour) + '00'        
             obs = pd.read_sql_query(sql_query, sql_con)
-            
             obs['Time'] = obs['Time'].astype(str).str.zfill(4)
-            obs['Date'] = obs['Date'].astype(str)
-            obs['datetime'] = pd.to_datetime(obs['Date'] + ' ' + obs['Time'], format='%Y/%m/%d %H:%M') 
+            obs['Date'] = pd.to_datetime(obs['Date'], format='%Y%m%d') 
             
-            obs = obs.set_index('DateTime')
-            df_all = df_new.join(obs)
+            obs = obs.set_index('Date')
+            df_all = df_new.join(obs, on='Date')
+            
 
-            hr60_obs = df_all['obs'][:60]     #84 x 7   (30) 
-            hr84_obs = df_all['obs'][:84]     #84 x 7   (30)     
-            hr120_obs = df_all['obs'][:120]   #120 x 7  (30) 
-            day1_obs = df_all['obs'][:24]     #24 x 7   (30)   
-            day2_obs = df_all['obs'][24:48]   #24 x 7   (30)   
-            day3_obs = df_all['obs'][48:72]   #24 x 7   (30)     
-            day4_obs = df_all['obs'][72:96]   #24 x 7   (30)  
-            day5_obs = df_all['obs'][96:120]  #24 x 7   (30)  
-            day6_obs = df_all['obs'][120:144] #24 x 7   (30)  
-            day7_obs = df_all['obs'][144:168] #24 x 7   (30)  
-
-            final_obs_180hr = np.array(df_all['obs']).T
+            hr60_obs = df_all['Val'][:60]     #84 x 7   (30) 
+            hr84_obs = df_all['Val'][:84]     #84 x 7   (30)     
+            hr120_obs = df_all['Val'][:120]   #120 x 7  (30) 
+            day1_obs = df_all['Val'][:24]     #24 x 7   (30)   
+            day2_obs = df_all['Val'][24:48]   #24 x 7   (30)   
+            day3_obs = df_all['Val'][48:72]   #24 x 7   (30)     
+            day4_obs = df_all['Val'][72:96]   #24 x 7   (30)  
+            day5_obs = df_all['Val'][96:120]  #24 x 7   (30)  
+            day6_obs = df_all['Val'][120:144] #24 x 7   (30)  
+            day7_obs = df_all['Val'][144:168] #24 x 7   (30)  
+            
+            final_obs_180hr = np.array(df_all['Val']).T
             final_obs_60hr = np.array(hr60_obs).T
             final_obs_84hr = np.array(hr84_obs).T
             final_obs_120hr = np.array(hr120_obs).T
@@ -257,7 +248,7 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
             final_obs_day5 = np.array(day5_obs).T
             final_obs_day6 = np.array(day6_obs).T
             final_obs_day7 = np.array(day7_obs).T
-
+            
             obs_df_180hr[station] = final_obs_180hr.flatten() # 1260 (180x7) for each station for weekly
             obs_df_60hr[station] = final_obs_60hr.flatten()
             obs_df_84hr[station] = final_obs_84hr.flatten()   # 588 (84x7)
@@ -269,50 +260,45 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
             obs_df_day5[station] = final_obs_day5.flatten()   # 168 (24x7) 
             obs_df_day6[station] = final_obs_day6.flatten()   # 168 (24x7) 
             obs_df_day7[station] = final_obs_day7.flatten()   # 168 (24x7) 
-                
             #extra_point_df[station] = np.array([extra_point])
-
             # output is a dataframe with the column names as the station, with 420 rows for 60x7 or 60x30
-            return(obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7)
+    return(obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7)
 
 # returns the fcst data for the given model/grid
-def get_fcst(station, filepath, variable, date_list,filehours):
+def get_fcst(station, filepath, variable, date_list,filehours, start_date, end_date):
     
-    if int(station) < 1000:
-        station = "0" + str(station)
-
+    df_new = make_df(date_list, start_date, end_date)
+    
     if "PCPT" in variable:
         variable = "PCPTOT"
 
     # pulls out a list of the files for the given station+variable+hour wanted   
     for hour in filehours:
         sql_con = sqlite3.connect(filepath + station + ".sqlite")
-        sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" + str(date_list[0][:-2]) + " AND 20" + str(date_list[len(date_list)-1][:-2] + ' AND offset == '+ str(hour))
+        sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" + str(date_list[0]) + " AND 20" + str(date_list[len(date_list)-1] + ' AND offset == '+ str(hour))
         fcst = pd.read_sql_query(sql_query, sql_con)
-
-    times = []
-    for x in fcst['Offset']:
-        while x > 24:
-            x = x - 24
-        times.append(str(x))
-
-    fcst['Time'] = pd.Series(times)
-    fcst['Time'] = fcst['Time'].astype(str).str.zfill(2)
-    fcst['Date'] = fcst['Date'].astype(str)
-    
-    if str(x)  == '24':
+        
+        day = 0   
+        times = []
+        
+        for x in fcst['Offset']:
+            day = 0
+            while x > 24:
+                x = x - 24
+                day = day + 1
+            times.append(str(x))
+        
+        fcst['Time'] = pd.Series(times)
+        fcst['Time'] = fcst['Time'].astype(str).str.zfill(2)
+        fcst['Date'] = fcst['Date'].astype(str)
+         
         fcst['Time'] = fcst['Time'].replace('24', '00')
-        fcst['Date'] = pd.to_datetime(fcst['Date'], format='%Y%m%d') + timedelta(days=1)
-        fcst['Date'] = fcst['Date'].dt.strftime('%Y%m%d')
-        fcst['datetime'] = pd.to_datetime(fcst['Date'] + ' ' +fcst['Time'], format='%Y%m%d %H')
-
-    else:
-        fcst['datetime'] = pd.to_datetime(fcst['Date'] + ' ' +fcst['Time'], format='%Y%m%d %H')
-
-    fcst = fcst.set_index('datetime')
-    df_all = df_all.join(fcst)
-
-    return(df_all['fcst'])
+        fcst['Date'] = pd.to_datetime(fcst['Date'], format='%Y%m%d') + timedelta(days=day)
+        fcst['Date'] = pd.to_datetime(fcst['Date'], format='%Y%m%d')
+        #fcst['datetime'] = pd.to_datetime(fcst['Date'] + ' ' +fcst['Time'], format='%Y%m%d %H')
+        fcst = fcst.set_index('Date')
+        df_all = df_new.join(fcst, on='Date')
+    return(df_all['Val'])
 
 # this removes (NaNs) any fcst data where the obs is not recorded, or fcst is -999
 def remove_missing_data(fcst, obs):
@@ -327,12 +313,12 @@ def remove_missing_data(fcst, obs):
                 
     return(fcst,obs) 
 
-def make_textfile(input_domain, savetype, date_entry1, date_entry2, time_domain, variable, model, MAE, RMSE, corr, len_fcst, numstations):
+def make_textfile(input_domain, savetype, date_entry1, date_entry2, time_domain, variable, model_filepath, MAE, RMSE, corr, len_fcst, numstations):
    
         
         
-    f1 = open(textfile_folder +  model + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-    read_f1 = np.loadtxt(textfile_folder +  model + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+    f1 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+    read_f1 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f1 and date_entry2 not in read_f1:
         f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
         
@@ -343,8 +329,8 @@ def make_textfile(input_domain, savetype, date_entry1, date_entry2, time_domain,
         f1.close()    
             
     
-    f2 = open(textfile_folder +  model + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
-    read_f2 = np.loadtxt(textfile_folder +  model + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+    f2 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+    read_f2 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f2 and date_entry2 not in read_f2:
         f2.write(str(date_entry1) + " " + str(date_entry2) + "   ")
         
@@ -355,8 +341,8 @@ def make_textfile(input_domain, savetype, date_entry1, date_entry2, time_domain,
         f2.close()  
     
     
-    f3 = open(textfile_folder +  model + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
-    read_f3 = np.loadtxt(textfile_folder +  model + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+    f3 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
+    read_f3 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f3 and date_entry2 not in read_f3:
         f3.write(str(date_entry1) + " " + str(date_entry2) + "   ")
         
@@ -421,7 +407,6 @@ def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,file
     return(fcst_NaNs, obs_NaNs)
 
 def get_statistics(delta, model, input_domain, savetype, date_entry1, date_entry2, maxhour,hour,length,fcst_allstations,obs_allstations,num_stations,totalstations,time_domain,variable,model_filepath):
-
     if int(maxhour) >= hour:
         fcst_avg = np.nanmean(fcst_allstations,axis=0) 
         obs_avg = np.nanmean(obs_allstations,axis=0)
@@ -437,7 +422,7 @@ def get_statistics(delta, model, input_domain, savetype, date_entry1, date_entry
         fcst_rounded = np.round(fcst_noNaNs,1)
         
         if len(fcst_rounded) == 0:
-            model_not_available(maxhour,hour,length,totalstations,time_domain,variable,model_filepath)
+            model_not_available(delta, input_domain, date_entry1, date_entry2, savetype, maxhour,hour,length,totalstations,time_domain,variable,model_filepath)
         
         else:
             MAE = mean_absolute_error(obs_rounded,fcst_rounded)
@@ -462,7 +447,7 @@ def get_statistics(delta, model, input_domain, savetype, date_entry1, date_entry
             len_fcst = str(len(fcst_noNaNs)) + "/" + str(total_length)   
             numstations = str(num_stations) + "/" + str(totalstations)
                 
-            make_textfile(input_domain, savetype, date_entry1, date_entry2, time_domain, variable, model, MAE, RMSE, corr, len_fcst, numstations)
+            make_textfile(input_domain, savetype, date_entry1, date_entry2, time_domain, variable, model_filepath, MAE, RMSE, corr, len_fcst, numstations)
 
 def model_not_available(delta, input_domain, date_entry1, date_entry2, savetype, maxhour,hour,length,totalstations,time_domain,variable,model_filepath):
 
@@ -483,7 +468,7 @@ def model_not_available(delta, input_domain, date_entry1, date_entry2, savetype,
         len_fcst = "0/" + str(total_length)
         numstations = "0/" + str(totalstations)
         
-        f1 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+        f1 = open(textfile_folder +  model_filepath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
         read_f1 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f1 and date_entry2 not in read_f1:
             f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
@@ -495,7 +480,7 @@ def model_not_available(delta, input_domain, date_entry1, date_entry2, savetype,
             f1.close()    
                 
         
-        f2 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+        f2 = open(textfile_folder +  model_filepath  + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
         read_f2 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f2 and date_entry2 not in read_f2:
             f2.write(str(date_entry1) + " " + str(date_entry2) + "   ")
@@ -507,7 +492,7 @@ def model_not_available(delta, input_domain, date_entry1, date_entry2, savetype,
             f2.close()  
             
         
-        f3 = open(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
+        f3 = open(textfile_folder +  model_filepath  + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+") 
         read_f3 = np.loadtxt(textfile_folder +  model_filepath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f3 and date_entry2 not in read_f3:
             f3.write(str(date_entry1) + " " + str(date_entry2) + "   ")
@@ -521,8 +506,6 @@ def model_not_available(delta, input_domain, date_entry1, date_entry2, savetype,
 def get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24):
     
     model_filepath = model + '/' + grid + '/'
-    
-    #makes model/grid folder if it doesn't exist
     if os.path.isdir(textfile_folder +  model_filepath) == False:
         os.makedirs(textfile_folder +  model_filepath)
             
@@ -555,7 +538,10 @@ def get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_st
         if check_variable(variable, station, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24) == False:                  
             #print("   Skipping station " + station + " (no " + variable + " data)")
             continue
-    
+        
+        if len(station) < 4:
+            station = "0" +str(station)
+        
         if check_dates(date_entry1, delta, filepath, variable, station) == False:
             print("   Skipping station " + station + " (not enough dates yet)")
             continue
@@ -566,35 +552,35 @@ def get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_st
          
         #when using the "small" domain, only include raw data if KF data also exists at that hour
         if input_domain == "small" and variable in ["SFCTC","SFCWSPD"]:
-            all_fcst_KF = get_fcst(station, filepath, variable + '_KF', date_list,filehours)
+            all_fcst_KF = get_fcst(station, filepath, variable + '_KF', date_list,filehours, start_date, end_date)
             fcst_final_all_KF = np.array(all_fcst_KF).T
             fcst_flat_all_KF = fcst_final_all_KF.flatten()
             
-            if np.isnan(fcst_flat_all_KF).all() == True:    
+            if pd.isna(fcst_flat_all_KF).all() == True:    
                 print("   Skipping station " + station + " (No KF data)")
                 continue
-            if np.isnan(fcst_flat_all_KF).any() == False:  
+            if pd.isna(fcst_flat_all_KF).any() == False:  
                 all_fcst_KF = False
                 print(station + " " + model + grid + " fcst KF missing")
 
         else:
             all_fcst_KF = False
             
-        all_fcst = get_fcst(station, filepath, variable, date_list,filehours)    #goes to maxhour       
+        all_fcst = get_fcst(station, filepath, variable, date_list,filehours, date_entry1, date_entry2)    #goes to maxhour       
        
         fcst_final_all = np.array(all_fcst).T
         fcst_flat_all = fcst_final_all.flatten()
         
+       
         if variable != "PCPT24":
             obs_flat_all = np.array(obs_df_180hr[station])
             
-    
             #checks 180 hour only
-            if np.isnan(fcst_flat_all).all() == True:    
+            if pd.isna(fcst_flat_all).all() == True:    
                 print("   Skipping station " + station + " (No forecast data)")
                 continue
             
-            if np.isnan(obs_flat_all).all() == True:    
+            if pd.isna(obs_flat_all).all() == True:    
                 print("   Skipping station " + station + " (No obs data)")
                 continue
         

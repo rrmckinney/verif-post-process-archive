@@ -125,7 +125,6 @@ def main(args):
 
     date_list = listofdates(start_date, end_date, obs=False)
     date_list_obs = listofdates(start_date, end_date, obs=True)
-          
     if input_variable == "PCPT6":       
         obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = \
             PCPT_obs_df_6(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6,\
@@ -157,20 +156,20 @@ def main(args):
            elif model == "ENS_lr":
                filepath = fcst_filepath +model + '/' + input_variable + '/fcst.lr.t/'    
            elif model =="ENS_hr" and '_KF' in input_variable:
-               filepath = fcst_filepath +model + '/' + input_variable + "fcst.hr.KF_MH.t/"  
+               filepath = fcst_filepath +model + '/' + input_variable + "/fcst.hr.KF_MH.t/"  
            elif model =="ENS_lr" and '_KF' in input_variable:
-               filepath = fcst_filepath +model + '/' + input_variable + "fcst.lr.KF_MH.t/"  
+               filepath = fcst_filepath +model + '/' + input_variable[:-3] + "/fcst.lr.KF_MH.t/"  
            elif model =="ENS_LR" and '_KF' in input_variable:
-               filepath = fcst_filepath +model + '/' + input_variable + "fcst.LR.KF_MH.t/"          
+               filepath = fcst_filepath +model + '/' + input_variable[:-3] + "/fcst.LR.KF_MH.t/"          
            elif "_KF" in input_variable:
-               filepath = fcst_filepath +model + '/' + grid + '/' + input_variable + "fcst.KF_MH.t/"          
+               filepath = fcst_filepath +model + '/' + grid + '/' + input_variable[:-3] + "/fcst.KF_MH/"          
                gridname = "_" + grid
            else:
                filepath = fcst_filepath + model + '/' + grid + '/' + input_variable + '/fcst.t/'
                gridname = "_" + grid
                
 
-           if check_dates(start_date, delta, filepath, input_variable) == False:
+           if check_dates(start_date, delta, filepath, input_variable, station='3510') == False:
                print("   Skipping model " + model + gridname + " (check_dates flag)")
                continue
        
