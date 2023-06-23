@@ -149,6 +149,8 @@ def main(args):
            if "ENS" in model:
                filepath = fcst_filepath + model + '/' + input_variable + '/fcst.t/'
                gridname = ""
+           elif model == "ENS" and "_KF" in input_variable:
+               filepath = fcst_filepath + model + '/' + input_variable[:-3] + '/fcst.KF_MH.t/'    
            elif model == "ENS_LR":
                filepath = fcst_filepath +model + '/' + input_variable + '/fcst.LR.t/'
            elif model == "ENS_hr":
