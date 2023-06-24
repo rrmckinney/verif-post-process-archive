@@ -125,7 +125,7 @@ def check_dates(start_date, delta, filepath, variable, station):
     
     sql_path = filepath + station + ".sqlite"
     sql_con = sqlite3.connect(sql_path)
-    print(sql_path)
+
     cursor = sql_con.cursor()
     cursor.execute("SELECT DISTINCT Date from 'All'")
     sql_result = cursor.fetchall()
