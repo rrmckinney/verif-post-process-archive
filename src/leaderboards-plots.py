@@ -35,7 +35,7 @@ save_folder = '/www_oper/results/verification/images/leaderboards/'
 #description file for models
 models_file = '/home/verif/verif-get-data/input/model_list.txt'
 
-textfile_folder = '/scratch/verif/verification/statistics/'
+textfile_folder = '/verification/Statistics/'
 
 ###########################################################
 ### -------------------- INPUT ------------------------
@@ -144,9 +144,9 @@ def get_rankings(variable,time_domain):
             
             print("Now on.. " + model + gridname + "   " + variable)
             
-            if os.path.isfile(textfile_folder +  modelpath + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt"):
+            if os.path.isfile(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt"):
                 #open the MAE file
-                with open(textfile_folder +  modelpath + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt") as f:
+                with open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt") as f:
                     MAE_lines = f.readlines()
         
                 data_check = False
@@ -168,7 +168,7 @@ def get_rankings(variable,time_domain):
                     
                     
                 #open the RMSE file
-                with open(textfile_folder +  modelpath + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt") as f:
+                with open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt") as f:
                     RMSE_lines = f.readlines()
         
                 #find the line for the given dates
@@ -177,7 +177,7 @@ def get_rankings(variable,time_domain):
                         RMSE = RMSE_line.split("   ")[1]
                   
                 #open the MAE file
-                with open(textfile_folder +  modelpath + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt") as f:
+                with open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt") as f:
                     spcorr_lines = f.readlines()
         
                 #find the line for the given dates
