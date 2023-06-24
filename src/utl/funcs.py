@@ -503,9 +503,9 @@ def model_not_available(delta, input_domain, date_entry1, date_entry2, savetype,
             
             f3.close()  
 
-def get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24):
+def get_rankings(model_filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24):
     
-    model_filepath = model + '/' + grid + '/'
+    #model_filepath = model + '/' + grid + '/'
     if os.path.isdir(textfile_folder +  model_filepath) == False:
         os.makedirs(textfile_folder +  model_filepath)
             
