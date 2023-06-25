@@ -296,31 +296,332 @@ Reading observational dataframe for SFCTC_KF..
     Now on station 704
     Now on station 691
     Now on station 694
+
 /verification/Forecasts/MM5/g2/SFCTC/fcst.KF_MH/
 Now on.. MM5_g2 for SFCTC_KF
+
 /verification/Forecasts/MM5/g3/SFCTC/fcst.KF_MH/
 Now on.. MM5_g3 for SFCTC_KF
+
 /verification/Forecasts/MM5/g4/SFCTC/fcst.KF_MH/
 Now on.. MM5_g4 for SFCTC_KF
+M
 /verification/Forecasts/MM5G/g2/SFCTC/fcst.KF_MH/
 Now on.. MM5G_g2 for SFCTC_KF
+M
 /verification/Forecasts/MM5G/g3/SFCTC/fcst.KF_MH/
 Now on.. MM5G_g3 for SFCTC_KF
+M
 /verification/Forecasts/MM5G/g4/SFCTC/fcst.KF_MH/
 Now on.. MM5G_g4 for SFCTC_KF
+M
 /verification/Forecasts/MM5G/g5/SFCTC/fcst.KF_MH/
 Now on.. MM5G_g5 for SFCTC_KF
+WRF3
 /verification/Forecasts/WRF3GEM/g2/SFCTC/fcst.KF_MH/
 Now on.. WRF3GEM_g2 for SFCTC_KF
+WRF3
 /verification/Forecasts/WRF3GEM/g3/SFCTC/fcst.KF_MH/
 Now on.. WRF3GEM_g3 for SFCTC_KF
+WRF3
 /verification/Forecasts/WRF3GEM/g4/SFCTC/fcst.KF_MH/
 Now on.. WRF3GEM_g4 for SFCTC_KF
+WRF3
 /verification/Forecasts/WRF3NAM/g2/SFCTC/fcst.KF_MH/
 Now on.. WRF3NAM_g2 for SFCTC_KF
+WRF3
 /verification/Forecasts/WRF3NAM/g3/SFCTC/fcst.KF_MH/
 Now on.. WRF3NAM_g3 for SFCTC_KF
+WRF3
 /verification/Forecasts/WRF3NAM/g4/SFCTC/fcst.KF_MH/
 Now on.. WRF3NAM_g4 for SFCTC_KF
-/verification/Forecasts/WRF3GFS/g2/SFCTC/fcst.KF_MH/
+WRF3
+/verification/Forecasts/WRF3GFS/g2/SFCTC/fcst.KF_MH//home/verif/.conda/envs/verification/lib/python3.8/site-packages/scipy/__init__.py:143: UserWarning: A NumPy version >=1.19.5 and <1.27.0 is required for this version of SciPy (detected version 1.19.1)
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_180hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_180hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_180hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_120hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_120hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_120hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_84hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_84hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_84hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_60hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_60hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_60hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day7_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day7_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day7_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day6_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day6_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day6_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day5_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day5_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day5_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day4_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day4_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day4_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day3_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day3_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day3_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day2_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day2_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day2_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day1_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day1_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_lr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day1_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_84hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_84hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_84hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_60hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_60hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_60hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day3_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day3_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day3_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day2_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day2_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day2_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day1_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day1_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_hr//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day1_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_180hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_180hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_180hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_120hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_120hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_120hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_84hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_84hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_84hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_60hr_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_60hr_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_60hr_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day7_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day7_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day7_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day6_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day6_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day6_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day5_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day5_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day5_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day4_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day4_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day4_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day3_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day3_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day3_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:480: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day2_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:492: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day2_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:504: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day2_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:324: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/MAE_weekly_SFCTC_KF_day1_small.txt"
+  read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:336: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/RMSE_weekly_SFCTC_KF_day1_small.txt"
+  read_f2 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:348: UserWarning: loadtxt: Empty input file: "/verification/Statistics/ENS_LR//small/SFCTC_KF/spcorr_weekly_SFCTC_KF_day1_small.txt"
+  read_f3 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)
+
 Now on.. WRF3GFS_g2 for SFCTC_KF
+WRF3
+/verification/Forecasts/WRF3GFS/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF3GFS_g3 for SFCTC_KF
+WRF3
+/verification/Forecasts/WRF3GFS/g4/SFCTC/fcst.KF_MH/
+Now on.. WRF3GFS_g4 for SFCTC_KF
+WRF3
+/verification/Forecasts/WRF3GFS/g5/SFCTC/fcst.KF_MH/
+Now on.. WRF3GFS_g5 for SFCTC_KF
+WRF3NAV
+/verification/Forecasts/WRF3NAVGEM/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF3NAVGEM_g2 for SFCTC_KF
+WRF3NAV
+/verification/Forecasts/WRF3NAVGEM/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF3NAVGEM_g3 for SFCTC_KF
+WRF3NAV
+/verification/Forecasts/WRF3NAVGEM/g4/SFCTC/fcst.KF_MH/
+Now on.. WRF3NAVGEM_g4 for SFCTC_KF
+WRF3GFSg
+/verification/Forecasts/WRF3GFSgc01/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF3GFSgc01_g2 for SFCTC_KF
+WRF3GFSg
+/verification/Forecasts/WRF3GFSgc01/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF3GFSgc01_g3 for SFCTC_KF
+WRF3ARP
+/verification/Forecasts/WRF3ARPEGE/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF3ARPEGE_g2 for SFCTC_KF
+WRF3ARP
+/verification/Forecasts/WRF3ARPEGE/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF3ARPEGE_g3 for SFCTC_KF
+WRF4I
+/verification/Forecasts/WRF4ICON/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF4ICON_g2 for SFCTC_KF
+WRF4I
+/verification/Forecasts/WRF4ICON/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF4ICON_g3 for SFCTC_KF
+WRF4
+/verification/Forecasts/WRF4NAM/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF4NAM_g2 for SFCTC_KF
+WRF4
+/verification/Forecasts/WRF4NAM/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF4NAM_g3 for SFCTC_KF
+WRF4
+/verification/Forecasts/WRF4NAM/g4/SFCTC/fcst.KF_MH/
+Now on.. WRF4NAM_g4 for SFCTC_KF
+NMM3
+/verification/Forecasts/NMM3NAM/g2/SFCTC/fcst.KF_MH/
+Now on.. NMM3NAM_g2 for SFCTC_KF
+NMM3
+/verification/Forecasts/NMM3NAM/g3/SFCTC/fcst.KF_MH/
+Now on.. NMM3NAM_g3 for SFCTC_KF
+NMM3
+/verification/Forecasts/NMM3NAM/g4/SFCTC/fcst.KF_MH/
+Now on.. NMM3NAM_g4 for SFCTC_KF
+NMM3
+/verification/Forecasts/NMM3GFS/g2/SFCTC/fcst.KF_MH/
+Now on.. NMM3GFS_g2 for SFCTC_KF
+NMM3
+/verification/Forecasts/NMM3GFS/g3/SFCTC/fcst.KF_MH/
+Now on.. NMM3GFS_g3 for SFCTC_KF
+WRF2
+/verification/Forecasts/WRF2NAM/g1/SFCTC/fcst.KF_MH/
+Now on.. WRF2NAM_g1 for SFCTC_KF
+WRF2
+/verification/Forecasts/WRF2NAM/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF2NAM_g2 for SFCTC_KF
+WRF2
+/verification/Forecasts/WRF2NAM/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF2NAM_g3 for SFCTC_KF
+WRF2NA
+/verification/Forecasts/WRF2NAM81/g1/SFCTC/fcst.KF_MH/
+Now on.. WRF2NAM81_g1 for SFCTC_KF
+WRF2NA
+/verification/Forecasts/WRF2NAM81/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF2NAM81_g2 for SFCTC_KF
+WRF2NA
+/verification/Forecasts/WRF2NAM81/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF2NAM81_g3 for SFCTC_KF
+WRF2
+/verification/Forecasts/WRF2GFS/g1/SFCTC/fcst.KF_MH/
+Now on.. WRF2GFS_g1 for SFCTC_KF
+WRF2
+/verification/Forecasts/WRF2GFS/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF2GFS_g2 for SFCTC_KF
+WRF2
+/verification/Forecasts/WRF2GFS/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF2GFS_g3 for SFCTC_KF
+WRF2GF
+/verification/Forecasts/WRF2GFS81/g1/SFCTC/fcst.KF_MH/
+Now on.. WRF2GFS81_g1 for SFCTC_KF
+WRF2GF
+/verification/Forecasts/WRF2GFS81/g2/SFCTC/fcst.KF_MH/
+Now on.. WRF2GFS81_g2 for SFCTC_KF
+WRF2GF
+/verification/Forecasts/WRF2GFS81/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF2GFS81_g3 for SFCTC_KF
+WRF4R
+/verification/Forecasts/WRF4RDPS/g3/SFCTC/fcst.KF_MH/
+Now on.. WRF4RDPS_g3 for SFCTC_KF
+WRF4R
+/verification/Forecasts/WRF4RDPS/g4/SFCTC/fcst.KF_MH/
+Now on.. WRF4RDPS_g4 for SFCTC_KF
+WRF4R
+/verification/Forecasts/WRF4RDPS/g5/SFCTC/fcst.KF_MH/
+Now on.. WRF4RDPS_g5 for SFCTC_KF
+MPA
+/verification/Forecasts/MPAS25/g1/SFCTC/fcst.KF_MH/
+Now on.. MPAS25_g1 for SFCTC_KF
+MPA
+/verification/Forecasts/MPAS25/g2/SFCTC/fcst.KF_MH/
+Now on.. MPAS25_g2 for SFCTC_KF
+
+/verification/Forecasts/ENS/SFCTC/fcst.KF_MH.t/
+Now on.. ENS for SFCTC_KF
+ENS
+/verification/Forecasts/ENS/SFCTC/fcst.lr.KF_MH.t/
+Now on.. ENS_lr for SFCTC_KF
+ENS
+/verification/Forecasts/ENS/SFCTC/fcst.lr.t/
+Now on.. ENS_hr for SFCTC_KF
+ENS
+/verification/Forecasts/ENS/SFCTC/fcst.LR.t/
+Now on.. ENS_LR for SFCTC_KF

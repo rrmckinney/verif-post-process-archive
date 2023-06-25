@@ -144,33 +144,44 @@ def main(args):
            grid = grids[i].split(",")[grid_i]
            maxhour = hours[i].split(",")[grid_i] # the max hours that are in the current model/grid
            
+           if "_KF" in input_variable:
+              file_var = input_variable[:-3]
+           else:
+               file_var = inpt_variable
+
            filehours = get_filehours(1, int(maxhour))
            #ENS only has one grid (and its not saved in a g folder)
-           if "ENS" in model:
-               filepath = fcst_filepath + model + '/' + input_variable + '/fcst.t/'
-               gridname = ""
-           elif model == "ENS" and "_KF" in input_variable:
-               filepath = fcst_filepath + model + '/' + input_variable[:-3] + '/fcst.KF_MH.t/'    
+           if model == 'ENS' and '_KF' in input_variable:    
+               filepath = fcst_filepath + model + '/' + file_var + '/fcst.KF_MH.t/'
+               gridname = ''
+           elif model == 'ENS':
+               filepath = fcst_filepath + model + '/' + file_var + '/fcst.t/'
+               gridname = ''
            elif model == "ENS_LR":
-               filepath = fcst_filepath +model + '/' + input_variable + '/fcst.LR.t/'
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.LR.t/'
+               gridname = ''
            elif model == "ENS_hr":
-               filepath = fcst_filepath +model + '/' + input_variable + '/fcst.hr.t/'
-           elif model == "ENS_lr":
-               filepath = fcst_filepath +model + '/' + input_variable + '/fcst.lr.t/'    
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.lr.t/'
+               gridname = ''
            elif model =="ENS_hr" and '_KF' in input_variable:
-               filepath = fcst_filepath +model + '/' + input_variable + "/fcst.hr.KF_MH.t/"  
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.hr.KF_MH.t/"
+               gridname = ''
            elif model =="ENS_lr" and '_KF' in input_variable:
-               filepath = fcst_filepath +model + '/' + input_variable[:-3] + "/fcst.lr.KF_MH.t/"  
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.lr.KF_MH.t/"
+               gridname = ''
            elif model =="ENS_LR" and '_KF' in input_variable:
-               filepath = fcst_filepath +model + '/' + input_variable[:-3] + "/fcst.LR.KF_MH.t/"          
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.LR.KF_MH.t/"
+               gridname = ''
            elif "_KF" in input_variable:
-               filepath = fcst_filepath +model + '/' + grid + '/' + input_variable[:-3] + "/fcst.KF_MH/"          
+               filepath = fcst_filepath +model + '/' + grid + '/' + file_var + "/fcst.KF_MH/"          
                gridname = "_" + grid
            else:
-               filepath = fcst_filepath + model + '/' + grid + '/' + input_variable + '/fcst.t/'
+               filepath = fcst_filepath + model + '/' + grid + '/' + file_var + '/fcst.t/'
                gridname = "_" + grid
-               
+           
+           print(model[:-3]) 
            print(filepath)
+           
            if check_dates(start_date, delta, filepath, input_variable, station='3510') == False:
                print("   Skipping model " + model + gridname + " (check_dates flag)")
                continue
@@ -182,7 +193,7 @@ def main(args):
            print("Now on.. " + model + gridname + " for " + input_variable)
 
            
-           get_rankings(delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filepath, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+           get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
 
 if __name__ == "__main__":
     main(sys.argv)
