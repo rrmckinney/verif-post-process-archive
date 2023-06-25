@@ -320,7 +320,7 @@ def make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2,
         modelpath= model + '/'
     else:
         modelpath = model + '/' + grid + '/'
-    f1 = open(textfile_folder + modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
+    f1 = open(textfile_folder + modelpath + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt","a+")       
     read_f1 = np.loadtxt(textfile_folder +  modelpath + '/' + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f1 and date_entry2 not in read_f1:
         f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
