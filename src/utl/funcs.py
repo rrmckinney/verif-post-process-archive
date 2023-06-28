@@ -219,20 +219,19 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
             if check_dates(start_date, delta, fcst_filepath + 'ENS/' + variable + '/fcst.t/', variable, station) == False:
                 print("   Skipping station " + station + " (not enough dates yet)")
                 continue        
+        # for hour in filehours_obs:
+        #     if float(hour) < 1000:
+        #             hour = str(hour).lstrip('0')
+        sql_con = sqlite3.connect(obs_filepath + variable + "/" + station + ".sqlite")
+        sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" +str(date_list_obs[0]) + " AND 20" + str(date_list_obs[len(date_list_obs)-1])       
+        obs = pd.read_sql_query(sql_query, sql_con)
+        obs['Time'] = obs['Time'].astype(str).str.zfill(4)
+        obs['Date'] = pd.to_datetime(obs['Date'], format='%Y%m%d') 
+        obs = obs.set_index('Date')
+        df_all = df_new.join(obs, on='Date')
+            
         
-        for hour in filehours_obs:
-            if float(hour) < 1000:
-                    hour = str(hour).lstrip('0')
-            sql_con = sqlite3.connect(obs_filepath + variable + "/" + station + ".sqlite")
-            sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" +str(date_list_obs[0]) + " AND 20" + str(date_list_obs[len(date_list_obs)-1]) + ' AND time == ' + str(hour) + '00'        
-            obs = pd.read_sql_query(sql_query, sql_con)
-            obs['Time'] = obs['Time'].astype(str).str.zfill(4)
-            obs['Date'] = pd.to_datetime(obs['Date'], format='%Y%m%d') 
-            obs = obs.set_index('Date')
-            df_all = df_new.join(obs, on='Date')
-            obs_all.append(df_all['Val'])
-        
-        print(all_obs)
+        print(df_all)
         hr60_obs = obs_all[:60]     #84 x 7   (30) 
         hr84_obs = obs_all[:84]     #84 x 7   (30)     
         hr120_obs = obs_all[:120]   #120 x 7  (30) 
@@ -275,39 +274,38 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
 def get_fcst(station, filepath, variable, date_list,filehours, start_date, end_date):
     
     df_new = make_df(date_list, start_date, end_date)
-    
+
     if "PCPT" in variable:
         variable = "PCPTOT"
     fcst_all = []
     # pulls out a list of the files for the given station+variable+hour wanted   
-    for hour in filehours:
-        sql_con = sqlite3.connect(filepath + station + ".sqlite")
-        sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" + str(date_list[0]) + " AND 20" + str(date_list[len(date_list)-1] + ' AND offset == '+ str(hour))
-        fcst = pd.read_sql_query(sql_query, sql_con)
+
+    sql_con = sqlite3.connect(filepath + station + ".sqlite")
+    sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" + str(date_list[0]) + " AND 20" + str(date_list[len(date_list)-1])
+    fcst = pd.read_sql_query(sql_query, sql_con)
+    
+    day = 0   
+    times = []
+    
+    for x in fcst['Offset']:
+        day = 0
+        while x > 24:
+            x = x - 24
+            day = day + 1
+        times.append(str(x))
+    
+    fcst['Time'] = pd.Series(times)
+    fcst['Time'] = fcst['Time'].astype(str).str.zfill(2)
+    fcst['Date'] = fcst['Date'].astype(str)
         
-        day = 0   
-        times = []
-        
-        for x in fcst['Offset']:
-            day = 0
-            while x > 24:
-                x = x - 24
-                day = day + 1
-            times.append(str(x))
-        
-        fcst['Time'] = pd.Series(times)
-        fcst['Time'] = fcst['Time'].astype(str).str.zfill(2)
-        fcst['Date'] = fcst['Date'].astype(str)
-         
-        fcst['Time'] = fcst['Time'].replace('24', '00')
-        fcst['Date'] = pd.to_datetime(fcst['Date'], format='%Y%m%d') + timedelta(days=day)
-        fcst['Date'] = pd.to_datetime(fcst['Date'], format='%Y%m%d')
-        #fcst['datetime'] = pd.to_datetime(fcst['Date'] + ' ' +fcst['Time'], format='%Y%m%d %H')
-        fcst = fcst.set_index('Date')
-        df_all = df_new.join(fcst, on='Date')
-        
-        fcst_all.append(df_all['Val'])
-    return(fcst_all)
+    fcst['Time'] = fcst['Time'].replace('24', '00')
+    fcst['Date'] = pd.to_datetime(fcst['Date'], format='%Y%m%d') + timedelta(days=day)
+    fcst['Date'] = pd.to_datetime(fcst['Date'], format='%Y%m%d')
+    #fcst['datetime'] = pd.to_datetime(fcst['Date'] + ' ' +fcst['Time'], format='%Y%m%d %H')
+    fcst = fcst.set_index('Date')
+    df_all = df_new.join(fcst, on='Date')
+    print(df_all)
+    return(df_all)
 
 # this removes (NaNs) any fcst data where the obs is not recorded, or fcst is -999
 def remove_missing_data(fcst, obs):
