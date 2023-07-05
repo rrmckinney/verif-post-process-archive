@@ -35,7 +35,7 @@ save_folder = '/www_oper/results/verification/images/leaderboards/'
 #description file for models
 models_file = '/home/verif/verif-get-data/input/model_list.txt'
 
-textfile_folder = '/scratch/verif/verification/statistics/'
+textfile_folder = '/verification/Statistics/'
 
 ###########################################################
 ### -------------------- INPUT ------------------------
