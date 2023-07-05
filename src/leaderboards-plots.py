@@ -27,7 +27,7 @@ warnings.filterwarnings("ignore",category=RuntimeWarning)
 #logfilepath = "/home/egnegy/python_plotting/log/plot_leaderboards.log"
 
 #location to save the images
-save_folder = '/www_oper/results/verification/images/leaderboards/'
+save_folder = '/www/results/verification/images/leaderboards/'
 
 #description file for stations
 #station_file = '/home/egnegy/ensemble-verification/testing_stations/input/station_list_leaderboards.txt'
@@ -135,10 +135,10 @@ def get_rankings(variable,time_domain):
         
             #ENS only has one grid (and its not saved in a g folder)
             if "ENS" in model:
-                modelpath = model + '/'+ input_domain + '/' + savetype + '/' + variable + '/'
+                modelpath = model + '/'
                 gridname = ""
             else:
-                modelpath = model + '/' + grid + '/'+ input_domain + '/' + savetype + '/' + variable + '/'
+                modelpath = model + '/' + grid + '/'
                 gridname = "_" + grid
                         
             
@@ -151,7 +151,6 @@ def get_rankings(variable,time_domain):
         
                 data_check = False
                 #find the line for the given dates
-                
                 for MAE_line in MAE_lines:
                     if date_entry1 in MAE_line and date_entry2 in MAE_line:
                         MAE = MAE_line.split("   ")[1]
@@ -185,7 +184,6 @@ def get_rankings(variable,time_domain):
                     if date_entry1 in spcorr_line and date_entry2 in spcorr_line:
                         spcorr = spcorr_line.split("   ")[1]
         
-            
                 #this removes models if more than half of data points are missing
                 if int(dataratio.split("/")[0]) < int(dataratio.split("/")[1])/2: 
                     print("   **Skipping " + model + grid + ", less than 50% of data points**")
@@ -213,8 +211,6 @@ def get_rankings(variable,time_domain):
                 correlation_list.append(float(spcorr))
                 modelcolors.append(model_colors[color_count])
                 
-                print(legend_labels[leg_count])
-                print(dataratio)
                 if int(dataratio.split("/")[0]) < int(dataratio.split("/")[1])-removed_hours*(delta+1):
                     if int(numstations.split("/")[0]) != int(numstations.split("/")[1]): 
                         modelnames.append(legend_labels[leg_count] + "*^")
@@ -236,7 +232,6 @@ def get_rankings(variable,time_domain):
          
         color_count = color_count+1
              
-     
      return(MAE_list,RMSE_list,correlation_list,modelnames,modelcolors,edited_modelnames,skipped_modelnames,numofstations)
  
 def get_obs_dates(time_domain):
@@ -276,7 +271,6 @@ def get_obs_dates(time_domain):
 
 
 def make_leaderboard_sorted(var, var_name, var_unit, time_domain, time_label,MAE,RMSE,corr,modelnames,modelcolors,edited_modelnames,skipped_modelnames,numofstations):     
-
 
     #sorts them greatest to least/least to greatest
     MAE_sorted, modelnames_sortedMAE,modelcolors_sortedMAE = zip(*sorted(zip(MAE, modelnames,modelcolors),reverse=True))
@@ -351,7 +345,7 @@ def make_leaderboard_sorted(var, var_name, var_unit, time_domain, time_label,MAE
             plt.text(0, -5 -x, "            " + skipped_modelnames[x], fontsize=18)
     
 
-    plt.savefig(save_folder + '/best_to_worst/' + input_domain + '_' + var + '_' + savetype + '_' + time_domain + '.png',bbox_inches='tight')
+    plt.savefig(save_folder + 'best_to_worst/' + input_domain + '_' + var + '_' + savetype + '_' + time_domain + '.png',bbox_inches='tight')
     
 
 def make_leaderboard_unsorted(var, var_name, var_unit, time_domain):     
