@@ -147,7 +147,7 @@ def main(args):
            if "_KF" in input_variable:
               file_var = input_variable[:-3]
            else:
-               file_var = inpt_variable
+               file_var = input_variable
 
            filehours = get_filehours(1, int(maxhour))
            #ENS only has one grid (and its not saved in a g folder)
@@ -157,20 +157,23 @@ def main(args):
            elif model == 'ENS':
                filepath = fcst_filepath + model + '/' + file_var + '/fcst.t/'
                gridname = ''
-           elif model == "ENS_LR":
-               filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.LR.t/'
+           elif model == "ENS_LR" and "_KF" in input_variable:
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.LR.KF_MH.t/'
                gridname = ''
-           elif model == "ENS_hr":
-               filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.lr.t/'
+           elif model == "ENS_lr" and "_KF" in input_variable:
+               filepath = fcst_filepath+model[:-3] + '/' + file_var + '/fcst.lr.KF_MH.t/'
                gridname = ''
-           elif model =="ENS_hr" and '_KF' in input_variable:
-               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.hr.KF_MH.t/"
+           elif model == "ENS_hr" and "_KF" in input_variable:
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.hr.KF_MH.t/'
                gridname = ''
-           elif model =="ENS_lr" and '_KF' in input_variable:
-               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.lr.KF_MH.t/"
+           elif model =="ENS_hr":
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.hr.t/"
                gridname = ''
-           elif model =="ENS_LR" and '_KF' in input_variable:
-               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.LR.KF_MH.t/"
+           elif model =="ENS_lr":
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.lr.t/"
+               gridname = ''
+           elif model =="ENS_LR":
+               filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.LR.t/"
                gridname = ''
            elif "_KF" in input_variable:
                filepath = fcst_filepath +model + '/' + grid + '/' + file_var + "/fcst.KF_MH/"          
@@ -179,7 +182,6 @@ def main(args):
                filepath = fcst_filepath + model + '/' + grid + '/' + file_var + '/fcst.t/'
                gridname = "_" + grid
            
-           print(model[:-3]) 
            print(filepath)
            
            if check_dates(start_date, delta, filepath, input_variable, station='3510') == False:
