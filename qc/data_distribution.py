@@ -62,7 +62,7 @@ stations_with_PCPT24 = np.array(station_df.query("PCPT24==1")["Station ID"],dtyp
 today = date.today()
 start = date(2021, 10, 1)
 delta = today - start
-tot_hours = delta.hours
+tot_hours = delta.days * 24
 
 ###########################################################
 ### ---------------------- FUNCTIONS ----------------------
@@ -72,6 +72,7 @@ def get_station_data(variable):
     
     obs_all = []
     len_all = []
+    
     if variable == 'SFCTC':
         station_list = copy.deepcopy(stations_with_SFCTC)              
     elif variable == 'SFCWSPD':  
@@ -81,6 +82,9 @@ def get_station_data(variable):
         station_list = copy.deepcopy(stations_with_PCPTOT)  
     
     for station in station_list:
+        
+        if int(station) < 1000:
+            station = '0' + str(station)
 
         sql_path = obs_filepath + variable + '/' + station + '.sqlite'
         sql_con = sqlite3.connect(sql_path)
@@ -89,15 +93,19 @@ def get_station_data(variable):
         obs = pd.read_sql_query(sql_query, sql_con)
         len_data = len(obs)
     
-    obs_all.append(obs['Val'])
-    len_all.append(len_data)
+        obs_all.append(obs['Val'])
+        len_all.append(len_data)
     return(obs_all, station_list, len_all)
 
 def plot_station_data(obs_all, variable, station_list):
-    plot = plt.boxplot(obs_all)
-    plt.title(variable + "distribution for all stations" + domain + "domain")
-    plt.set_xticklables(station_list)
-    plt.show()
+    print(len(obs_all))
+
+    fig, ax = plt.subplots()
+    plot = ax.boxplot(obs_all)
+    ax.set(title = variable + "distribution for all stations" + domain + "domain")
+    print(station_list)
+    #ax.set_xticklabels(station_list)
+    plt.savefig('img/'+variable+'.png')
 
 def data_quantity(station_list, len_all):
     for x in len_all:
