@@ -99,10 +99,10 @@ def get_station_data(variable):
 
 def plot_station_data(obs_all, variable, station_list):
 
-    fig, ax = plt.subplots(figsize=(20,6))
+    fig, ax = plt.subplots(figsize=(40,6))
     plot = ax.boxplot(obs_all)
-    ax.set(title = variable + "distribution for all stations" + domain + "domain")
-    #ax.set_xticklabels(station_list)
+    ax.set(title = variable + " distribution for all stations " + domain + " domain")
+    ax.set_xticklabels(station_list, rotation=90)
     plt.ylim([-50,50])
     plt.savefig('img/'+variable+'.png')
 
