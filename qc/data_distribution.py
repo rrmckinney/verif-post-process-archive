@@ -98,13 +98,12 @@ def get_station_data(variable):
     return(obs_all, station_list, len_all)
 
 def plot_station_data(obs_all, variable, station_list):
-    print(len(obs_all))
 
     fig, ax = plt.subplots()
     plot = ax.boxplot(obs_all)
     ax.set(title = variable + "distribution for all stations" + domain + "domain")
-    print(station_list)
     #ax.set_xticklabels(station_list)
+    plt.ylim([-50,50])
     plt.savefig('img/'+variable+'.png')
 
 def data_quantity(station_list, len_all):
