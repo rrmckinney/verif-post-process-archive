@@ -23,6 +23,7 @@ import math
 import copy
 import shutil
 import pandas as pd
+import sqlite3
 
 ###########################################################
 ### -------------------- FILEPATHS ------------------------
@@ -30,17 +31,17 @@ import pandas as pd
 
 
 #path to save the log/output
-logfilepath = "/home/verif/verif-post-process/log/meteograms.log"
+logfilepath = "/home/verif/verif-post-process/src/log/meteograms.log"
 
 #location to save the images
-save_folder = '/www_oper/results/verification/images/meteograms/'
+save_folder = '/www/results/verification/images/meteograms/'
 #save_folder = '/scratch/egnegy/verification/python_plots/station_plots/'
 
 #location where obs files are (all textfiles should be in this directory)
 obs_filepath = "/verification/Observations/"
 
 #location where forecast files are (immediately within this directory should be model folders, then grid folders, then the textfiles)
-fcst_filepath = "/verification/Forecasts"
+fcst_filepath = "/verification/Forecasts/"
 
 #description file for stations
 station_file = '/home/verif/verif-get-data/input/station_list_meteograms.txt'
@@ -55,8 +56,8 @@ models_file = '/home/verif/verif-get-data/input/model_list.txt'
 # takes an input date for the first date on the plot at 00Z, should be date (YYMMDD) 
 if len(sys.argv) == 2:
     date_entry = sys.argv[1]    #input date YYMMDD
-    start_date = str(date_entry) + '00'  
-    input_date = datetime.strptime(start_date, "%y%m%d%H").date()
+    start_date = str(date_entry) 
+    input_date = datetime.strptime(start_date, "%y%m%d").date()
 
 else:
     raise Exception("Invalid input entries. Needs YYMMDD for start plot date")
@@ -120,7 +121,8 @@ precip6hrs_stations = ['597','604','583','600','606','601','607','610','612','60
 
 # num of days to go forward on plot - highest models go is 7.5 (but this must be an int, must be whole days)
 days = 8    
-
+    
+end_date = pd.to_datetime(start_date, format='%y%m%d') + timedelta(days=days)
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
 ###########################################################
@@ -198,55 +200,58 @@ def areEqual(arr):
 # returns the fcst data for the given model/grid, as well as the forecast hours
 def get_data(filepath, station, variable, obs):
     
-    file_list, hours = [], []
+    if "_KF" in input_variable:
+        file_var = input_varibale[:-3]
+    else:
+        file_var = input_variable
     
-    if variable == "APCP":
+    if variable == "PCPT6" or "PCPT24":
         variable = "PCPTOT"
     
-    # goes through the entire directory for each model+grid and and 
-    # pulls out a list of the ones for the given station+variable wanted
-    # Also pulls out the forecast hours that were collected from the filenames
-    for all_files in os.listdir(filepath):
-        if all_files.startswith(station + "." + variable + "."):
-            file_list.append(all_files)
-            hours.append(all_files[-7:-4])
-            
+    if model == 'ENS' and '_KF' in input_variable:    
+        filepath = fcst_filepath + model + '/' + file_var + '/fcst.KF_MH.t/'
+        gridname = ''
+    elif model == 'ENS':
+        filepath = fcst_filepath + model + '/' + file_var + '/fcst.t/'
+        gridname = ''
+    elif model == "ENS_LR" and "_KF" in input_variable:
+        filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.LR.KF_MH.t/'
+        gridname = ''
+    elif model == "ENS_lr" and "_KF" in input_variable:
+        filepath = fcst_filepath+model[:-3] + '/' + file_var + '/fcst.lr.KF_MH.t/'
+        gridname = ''
+    elif model == "ENS_hr" and "_KF" in input_variable:
+        filepath = fcst_filepath +model[:-3] + '/' + file_var + '/fcst.hr.KF_MH.t/'
+        gridname = ''
+    elif model =="ENS_hr":
+        filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.hr.t/"
+        gridname = ''
+    elif model =="ENS_lr":
+        filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.lr.t/"
+        gridname = ''
+    elif model =="ENS_LR":
+        filepath = fcst_filepath +model[:-3] + '/' + file_var + "/fcst.LR.t/"
+        gridname = ''
+    elif "_KF" in input_variable:
+        filepath = fcst_filepath +model + '/' + grid + '/' + file_var + "/fcst.KF_MH/"          
+        gridname = "_" + grid
+    else:
+        filepath = fcst_filepath + model + '/' + grid + '/' + file_var + '/fcst.t/'
+        gridname = "_" + grid
+       # the last date we want to plot
+
+    end_date = (input_date + delta).strftime("%y%m%d%H")
     
-    file_list.sort() # sorts the forecast hour in the file, since the station and variable are constant
-    hours.sort() # list of hours that exist from filenames
-    hours_int = [int(i) for i in hours] # convert hours from str to int
+    sql_con = sqlite3.connect(filepath + station + ".sqlite")
+    sql_query = "SELECT *from 'All' WHERE date BETWEEN 20" + str(start_date) + " AND 20" + str(end_date)
+    fcst = pd.read_sql_query(sql_query, sql_con)
+
+    fcst['dateime'] = None
+    for x in range(len(fcst['Offset'])):
+        fcst.loc[x, 'datetime'] = pd.to_datetime(start_date, format='%y%m%d')+ timedelta(hours=int(x))
     
-    #raises an exception because this means an error in the get_fcst_data collection script that needs fixed
-    if checkConsecutive(hours_int) == False:
-        raise Exception("      WARNING: Missing output file (hours not consecutive) for " + station + "." + variable)
-        
-        
-    # subtract one for plotting purposes because hour 001 is 00 UTC
-    hours_int = np.subtract(hours_int,1)
+    fcst = fcst.set_index('datetime')
 
-    # reads the first column of the file, which is the list of dates YYMMDD00
-    dates = np.loadtxt(filepath + file_list[0],usecols=0,dtype=str)
-    index = list(dates).index(start_date) #finds the index of the first date we want to plot
-
-    # loops through every hour file for each model
-    fcst = []
-    for i in range(len(file_list)):
-
-        # gets the date thats at the index found above, but for each file
-        date = str(np.loadtxt(filepath + file_list[i],usecols=0)[index])
-
-        # makes sure that it is getting the correct date
-        if date == start_date + ".0":
-
-            # if the date is right, collect the forecast data
-            fcst.append(float(np.loadtxt(filepath + file_list[i],usecols=1)[index]))
-        
-        else: # for now this is an exception because it likely means there was an error with the get_fcst_data script that needs fixed
-            #fcst.append(np.nan)
-            raise Exception("      WARNING: Wrong date for " + file_list[i] + ": should be " + start_date + " but is " + date)
-            #print("      removing data point from that hour")
-    
-    
     #removes bad/missing data data
     fcst = remove_missing_data(fcst)
     
@@ -257,89 +262,44 @@ def get_data(filepath, station, variable, obs):
     # removes forecast data where there is no obs data
     fcst = remove_missing_obs(fcst, obs)
 
-    return(hours_int, fcst)
-
+    return(hours_int, fcst, obs)
 
 # returns the obs data for the given station, as well as the hours
 def get_obs(filepath,station,variable):    
      
-     file_list = []
-     
-     # ignore the "KF" in the variable list, since its the same thing as the non-KF variable for obs
-     if "_KF" in variable:
-         variable = variable[:-3]
-     if variable == "APCP":
-         variable = "PCPTOT"
-     
-     # gets the list of hour files for the given station/variable
-     for all_files in os.listdir(filepath):
-         if all_files.startswith(station + "." + variable):
-             file_list.append(all_files) # appends all files for that station/variable
-             
- 
-     file_list.sort() # sorts the hours in the file list, since the station and variable are constant
-      
-     #list of all dates for hour 001 that obs has been collected for
-     dates = np.loadtxt(filepath + file_list[0],usecols=0,dtype=str)
+    # how many days in the future the end date should be, subtracts one bc we count the start date
+    delta = timedelta(days=days-1)
+    
+    # the last date we want to plot
+    end_date = (input_date + delta).strftime("%y%m%d%H")
+    
+    # ignore the "KF" in the variable list, since its the same thing as the non-KF variable for obs
+    if "_KF" in variable:
+        variable = variable[:-3]
+    
+    if 'PCPT' in variable:
+        variable = "PCPTOT"
 
-     # this means the user picked a date to plot that there is no obs for (or it was the wrong format)
-     if start_date not in list(dates):
-         raise Exception("Invalid start date: " + start_date  + " not in output data collected. Make sure it is YYMMDD.")
+    print(obs_filepath + variable + '/' + station + ".sqlite")
     
-     index_start = list(dates).index(start_date) #gets the index of the start date you want 
-    
-     # how many days in the future the end date should be, subtracts one bc we count the start date
-     delta = timedelta(days=days-1)
-    
-     # the last date we want to plot
-     end_date = (input_date + delta).strftime("%y%m%d%H")
-    
-    
-     if end_date in list(dates): 
-         index_end = list(dates).index(end_date) # if the end date is in the list, get that index
-     else:
-         index_end = len(dates)-1 # if its not, just plot up til the last day of obs that exists
+    sql_con = sqlite3.connect(obs_filepath + variable + '/' + station + ".sqlite")
+    sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" +str(start_date) + " AND 20" +str(end_date)
+    obs = pd.read_sql_query(sql_query, sql_con)
+
+    obs['datetime'] = None
+
+    for y in range(len(obs['Time'])):
+        hour = int(obs['Time'][y])/100
+        obs.loc[y,'datetime'] = pd.to_datetime(obs.loc[y,'Date'],format='%Y%m%d') + timedelta(hours=hour)
+
+    obs = obs.set_index('datetime')
      
-     all_obs = [] #this will be the variable that combines all of the days of obs we want (since they are saved separetly by day)
-     prev_date = input_date-timedelta(days=1) # this is used to check that the dates being appended are consecutive and that none were missed
-     
-     # this loops through the amount of days you want to plot (bc of the way the obs files are structured)
-     # date loop is one day at a time
-     for date_loop in np.linspace(index_start,index_end,index_end-index_start+1):
-         
-         # collects all obs data for the given day
-         obs = [(float(np.loadtxt(filepath + file_list[i],usecols=1)[int(date_loop)])) for i in range(len(file_list))]
-         obs = remove_missing_data(obs)
-         
-         # appends that list of that days obs data from the previous iterations
-         all_obs.append(obs) #makes all of the dates in one list
-         
-         # collects all of the dates for the given index
-         all_start_dates = [(float(np.loadtxt(filepath + file_list[i],usecols=0)[int(date_loop)])) for i in range(len(file_list))]
-         
-         # makes sure its looking at the same date for every file, or else there's an error in the obs
-         dates_equal = areEqual(all_start_dates)
-         if dates_equal == False:
-             raise Exception(" -- OBS WARNING: obs date used does not match all obs date -- ")
-
-         # the date the loop is on
-         current_date = int(all_start_dates[0])
-       
-         # converts it to a python date YYMMDD00
-         current_date2 = datetime.strptime(str(current_date), "%y%m%d%H").date()
-
-         # makes sure the days are consecutive
-         if current_date2-timedelta(days=1) != prev_date:
-             raise Exception(" -- OBS WARNING: obs missing a day in obs_files: missing " + (current_date2-timedelta(days=1)).strftime('%y%m%d') + '00')
-
-         # will be used in the next iteration to make sure the next day is "tomorrow"
-         prev_date = copy.deepcopy(current_date2)
+    # this means the user picked a date to plot that there is no obs for (or it was the wrong format)
+    #if start_date not in obs['Date']:
+    #    raise Exception("Invalid start date: " + start_date  + " not in output data collected. Make sure it is YYMMDD.")
+    
         
-     # starts at 0 bc 001 is 00 UTC
-     hours = np.linspace(0,len(np.hstack((all_obs)))-1,len(np.hstack((all_obs))))
-
-     #hstack just flattens the list of lists (horizontally stacks them)
-     return(hours, np.hstack((all_obs)))
+    return(obs['Time'], obs['Val'])
 
 
 # checks if station/var exists 
@@ -359,7 +319,6 @@ def check_data_exists(filepath, station, variable):
 # MAIN PLOTTING FUCNTION: returns one plot every time it is ran
 def time_series(station, variable, ylabel, title):
       
-        
     plt.figure(figsize=(18, 6), dpi=150)
     color_i = 0 #variable for plotting, loops through color array
     leg_count = 0 #variable for plotting 
@@ -369,7 +328,7 @@ def time_series(station, variable, ylabel, title):
 
     # this allows a cumulative sum with Nans in it (it just ignores the Nans). 
     # Might want to change this process in the future
-    if variable == "APCP":
+    if "PCPT" in variable:
         obs = np.array(obs)
         obs = obs*0 + np.nan_to_num(obs).cumsum()
 
@@ -381,8 +340,8 @@ def time_series(station, variable, ylabel, title):
         for grid in grids[i].split(","): #loops through each grid size for each model
         
             #ENS only has one grid (and its not saved in a g folder)
-            if  model == "ENS":
-                filepath = fcst_filepath + model + '/'
+            if  "ENS" in model:
+                filepath = fcst_filepath + "ENS" + '/'
                 gridname = ""
             else:
                 filepath = fcst_filepath + model + '/' + grid + '/'
@@ -466,7 +425,7 @@ def time_series(station, variable, ylabel, title):
     plt.yticks(fontsize=18)
     
     # convert the initialization date to a python date
-    date = datetime.strptime(start_date, "%y%m%d%H")
+    date = datetime.strptime(start_date, "%y%m%d")
     delta = timedelta(hours=12) # time iteratization for the x axis
     
     # time labels on x axis
@@ -519,6 +478,7 @@ def main(args):
                 continue
             
             # make the plot
+            print(obs_filepath + var + '/' + station + ".sqlite")
             time_series(station, var, yaxis_labels[var_i], station_names[stations_i])
             
             var_i = var_i + 1

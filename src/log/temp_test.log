@@ -1,5 +1,5 @@
-Performing MONTHLY calculation for 230501 to 230531
-Reading observational dataframe for SFCTC.. 
+Performing WEEKLY calculation for 230507 to 230513
+Reading observational dataframe for SFCTC_KF.. 
     Now on station 2162
     Now on station 1972
     Now on station 2155
@@ -56,615 +56,561 @@ Reading observational dataframe for SFCTC..
     Now on station 2961
     Now on station 2968
     Now on station 3320
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.6
-1   2023-05-01  01:00:00  12.3
-2   2023-05-01  02:00:00  12.1
-3   2023-05-01  03:00:00  12.3
-4   2023-05-01  04:00:00  12.3
-..         ...       ...   ...
-907 2023-06-07  19:00:00  25.9
-908 2023-06-07  20:00:00  26.4
-909 2023-06-07  21:00:00  27.3
-910 2023-06-07  22:00:00  28.4
-911 2023-06-07  23:00:00  29.5
+         Date  Time   Val             datetime
+0    20230507     0  12.9  2023-05-07 00:00:00
+1    20230507   100  13.2  2023-05-07 01:00:00
+2    20230507   200  12.4  2023-05-07 02:00:00
+3    20230507   300  12.2  2023-05-07 03:00:00
+4    20230507   400  11.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.3                 None
+332  20230520  2000  22.4                 None
+333  20230520  2100  23.2                 None
+334  20230520  2200  24.4                 None
+335  20230520  2300  24.4                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 604
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.9
-1   2023-05-01  01:00:00  13.1
-2   2023-05-01  02:00:00  12.6
-3   2023-05-01  03:00:00  12.1
-4   2023-05-01  04:00:00  11.6
-..         ...       ...   ...
-907 2023-06-07  19:00:00  27.3
-908 2023-06-07  20:00:00  28.6
-909 2023-06-07  21:00:00  29.4
-910 2023-06-07  22:00:00  29.5
-911 2023-06-07  23:00:00  29.0
+         Date  Time   Val             datetime
+0    20230507     0  12.4  2023-05-07 00:00:00
+1    20230507   100  12.6  2023-05-07 01:00:00
+2    20230507   200  12.8  2023-05-07 02:00:00
+3    20230507   300  11.7  2023-05-07 03:00:00
+4    20230507   400  10.8  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.9                 None
+332  20230520  2000  22.0                 None
+333  20230520  2100  23.0                 None
+334  20230520  2200  24.0                 None
+335  20230520  2300  24.6                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 679
     Now on station 1969
     Now on station 414
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.3
-1   2023-05-01  01:00:00  14.1
-2   2023-05-01  02:00:00  12.9
-3   2023-05-01  03:00:00  12.2
-4   2023-05-01  04:00:00  11.7
-..         ...       ...   ...
-907 2023-06-07  19:00:00  25.6
-908 2023-06-07  20:00:00  27.2
-909 2023-06-07  21:00:00  28.9
-910 2023-06-07  22:00:00  29.8
-911 2023-06-07  23:00:00  30.5
+         Date  Time   Val             datetime
+0    20230507     0  10.3  2023-05-07 00:00:00
+1    20230507   100  10.3  2023-05-07 01:00:00
+2    20230507   200  10.4  2023-05-07 02:00:00
+3    20230507   300   9.7  2023-05-07 03:00:00
+4    20230507   400   9.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.1                 None
+332  20230520  2000  22.7                 None
+333  20230520  2100  23.1                 None
+334  20230520  2200  24.0                 None
+335  20230520  2300  24.2                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3544
     Now on station 624
-          Date      Time   Val
-0   2023-05-01  00:00:00  10.8
-1   2023-05-01  01:00:00  11.2
-2   2023-05-01  02:00:00  11.3
-3   2023-05-01  03:00:00  10.7
-4   2023-05-01  04:00:00  10.5
-..         ...       ...   ...
-907 2023-06-07  19:00:00  16.5
-908 2023-06-07  20:00:00  18.8
-909 2023-06-07  21:00:00  19.5
-910 2023-06-07  22:00:00  20.5
-911 2023-06-07  23:00:00  21.4
+         Date  Time   Val             datetime
+0    20230507     0  11.7  2023-05-07 00:00:00
+1    20230507   100  11.7  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300  11.5  2023-05-07 03:00:00
+4    20230507   400  11.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  18.1                 None
+332  20230520  2000  18.7                 None
+333  20230520  2100  19.3                 None
+334  20230520  2200  20.0                 None
+335  20230520  2300  21.0                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3582
     Now on station 3546
     Now on station 580
     Now on station 2899
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.2
-1   2023-05-01  01:00:00  11.3
-2   2023-05-01  02:00:00  10.6
-3   2023-05-01  03:00:00   9.8
-4   2023-05-01  04:00:00   9.0
-..         ...       ...   ...
-907 2023-06-07  19:00:00  27.5
-908 2023-06-07  20:00:00  29.0
-909 2023-06-07  21:00:00  30.2
-910 2023-06-07  22:00:00  30.5
-911 2023-06-07  23:00:00  30.2
+         Date  Time   Val             datetime
+0    20230507     0   9.6  2023-05-07 00:00:00
+1    20230507   100   8.7  2023-05-07 01:00:00
+2    20230507   200   8.2  2023-05-07 02:00:00
+3    20230507   300   7.9  2023-05-07 03:00:00
+4    20230507   400   7.5  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  23.9                 None
+332  20230520  2000  26.2                 None
+333  20230520  2100  26.4                 None
+334  20230520  2200  25.9                 None
+335  20230520  2300  26.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3316
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.3
-1   2023-05-01  01:00:00  11.9
-2   2023-05-01  02:00:00  12.1
-3   2023-05-01  03:00:00  12.1
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-907 2023-06-07  19:00:00  24.2
-908 2023-06-07  20:00:00  24.4
-909 2023-06-07  21:00:00  26.9
-910 2023-06-07  22:00:00  26.8
-911 2023-06-07  23:00:00  26.8
+         Date  Time   Val             datetime
+0    20230507     0  12.3  2023-05-07 00:00:00
+1    20230507   100  13.0  2023-05-07 01:00:00
+2    20230507   200  12.8  2023-05-07 02:00:00
+3    20230507   300  12.1  2023-05-07 03:00:00
+4    20230507   400  11.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.0                 None
+332  20230520  2000  21.1                 None
+333  20230520  2100  21.7                 None
+334  20230520  2200  22.7                 None
+335  20230520  2300  22.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 584
     Now on station 658
     Now on station 675
     Now on station 402
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.2
-1   2023-05-01  01:00:00  12.6
-2   2023-05-01  02:00:00  11.9
-3   2023-05-01  03:00:00  12.0
-4   2023-05-01  04:00:00  12.0
-..         ...       ...   ...
-907 2023-06-07  19:00:00  27.0
-908 2023-06-07  20:00:00  27.8
-909 2023-06-07  21:00:00  28.5
-910 2023-06-07  22:00:00  29.8
-911 2023-06-07  23:00:00  30.4
+         Date  Time   Val             datetime
+0    20230507     0  11.7  2023-05-07 00:00:00
+1    20230507   100  11.8  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300  11.6  2023-05-07 03:00:00
+4    20230507   400  11.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.2                 None
+332  20230520  2000  23.3                 None
+333  20230520  2100  24.0                 None
+334  20230520  2200  24.7                 None
+335  20230520  2300  24.9                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 397
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.3
-1   2023-05-01  01:00:00  10.4
-2   2023-05-01  02:00:00   9.6
-3   2023-05-01  03:00:00  10.1
-4   2023-05-01  04:00:00  10.4
-..         ...       ...   ...
-907 2023-06-07  19:00:00  23.9
-908 2023-06-07  20:00:00  24.5
-909 2023-06-07  21:00:00  25.4
-910 2023-06-07  22:00:00  26.5
-911 2023-06-07  23:00:00  27.3
+         Date  Time   Val             datetime
+0    20230507     0   9.1  2023-05-07 00:00:00
+1    20230507   100   9.4  2023-05-07 01:00:00
+2    20230507   200   9.4  2023-05-07 02:00:00
+3    20230507   300   9.2  2023-05-07 03:00:00
+4    20230507   400   9.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.5                 None
+332  20230520  2000  20.3                 None
+333  20230520  2100  21.0                 None
+334  20230520  2200  21.5                 None
+335  20230520  2300  22.0                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 404
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.0
-1   2023-05-01  01:00:00  12.8
-2   2023-05-01  02:00:00  12.3
-3   2023-05-01  03:00:00  12.2
-4   2023-05-01  04:00:00  12.2
-..         ...       ...   ...
-905 2023-06-07  19:00:00  24.5
-906 2023-06-07  20:00:00  25.1
-907 2023-06-07  21:00:00  26.9
-908 2023-06-07  22:00:00  27.2
-909 2023-06-07  23:00:00  27.9
+         Date  Time   Val             datetime
+0    20230507     0  11.4  2023-05-07 00:00:00
+1    20230507   100  11.4  2023-05-07 01:00:00
+2    20230507   200  11.3  2023-05-07 02:00:00
+3    20230507   300  11.1  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+329  20230520  1900  21.1                 None
+330  20230520  2000  21.5                 None
+331  20230520  2100  22.3                 None
+332  20230520  2200  22.5                 None
+333  20230520  2300  23.4                 None
 
-[910 rows x 3 columns]
+[334 rows x 4 columns]
     Now on station 400
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.7
-1   2023-05-01  01:00:00  11.4
-2   2023-05-01  02:00:00  11.5
-3   2023-05-01  03:00:00  11.6
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-907 2023-06-07  19:00:00  24.7
-908 2023-06-07  20:00:00  26.5
-909 2023-06-07  21:00:00  27.0
-910 2023-06-07  22:00:00  27.8
-911 2023-06-07  23:00:00  28.2
+         Date  Time   Val             datetime
+0    20230507     0  12.2  2023-05-07 00:00:00
+1    20230507   100  11.8  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300  11.4  2023-05-07 03:00:00
+4    20230507   400  11.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.4                 None
+332  20230520  2000  20.6                 None
+333  20230520  2100  21.6                 None
+334  20230520  2200  22.4                 None
+335  20230520  2300  22.5                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 648
     Now on station 2102
     Now on station 3547
     Now on station 2900
-          Date      Time   Val
-0   2023-05-01  00:00:00   6.4
-1   2023-05-01  01:00:00   5.5
-2   2023-05-01  02:00:00   4.0
-3   2023-05-01  03:00:00   3.1
-4   2023-05-01  04:00:00   2.8
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.4
-908 2023-06-07  20:00:00  27.7
-909 2023-06-07  21:00:00  27.6
-910 2023-06-07  22:00:00  27.6
-911 2023-06-07  23:00:00  27.9
+         Date  Time   Val             datetime
+0    20230507     0   6.7  2023-05-07 00:00:00
+1    20230507   100   6.5  2023-05-07 01:00:00
+2    20230507   200   6.0  2023-05-07 02:00:00
+3    20230507   300   4.5  2023-05-07 03:00:00
+4    20230507   400   3.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  23.2                 None
+332  20230520  2000  23.2                 None
+333  20230520  2100  23.0                 None
+334  20230520  2200  23.8                 None
+335  20230520  2300  23.2                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 581
     Now on station 403
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.1
-1   2023-05-01  01:00:00  11.5
-2   2023-05-01  02:00:00  11.1
-3   2023-05-01  03:00:00  10.8
-4   2023-05-01  04:00:00  10.7
-..         ...       ...   ...
-907 2023-06-07  19:00:00  23.4
-908 2023-06-07  20:00:00  24.7
-909 2023-06-07  21:00:00  25.8
-910 2023-06-07  22:00:00  26.6
-911 2023-06-07  23:00:00  26.8
+         Date  Time   Val             datetime
+0    20230507     0  10.0  2023-05-07 00:00:00
+1    20230507   100  10.0  2023-05-07 01:00:00
+2    20230507   200   9.8  2023-05-07 02:00:00
+3    20230507   300   9.3  2023-05-07 03:00:00
+4    20230507   400   8.9  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.8                 None
+332  20230520  2000  20.3                 None
+333  20230520  2100  21.0                 None
+334  20230520  2200  21.7                 None
+335  20230520  2300  22.2                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 583
     Now on station 640
     Now on station 413
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.7
-1   2023-05-01  01:00:00  13.0
-2   2023-05-01  02:00:00  12.6
-3   2023-05-01  03:00:00  12.2
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-907 2023-06-07  19:00:00  27.3
-908 2023-06-07  20:00:00  28.2
-909 2023-06-07  21:00:00  29.3
-910 2023-06-07  22:00:00  29.2
-911 2023-06-07  23:00:00  29.1
+         Date  Time   Val             datetime
+0    20230507     0  12.4  2023-05-07 00:00:00
+1    20230507   100  12.4  2023-05-07 01:00:00
+2    20230507   200  12.0  2023-05-07 02:00:00
+3    20230507   300  11.3  2023-05-07 03:00:00
+4    20230507   400  11.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.4                 None
+332  20230520  2000  22.2                 None
+333  20230520  2100  23.0                 None
+334  20230520  2200  23.9                 None
+335  20230520  2300  24.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 585
     Now on station 395
-          Date      Time   Val
-0   2023-05-01  00:00:00  15.4
-1   2023-05-01  01:00:00  14.7
-2   2023-05-01  02:00:00  14.2
-3   2023-05-01  03:00:00  13.4
-4   2023-05-01  04:00:00  13.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  27.7
-908 2023-06-07  20:00:00  28.7
-909 2023-06-07  21:00:00  30.2
-910 2023-06-07  22:00:00  31.2
-911 2023-06-07  23:00:00  30.4
+         Date  Time   Val             datetime
+0    20230507     0  12.0  2023-05-07 00:00:00
+1    20230507   100  12.2  2023-05-07 01:00:00
+2    20230507   200  12.0  2023-05-07 02:00:00
+3    20230507   300  11.7  2023-05-07 03:00:00
+4    20230507   400  11.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  23.3                 None
+332  20230520  2000  24.3                 None
+333  20230520  2100  25.1                 None
+334  20230520  2200  25.1                 None
+335  20230520  2300  25.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3549
     Now on station 3584
     Now on station 3543
     Now on station 424
-          Date      Time   Val
-0   2023-05-01  00:00:00  10.4
-1   2023-05-01  01:00:00  10.2
-2   2023-05-01  02:00:00   9.9
-3   2023-05-01  03:00:00   9.6
-4   2023-05-01  04:00:00   9.3
-..         ...       ...   ...
-907 2023-06-07  19:00:00  23.7
-908 2023-06-07  20:00:00  26.7
-909 2023-06-07  21:00:00  26.7
-910 2023-06-07  22:00:00  28.8
-911 2023-06-07  23:00:00  28.1
+         Date  Time   Val             datetime
+0    20230507     0  11.9  2023-05-07 00:00:00
+1    20230507   100  11.7  2023-05-07 01:00:00
+2    20230507   200  11.3  2023-05-07 02:00:00
+3    20230507   300  10.3  2023-05-07 03:00:00
+4    20230507   400   9.7  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.8                 None
+332  20230520  2000  21.0                 None
+333  20230520  2100  21.8                 None
+334  20230520  2200  22.7                 None
+335  20230520  2300  22.7                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 442
-          Date      Time   Val
-0   2023-05-01  00:00:00  15.3
-1   2023-05-01  01:00:00  14.5
-2   2023-05-01  02:00:00  13.8
-3   2023-05-01  03:00:00  12.6
-4   2023-05-01  04:00:00  11.9
-..         ...       ...   ...
-907 2023-06-07  19:00:00  23.3
-908 2023-06-07  20:00:00  24.8
-909 2023-06-07  21:00:00  26.7
-910 2023-06-07  22:00:00  27.8
-911 2023-06-07  23:00:00  28.4
+         Date  Time   Val             datetime
+0    20230507     0  12.4  2023-05-07 00:00:00
+1    20230507   100  12.5  2023-05-07 01:00:00
+2    20230507   200  13.0  2023-05-07 02:00:00
+3    20230507   300  11.8  2023-05-07 03:00:00
+4    20230507   400  11.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.6                 None
+332  20230520  2000  21.2                 None
+333  20230520  2100  22.2                 None
+334  20230520  2200  23.3                 None
+335  20230520  2300  23.9                 None
 
-[912 rows x 3 columns]/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-
+[336 rows x 4 columns]
     Now on station 594
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.6
-1   2023-05-01  01:00:00  13.4
-2   2023-05-01  02:00:00  13.1
-3   2023-05-01  03:00:00  12.7
-4   2023-05-01  04:00:00  12.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  21.6
-908 2023-06-07  20:00:00  21.0
-909 2023-06-07  21:00:00  21.9
-910 2023-06-07  22:00:00  22.9
-911 2023-06-07  23:00:00  23.7
+         Date  Time   Val             datetime
+0    20230507     0  13.7  2023-05-07 00:00:00
+1    20230507   100  12.7  2023-05-07 01:00:00
+2    20230507   200  11.8  2023-05-07 02:00:00
+3    20230507   300  11.4  2023-05-07 03:00:00
+4    20230507   400  11.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  18.8                 None
+332  20230520  2000  19.7                 None
+333  20230520  2100  20.8                 None
+334  20230520  2200  22.0                 None
+335  20230520  2300  22.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 415
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.7
-1   2023-05-01  01:00:00  14.1
-2   2023-05-01  02:00:00  13.3
-3   2023-05-01  03:00:00  12.6
-4   2023-05-01  04:00:00  12.0
-..         ...       ...   ...
-907 2023-06-07  19:00:00  28.6
-908 2023-06-07  20:00:00  30.0
-909 2023-06-07  21:00:00  30.3
-910 2023-06-07  22:00:00  31.7
-911 2023-06-07  23:00:00  32.7
+         Date  Time   Val             datetime
+0    20230507     0  10.4  2023-05-07 00:00:00
+1    20230507   100  10.0  2023-05-07 01:00:00
+2    20230507   200  10.2  2023-05-07 02:00:00
+3    20230507   300   9.8  2023-05-07 03:00:00
+4    20230507   400   9.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  24.2                 None
+332  20230520  2000  25.4                 None
+333  20230520  2100  25.1                 None
+334  20230520  2200  27.1                 None
+335  20230520  2300  28.7                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 416
-          Date      Time   Val
-0   2023-05-01  00:00:00  10.8
-1   2023-05-01  01:00:00   9.6
-2   2023-05-01  02:00:00   9.3
-3   2023-05-01  03:00:00   8.5
-4   2023-05-01  04:00:00   8.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  28.6
-908 2023-06-07  20:00:00  29.3
-909 2023-06-07  21:00:00  30.6
-910 2023-06-07  22:00:00  31.0
-911 2023-06-07  23:00:00  28.1
+         Date  Time   Val             datetime
+0    20230507     0   9.0  2023-05-07 00:00:00
+1    20230507   100   9.2  2023-05-07 01:00:00
+2    20230507   200   8.4  2023-05-07 02:00:00
+3    20230507   300   7.5  2023-05-07 03:00:00
+4    20230507   400   7.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.8                 None
+332  20230520  2000  24.4                 None
+333  20230520  2100  25.6                 None
+334  20230520  2200  26.4                 None
+335  20230520  2300  25.2                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3570
     Now on station 600
     Now on station 631
     Now on station 444
-          Date      Time   Val
-0   2023-05-01  00:00:00  16.0
-1   2023-05-01  01:00:00  14.4
-2   2023-05-01  02:00:00  13.5
-3   2023-05-01  03:00:00  12.2
-4   2023-05-01  04:00:00  11.4
-..         ...       ...   ...
-907 2023-06-07  19:00:00  24.5
-908 2023-06-07  20:00:00  26.3
-909 2023-06-07  21:00:00  27.9
-910 2023-06-07  22:00:00  29.5
-911 2023-06-07  23:00:00  29.6
+         Date  Time   Val             datetime
+0    20230507     0  13.9  2023-05-07 00:00:00
+1    20230507   100  13.0  2023-05-07 01:00:00
+2    20230507   200  12.4  2023-05-07 02:00:00
+3    20230507   300  11.6  2023-05-07 03:00:00
+4    20230507   400  11.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.3                 None
+332  20230520  2000  23.6                 None
+333  20230520  2100  23.7                 None
+334  20230520  2200  25.4                 None
+335  20230520  2300  25.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3548
-          Date      Time   Val
-0   2023-05-01  00:00:00  16.1
-1   2023-05-01  01:00:00  14.9
-2   2023-05-01  02:00:00  14.1
-3   2023-05-01  03:00:00  13.2
-4   2023-05-01  04:00:00  12.5
-..         ...       ...   ...
-904 2023-06-07  19:00:00  30.0
-905 2023-06-07  20:00:00  29.6
-906 2023-06-07  21:00:00  30.3
-907 2023-06-07  22:00:00  32.2
-908 2023-06-07  23:00:00  30.9
+         Date  Time   Val             datetime
+0    20230507     0  11.9  2023-05-07 00:00:00
+1    20230507   100  12.0  2023-05-07 01:00:00
+2    20230507   200  12.0  2023-05-07 02:00:00
+3    20230507   300  11.3  2023-05-07 03:00:00
+4    20230507   400  10.8  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  23.8                 None
+332  20230520  2000  24.9                 None
+333  20230520  2100  25.6                 None
+334  20230520  2200  26.2                 None
+335  20230520  2300  25.6                 None
 
-[909 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 680
     Now on station 2795
-          Date      Time   Val
-0   2023-05-01  00:00:00  15.0
-1   2023-05-01  01:00:00  15.0
-2   2023-05-01  02:00:00  13.0
-3   2023-05-01  03:00:00  14.0
-4   2023-05-01  04:00:00  14.0
-..         ...       ...   ...
-903 2023-06-07  18:00:00  21.0
-904 2023-06-07  20:00:00  20.0
-905 2023-06-07  21:00:00  21.0
-906 2023-06-07  22:00:00  22.0
-907 2023-06-07  23:00:00  21.0
+         Date  Time   Val             datetime
+0    20230507     0  15.0  2023-05-07 00:00:00
+1    20230507   100  15.0  2023-05-07 01:00:00
+2    20230507   200  14.0  2023-05-07 02:00:00
+3    20230507   300  14.0  2023-05-07 03:00:00
+4    20230507   400  13.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+330  20230520  1900  17.0                 None
+331  20230520  2000  17.0                 None
+332  20230520  2100  18.0                 None
+333  20230520  2200  19.0                 None
+334  20230520  2300  18.0                 None
 
-[908 rows x 3 columns]
+[335 rows x 4 columns]
     Now on station 2007
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.0
-1   2023-05-01  01:00:00  12.0
-2   2023-05-01  02:00:00  12.0
-3   2023-05-01  03:00:00  12.0
-4   2023-05-01  04:00:00  12.0
-..         ...       ...   ...
-895 2023-06-07  19:00:00  21.0
-896 2023-06-07  20:00:00  22.0
-897 2023-06-07  21:00:00  21.0
-898 2023-06-07  22:00:00  22.0
-899 2023-06-07  23:00:00  24.0
+         Date  Time   Val             datetime
+0    20230507     0  12.0  2023-05-07 00:00:00
+1    20230507   100  11.0  2023-05-07 01:00:00
+2    20230507   200  11.0  2023-05-07 02:00:00
+3    20230507   300  11.0  2023-05-07 03:00:00
+4    20230507   400  10.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+321  20230520  1900  15.0                 None
+322  20230520  2000  19.0                 None
+323  20230520  2100  15.0                 None
+324  20230520  2200  18.0                 None
+325  20230520  2300  19.0                 None
 
-[900 rows x 3 columns]
+[326 rows x 4 columns]
     Now on station 2793
-          Date      Time   Val
-0   2023-05-01  00:00:00  18.0
-1   2023-05-01  01:00:00  18.0
-2   2023-05-01  02:00:00  18.0
-3   2023-05-01  03:00:00  17.0
-4   2023-05-01  04:00:00  10.0
-..         ...       ...   ...
-903 2023-06-07  18:00:00  24.0
-904 2023-06-07  20:00:00  30.0
-905 2023-06-07  21:00:00  31.0
-906 2023-06-07  22:00:00  32.0
-907 2023-06-07  23:00:00  32.0
+         Date  Time   Val             datetime
+0    20230507     0  16.0  2023-05-07 00:00:00
+1    20230507   100  16.0  2023-05-07 01:00:00
+2    20230507   200  14.0  2023-05-07 02:00:00
+3    20230507   300  12.0  2023-05-07 03:00:00
+4    20230507   400  11.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+330  20230520  1900  22.0                 None
+331  20230520  2000  24.0                 None
+332  20230520  2100  25.0                 None
+333  20230520  2200  27.0                 None
+334  20230520  2300  27.0                 None
 
-[908 rows x 3 columns]
+[335 rows x 4 columns]
     Now on station 2106
     Now on station 2114
     Now on station 2746
     Now on station 426
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.4
-1   2023-05-01  01:00:00  11.2
-2   2023-05-01  02:00:00  10.4
-3   2023-05-01  03:00:00  10.0
-4   2023-05-01  04:00:00   9.3
-..         ...       ...   ...
-907 2023-06-07  19:00:00  29.7
-908 2023-06-07  20:00:00  30.5
-909 2023-06-07  21:00:00  30.7
-910 2023-06-07  22:00:00  31.5
-911 2023-06-07  23:00:00  30.8
+         Date  Time   Val             datetime
+0    20230507     0  10.3  2023-05-07 00:00:00
+1    20230507   100   9.9  2023-05-07 01:00:00
+2    20230507   200   9.4  2023-05-07 02:00:00
+3    20230507   300   8.8  2023-05-07 03:00:00
+4    20230507   400   8.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  25.1                 None
+332  20230520  2000  26.6                 None
+333  20230520  2100  26.7                 None
+334  20230520  2200  26.8                 None
+335  20230520  2300  26.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 587
     Now on station 3583
     Now on station 636
     Now on station 2065
     Now on station 3545
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.4
-1   2023-05-01  01:00:00  12.2
-2   2023-05-01  02:00:00  12.2
-3   2023-05-01  03:00:00  11.8
-4   2023-05-01  04:00:00  11.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.1
-908 2023-06-07  20:00:00  27.1
-909 2023-06-07  21:00:00  28.0
-910 2023-06-07  22:00:00  28.5
-911 2023-06-07  23:00:00  29.8
+         Date  Time   Val             datetime
+0    20230507     0  12.9  2023-05-07 00:00:00
+1    20230507   100  13.5  2023-05-07 01:00:00
+2    20230507   200  12.9  2023-05-07 02:00:00
+3    20230507   300  12.2  2023-05-07 03:00:00
+4    20230507   400   9.7  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.3                 None
+332  20230520  2000  20.3                 None
+333  20230520  2100  22.7                 None
+334  20230520  2200  22.7                 None
+335  20230520  2300  22.5                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3591
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.0
-1   2023-05-01  01:00:00  11.9
-2   2023-05-01  02:00:00  12.2
-3   2023-05-01  03:00:00  12.1
-4   2023-05-01  04:00:00  12.1
-..         ...       ...   ...
-894 2023-06-07  19:00:00  23.8
-895 2023-06-07  20:00:00  24.0
-896 2023-06-07  21:00:00  25.8
-897 2023-06-07  22:00:00  27.8
-898 2023-06-07  23:00:00  28.7
+         Date  Time   Val             datetime
+0    20230507     0  12.6  2023-05-07 00:00:00
+1    20230507   100  13.1  2023-05-07 01:00:00
+2    20230507   200  13.1  2023-05-07 02:00:00
+3    20230507   300  12.8  2023-05-07 03:00:00
+4    20230507   400  12.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+322  20230520  1900  18.6                 None
+323  20230520  2000  20.4                 None
+324  20230520  2100  22.7                 None
+325  20230520  2200  23.1                 None
+326  20230520  2300  24.3                 None
 
-[899 rows x 3 columns]
+[327 rows x 4 columns]
     Now on station 3599
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.9
-1   2023-05-01  01:00:00  12.3
-2   2023-05-01  02:00:00  12.2
-3   2023-05-01  03:00:00  12.3
-4   2023-05-01  04:00:00  12.3
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.2
-908 2023-06-07  20:00:00  26.8
-909 2023-06-07  21:00:00  27.7
-910 2023-06-07  22:00:00  28.9
-911 2023-06-07  23:00:00  28.9
+         Date  Time   Val             datetime
+0    20230507     0  13.4  2023-05-07 00:00:00
+1    20230507   100  12.8  2023-05-07 01:00:00
+2    20230507   200  12.5  2023-05-07 02:00:00
+3    20230507   300  12.4  2023-05-07 03:00:00
+4    20230507   400  11.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.8                 None
+332  20230520  2000  20.7                 None
+333  20230520  2100  21.6                 None
+334  20230520  2200  21.6                 None
+335  20230520  2300  22.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 617
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.5
-1   2023-05-01  01:00:00  10.7
-2   2023-05-01  02:00:00  10.7
-3   2023-05-01  03:00:00  11.2
-4   2023-05-01  04:00:00  11.6
-..         ...       ...   ...
-902 2023-06-07  19:00:00  19.0
-903 2023-06-07  20:00:00  16.7
-904 2023-06-07  21:00:00  17.9
-905 2023-06-07  22:00:00  19.0
-906 2023-06-07  23:00:00  17.7
+         Date  Time   Val             datetime
+0    20230507     0  10.2  2023-05-07 00:00:00
+1    20230507   100   9.8  2023-05-07 01:00:00
+2    20230507   200   9.5  2023-05-07 02:00:00
+3    20230507   300   9.5  2023-05-07 03:00:00
+4    20230507   400  10.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+326  20230520  1900  15.1                 None
+327  20230520  2000  14.2                 None
+328  20230520  2100  13.3                 None
+329  20230520  2200  14.2                 None
+330  20230520  2300  13.5                 None
 
-[907 rows x 3 columns]
+[331 rows x 4 columns]
     Now on station 412
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.1
-1   2023-05-01  01:00:00  13.4
-2   2023-05-01  02:00:00  12.6
-3   2023-05-01  03:00:00  12.4
-4   2023-05-01  04:00:00  12.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.3
-908 2023-06-07  20:00:00  27.4
-909 2023-06-07  21:00:00  28.3
-910 2023-06-07  22:00:00  29.1
-911 2023-06-07  23:00:00  29.6
+         Date  Time   Val             datetime
+0    20230507     0  11.0  2023-05-07 00:00:00
+1    20230507   100  11.1  2023-05-07 01:00:00
+2    20230507   200  11.2  2023-05-07 02:00:00
+3    20230507   300  10.9  2023-05-07 03:00:00
+4    20230507   400  10.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.2                 None
+332  20230520  2000  23.0                 None
+333  20230520  2100  23.6                 None
+334  20230520  2200  24.2                 None
+335  20230520  2300  24.4                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 445
     Now on station 446
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.5
-1   2023-05-01  01:00:00  12.9
-2   2023-05-01  02:00:00  12.5
-3   2023-05-01  03:00:00  11.0
-4   2023-05-01  04:00:00   9.4
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.5
-908 2023-06-07  20:00:00  27.0
-909 2023-06-07  21:00:00  27.7
-910 2023-06-07  22:00:00  26.8
-911 2023-06-07  23:00:00  28.2
+         Date  Time   Val             datetime
+0    20230507     0  12.0  2023-05-07 00:00:00
+1    20230507   100  11.3  2023-05-07 01:00:00
+2    20230507   200  10.3  2023-05-07 02:00:00
+3    20230507   300   9.8  2023-05-07 03:00:00
+4    20230507   400   8.8  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.4                 None
+332  20230520  2000  23.7                 None
+333  20230520  2100  22.5                 None
+334  20230520  2200  23.9                 None
+335  20230520  2300  24.2                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 2631
-          Date      Time   Val
-0   2023-05-01  00:00:00  10.4
-1   2023-05-01  01:00:00  10.5
-2   2023-05-01  02:00:00  10.8
-3   2023-05-01  03:00:00  10.5
-4   2023-05-01  04:00:00  10.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  16.3
-908 2023-06-07  20:00:00  17.1
-909 2023-06-07  21:00:00  17.4
-910 2023-06-07  22:00:00  18.5
-911 2023-06-07  23:00:00  20.3
+         Date  Time   Val             datetime
+0    20230507     0  11.3  2023-05-07 00:00:00
+1    20230507   100  11.2  2023-05-07 01:00:00
+2    20230507   200  11.2  2023-05-07 02:00:00
+3    20230507   300  11.0  2023-05-07 03:00:00
+4    20230507   400  10.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  16.0                 None
+332  20230520  2000  16.9                 None
+333  20230520  2100  18.3                 None
+334  20230520  2200  18.8                 None
+335  20230520  2300  19.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 447
-          Date      Time   Val
-0   2023-05-01  00:00:00  16.3
-1   2023-05-01  01:00:00  15.2
-2   2023-05-01  02:00:00  13.6
-3   2023-05-01  03:00:00  12.3
-4   2023-05-01  04:00:00  10.5
-..         ...       ...   ...
-907 2023-06-07  19:00:00  27.1
-908 2023-06-07  20:00:00  29.6
-909 2023-06-07  21:00:00  30.6
-910 2023-06-07  22:00:00  31.8
-911 2023-06-07  23:00:00  31.9
+         Date  Time   Val             datetime
+0    20230507     0  14.2  2023-05-07 00:00:00
+1    20230507   100  13.4  2023-05-07 01:00:00
+2    20230507   200  12.5  2023-05-07 02:00:00
+3    20230507   300  11.7  2023-05-07 03:00:00
+4    20230507   400  10.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  23.7                 None
+332  20230520  2000  25.5                 None
+333  20230520  2100  26.2                 None
+334  20230520  2200  26.4                 None
+335  20230520  2300  27.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 2094
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.0
-1   2023-05-01  01:00:00  14.0
-2   2023-05-01  02:00:00  12.0
-3   2023-05-01  03:00:00  14.0
-4   2023-05-01  04:00:00  13.0
-..         ...       ...   ...
-893 2023-06-07  19:00:00  15.0
-894 2023-06-07  20:00:00  15.0
-895 2023-06-07  21:00:00  18.0
-896 2023-06-07  22:00:00  19.0
-897 2023-06-07  23:00:00  19.0
+         Date  Time   Val             datetime
+0    20230507     0  10.0  2023-05-07 00:00:00
+1    20230507   100  10.0  2023-05-07 01:00:00
+2    20230507   200  11.0  2023-05-07 02:00:00
+3    20230507   300  12.0  2023-05-07 03:00:00
+4    20230507   400  11.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+320  20230520  1900  15.0                 None
+321  20230520  2000  18.0                 None
+322  20230520  2100  17.0                 None
+323  20230520  2200  17.0                 None
+324  20230520  2300  20.0                 None
 
-[898 rows x 3 columns]
+[325 rows x 4 columns]
     Now on station 645
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.5
-1   2023-05-01  01:00:00  14.5
-2   2023-05-01  02:00:00  14.3
-3   2023-05-01  03:00:00  13.9
-4   2023-05-01  04:00:00  13.5
-..         ...       ...   ...
-894 2023-06-07  19:00:00  14.9
-895 2023-06-07  20:00:00  15.3
-896 2023-06-07  21:00:00  17.6
-897 2023-06-07  22:00:00  18.6
-898 2023-06-07  23:00:00  19.0
+         Date  Time   Val             datetime
+0    20230507     0   9.6  2023-05-07 00:00:00
+1    20230507   100  10.3  2023-05-07 01:00:00
+2    20230507   200  11.4  2023-05-07 02:00:00
+3    20230507   300  11.6  2023-05-07 03:00:00
+4    20230507   400  10.8  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+320  20230520  1900  14.8                 None
+321  20230520  2000  18.1                 None
+322  20230520  2100  17.3                 None
+323  20230520  2200  17.4                 None
+324  20230520  2300  20.3                 None
 
-[899 rows x 3 columns]
+[325 rows x 4 columns]
     Now on station 2629
     Now on station 683
     Now on station 606
@@ -673,37 +619,37 @@ Reading observational dataframe for SFCTC..
     Now on station 601
     Now on station 496
     Now on station 417
-          Date      Time   Val
-0   2023-05-01  00:00:00   7.8
-1   2023-05-01  01:00:00   5.5
-2   2023-05-01  02:00:00   6.3
-3   2023-05-01  03:00:00   4.8
-4   2023-05-01  04:00:00   4.2
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.2
-908 2023-06-07  20:00:00  25.3
-909 2023-06-07  21:00:00  25.7
-910 2023-06-07  22:00:00  27.0
-911 2023-06-07  23:00:00  27.4
+         Date  Time   Val             datetime
+0    20230507     0   5.6  2023-05-07 00:00:00
+1    20230507   100   5.8  2023-05-07 01:00:00
+2    20230507   200   5.6  2023-05-07 02:00:00
+3    20230507   300   4.9  2023-05-07 03:00:00
+4    20230507   400   3.7  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.5                 None
+332  20230520  2000  19.3                 None
+333  20230520  2100  20.1                 None
+334  20230520  2200  21.1                 None
+335  20230520  2300  20.5                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3552
     Now on station 588
     Now on station 410
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.3
-1   2023-05-01  01:00:00  13.8
-2   2023-05-01  02:00:00  12.4
-3   2023-05-01  03:00:00  12.4
-4   2023-05-01  04:00:00  12.3
-..         ...       ...   ...
-907 2023-06-07  19:00:00  27.2
-908 2023-06-07  20:00:00  28.8
-909 2023-06-07  21:00:00  29.9
-910 2023-06-07  22:00:00  30.9
-911 2023-06-07  23:00:00  30.6
+         Date  Time   Val             datetime
+0    20230507     0  11.4  2023-05-07 00:00:00
+1    20230507   100  11.7  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300  11.1  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.4                 None
+332  20230520  2000  23.7                 None
+333  20230520  2100  24.4                 None
+334  20230520  2200  24.7                 None
+335  20230520  2300  24.8                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 2630
     Now on station 497
     Now on station 2033
@@ -714,87 +660,87 @@ Reading observational dataframe for SFCTC..
     Now on station 589
     Now on station 498
     Now on station 3341
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.2
-1   2023-05-01  01:00:00  12.0
-2   2023-05-01  02:00:00  12.0
-3   2023-05-01  03:00:00  11.8
-4   2023-05-01  04:00:00  11.4
-..         ...       ...   ...
-907 2023-06-07  19:00:00  22.3
-908 2023-06-07  20:00:00  23.6
-909 2023-06-07  21:00:00  25.8
-910 2023-06-07  22:00:00  24.8
-911 2023-06-07  23:00:00  24.2
+         Date  Time   Val             datetime
+0    20230507     0  12.2  2023-05-07 00:00:00
+1    20230507   100  12.0  2023-05-07 01:00:00
+2    20230507   200  11.8  2023-05-07 02:00:00
+3    20230507   300  11.2  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  16.9                 None
+332  20230520  2000  18.1                 None
+333  20230520  2100  19.4                 None
+334  20230520  2200  20.0                 None
+335  20230520  2300  19.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 2014
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.0
-1   2023-05-01  01:00:00  14.0
-2   2023-05-01  02:00:00  13.0
-3   2023-05-01  03:00:00  11.0
-4   2023-05-01  04:00:00  11.0
-..         ...       ...   ...
-903 2023-06-07  18:00:00  16.0
-904 2023-06-07  20:00:00  19.0
-905 2023-06-07  21:00:00  19.0
-906 2023-06-07  22:00:00  21.0
-907 2023-06-07  23:00:00  21.0
+         Date  Time   Val             datetime
+0    20230507     0  12.0  2023-05-07 00:00:00
+1    20230507   100  12.0  2023-05-07 01:00:00
+2    20230507   200  12.0  2023-05-07 02:00:00
+3    20230507   300  11.0  2023-05-07 03:00:00
+4    20230507   400  11.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+330  20230520  1900  18.0                 None
+331  20230520  2000  19.0                 None
+332  20230520  2100  19.0                 None
+333  20230520  2200  20.0                 None
+334  20230520  2300  21.0                 None
 
-[908 rows x 3 columns]
+[335 rows x 4 columns]
     Now on station 590
     Now on station 3581
     Now on station 591
     Now on station 3553
     Now on station 392
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.5
-1   2023-05-01  01:00:00  12.1
-2   2023-05-01  02:00:00  11.7
-3   2023-05-01  03:00:00  11.8
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-907 2023-06-07  19:00:00  25.8
-908 2023-06-07  20:00:00  26.2
-909 2023-06-07  21:00:00  27.2
-910 2023-06-07  22:00:00  28.4
-911 2023-06-07  23:00:00  29.2
+         Date  Time   Val             datetime
+0    20230507     0  10.5  2023-05-07 00:00:00
+1    20230507   100  10.7  2023-05-07 01:00:00
+2    20230507   200  10.6  2023-05-07 02:00:00
+3    20230507   300  10.1  2023-05-07 03:00:00
+4    20230507   400   9.7  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.4                 None
+332  20230520  2000  22.2                 None
+333  20230520  2100  23.0                 None
+334  20230520  2200  23.8                 None
+335  20230520  2300  24.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 651
     Now on station 3522
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.8
-1   2023-05-01  01:00:00  14.1
-2   2023-05-01  02:00:00  13.3
-3   2023-05-01  03:00:00  13.3
-4   2023-05-01  04:00:00  13.3
-..         ...       ...   ...
-905 2023-06-07  19:00:00  25.4
-906 2023-06-07  20:00:00  24.7
-907 2023-06-07  21:00:00  26.1
-908 2023-06-07  22:00:00  28.7
-909 2023-06-07  23:00:00  28.4
+         Date  Time   Val             datetime
+0    20230507     0  12.5  2023-05-07 00:00:00
+1    20230507   100  12.7  2023-05-07 01:00:00
+2    20230507   200  12.6  2023-05-07 02:00:00
+3    20230507   300  12.3  2023-05-07 03:00:00
+4    20230507   400  11.7  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+329  20230520  1900  21.4                 None
+330  20230520  2000  21.7                 None
+331  20230520  2100  21.9                 None
+332  20230520  2200  23.4                 None
+333  20230520  2300  23.7                 None
 
-[910 rows x 3 columns]
+[334 rows x 4 columns]
     Now on station 437
     Now on station 632
     Now on station 407
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.7
-1   2023-05-01  01:00:00  11.6
-2   2023-05-01  02:00:00  11.3
-3   2023-05-01  03:00:00  11.2
-4   2023-05-01  04:00:00  11.0
-..         ...       ...   ...
-907 2023-06-07  19:00:00  25.9
-908 2023-06-07  20:00:00  27.1
-909 2023-06-07  21:00:00  27.7
-910 2023-06-07  22:00:00  27.7
-911 2023-06-07  23:00:00  27.7
+         Date  Time   Val             datetime
+0    20230507     0  11.4  2023-05-07 00:00:00
+1    20230507   100  11.5  2023-05-07 01:00:00
+2    20230507   200  11.5  2023-05-07 02:00:00
+3    20230507   300  10.6  2023-05-07 03:00:00
+4    20230507   400   9.8  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.4                 None
+332  20230520  2000  21.3                 None
+333  20230520  2100  22.4                 None
+334  20230520  2200  22.4                 None
+335  20230520  2300  22.0                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 634
     Now on station 637
     Now on station 567
@@ -803,314 +749,260 @@ Reading observational dataframe for SFCTC..
     Now on station 611
     Now on station 3577
     Now on station 406
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.4
-1   2023-05-01  01:00:00  12.0
-2   2023-05-01  02:00:00  12.1
-3   2023-05-01  03:00:00  12.1
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-906 2023-06-07  19:00:00  23.3
-907 2023-06-07  20:00:00  24.4
-908 2023-06-07  21:00:00  25.8
-909 2023-06-07  22:00:00  26.5
-910 2023-06-07  23:00:00  28.0
+         Date  Time   Val             datetime
+0    20230507     0  11.4  2023-05-07 00:00:00
+1    20230507   100  11.7  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300  11.3  2023-05-07 03:00:00
+4    20230507   400  10.7  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.7                 None
+332  20230520  2000  20.4                 None
+333  20230520  2100  21.2                 None
+334  20230520  2200  22.0                 None
+335  20230520  2300  21.9                 None
 
-[911 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 635
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.5
-1   2023-05-01  01:00:00  12.4
-2   2023-05-01  02:00:00  11.5
-3   2023-05-01  03:00:00  10.5
-4   2023-05-01  04:00:00   9.5
-..         ...       ...   ...
-905 2023-06-07  19:00:00  24.8
-906 2023-06-07  20:00:00  25.6
-907 2023-06-07  21:00:00  25.0
-908 2023-06-07  22:00:00  28.5
-909 2023-06-07  23:00:00  28.6
+         Date  Time   Val             datetime
+0    20230507     0  12.9  2023-05-07 00:00:00
+1    20230507   100  12.3  2023-05-07 01:00:00
+2    20230507   200  12.1  2023-05-07 02:00:00
+3    20230507   300  11.0  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+329  20230520  1900  21.0                 None
+330  20230520  2000  20.8                 None
+331  20230520  2100  20.7                 None
+332  20230520  2200  21.5                 None
+333  20230520  2300  22.1                 None
 
-[910 rows x 3 columns]
+[334 rows x 4 columns]
     Now on station 2061
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.0
-1   2023-05-01  01:00:00  12.0
-2   2023-05-01  02:00:00  12.0
-3   2023-05-01  03:00:00  10.0
-4   2023-05-01  04:00:00  10.0
-..         ...       ...   ...
-904 2023-06-07  19:00:00  25.0
-905 2023-06-07  20:00:00  26.0
-906 2023-06-07  21:00:00  25.0
-907 2023-06-07  22:00:00  29.0
-908 2023-06-07  23:00:00  29.0
+         Date  Time   Val             datetime
+0    20230507     0  13.0  2023-05-07 00:00:00
+1    20230507   100  12.0  2023-05-07 01:00:00
+2    20230507   200  12.0  2023-05-07 02:00:00
+3    20230507   300  11.0  2023-05-07 03:00:00
+4    20230507   400  10.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+328  20230520  1900  21.0                 None
+329  20230520  2000  21.0                 None
+330  20230520  2100  21.0                 None
+331  20230520  2200  21.0                 None
+332  20230520  2300  22.0                 None
 
-[909 rows x 3 columns]
+[333 rows x 4 columns]
     Now on station 3579
     Now on station 3585
     Now on station 502
     Now on station 401
-          Date      Time   Val
-0   2023-05-01  00:00:00  15.8
-1   2023-05-01  01:00:00  15.0
-2   2023-05-01  02:00:00  14.0
-3   2023-05-01  03:00:00  13.8
-4   2023-05-01  04:00:00  13.6
-..         ...       ...   ...
-907 2023-06-07  19:00:00  28.2
-908 2023-06-07  20:00:00  29.7
-909 2023-06-07  21:00:00  30.8
-910 2023-06-07  22:00:00  31.4
-911 2023-06-07  23:00:00  31.6
+         Date  Time   Val             datetime
+0    20230507     0  11.2  2023-05-07 00:00:00
+1    20230507   100  11.5  2023-05-07 01:00:00
+2    20230507   200  11.2  2023-05-07 02:00:00
+3    20230507   300  10.8  2023-05-07 03:00:00
+4    20230507   400  10.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.1                 None
+332  20230520  2000  23.5                 None
+333  20230520  2100  24.4                 None
+334  20230520  2200  25.3                 None
+335  20230520  2300  25.7                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3555
     Now on station 2104
-          Date      Time   Val
-0   2023-05-01  00:00:00  13.0
-1   2023-05-01  01:00:00  13.0
-2   2023-05-01  02:00:00  12.0
-3   2023-05-01  03:00:00  12.0
-4   2023-05-01  04:00:00  12.0
-..         ...       ...   ...
-907 2023-06-07  19:00:00  18.0
-908 2023-06-07  20:00:00  20.0
-909 2023-06-07  21:00:00  20.0
-910 2023-06-07  22:00:00  17.0
-911 2023-06-07  23:00:00  15.0
+         Date  Time   Val             datetime
+0    20230507     0  10.0  2023-05-07 00:00:00
+1    20230507   100   9.0  2023-05-07 01:00:00
+2    20230507   200  10.0  2023-05-07 02:00:00
+3    20230507   300  10.0  2023-05-07 03:00:00
+4    20230507   400   9.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  13.0                 None
+332  20230520  2000  13.0                 None
+333  20230520  2100  13.0                 None
+334  20230520  2200  12.0                 None
+335  20230520  2300  15.0                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 643
     Now on station 582
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.1
-1   2023-05-01  01:00:00  14.2
-2   2023-05-01  02:00:00  14.7
-3   2023-05-01  03:00:00  14.2
-4   2023-05-01  04:00:00  13.1
-..         ...       ...   ...
-906 2023-06-07  19:00:00  25.8
-907 2023-06-07  20:00:00  27.5
-908 2023-06-07  21:00:00  28.0
-909 2023-06-07  22:00:00  29.2
-910 2023-06-07  23:00:00  29.1
+         Date  Time   Val             datetime
+0    20230507     0  13.7  2023-05-07 00:00:00
+1    20230507   100  13.6  2023-05-07 01:00:00
+2    20230507   200  11.8  2023-05-07 02:00:00
+3    20230507   300  11.3  2023-05-07 03:00:00
+4    20230507   400  10.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+330  20230520  1900  22.2                 None
+331  20230520  2000  22.7                 None
+332  20230520  2100  24.0                 None
+333  20230520  2200  24.7                 None
+334  20230520  2300  25.2                 None
 
-[911 rows x 3 columns]
+[335 rows x 4 columns]
     Now on station 642
     Now on station 3558
-          Date      Time   Val
-0   2023-05-01  00:00:00  15.3
-1   2023-05-01  01:00:00  16.3
-2   2023-05-01  02:00:00  15.2
-3   2023-05-01  03:00:00  14.0
-4   2023-05-01  04:00:00  12.7
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.5
-908 2023-06-07  20:00:00  28.0
-909 2023-06-07  21:00:00  28.6
-910 2023-06-07  22:00:00  29.0
-911 2023-06-07  23:00:00  28.5
+         Date  Time   Val             datetime
+0    20230507     0  14.5  2023-05-07 00:00:00
+1    20230507   100  14.6  2023-05-07 01:00:00
+2    20230507   200  14.0  2023-05-07 02:00:00
+3    20230507   300  12.5  2023-05-07 03:00:00
+4    20230507   400  10.5  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.6                 None
+332  20230520  2000  24.1                 None
+333  20230520  2100  24.9                 None
+334  20230520  2200  25.2                 None
+335  20230520  2300  24.7                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 396
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.8
-1   2023-05-01  01:00:00  11.0
-2   2023-05-01  02:00:00  11.2
-3   2023-05-01  03:00:00  11.3
-4   2023-05-01  04:00:00  11.0
-..         ...       ...   ...
-869 2023-06-07  19:00:00  25.9
-870 2023-06-07  20:00:00  26.5
-871 2023-06-07  21:00:00  28.0
-872 2023-06-07  22:00:00  28.7
-873 2023-06-07  23:00:00  29.4
+         Date  Time   Val             datetime
+0    20230507     0  12.2  2023-05-07 00:00:00
+1    20230507   100  11.8  2023-05-07 01:00:00
+2    20230507   200  11.5  2023-05-07 02:00:00
+3    20230507   300  10.8  2023-05-07 03:00:00
+4    20230507   400  10.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+307  20230520  1900  20.1                 None
+308  20230520  2000  21.1                 None
+309  20230520  2100  21.5                 None
+310  20230520  2200  22.7                 None
+311  20230520  2300  21.3                 None
 
-[874 rows x 3 columns]
+[312 rows x 4 columns]
     Now on station 439
     Now on station 2074
     Now on station 3566
     Now on station 678
     Now on station 3317
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.1
-1   2023-05-01  01:00:00  11.2
-2   2023-05-01  02:00:00  11.2
-3   2023-05-01  03:00:00  11.3
-4   2023-05-01  04:00:00  11.3
-..         ...       ...   ...
-907 2023-06-07  19:00:00  21.8
-908 2023-06-07  20:00:00  22.5
-909 2023-06-07  21:00:00  25.2
-910 2023-06-07  22:00:00  24.4
-911 2023-06-07  23:00:00  25.8
+         Date  Time   Val             datetime
+0    20230507     0  12.3  2023-05-07 00:00:00
+1    20230507   100  12.8  2023-05-07 01:00:00
+2    20230507   200  12.8  2023-05-07 02:00:00
+3    20230507   300  12.5  2023-05-07 03:00:00
+4    20230507   400  11.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  18.7                 None
+332  20230520  2000  19.3                 None
+333  20230520  2100  20.1                 None
+334  20230520  2200  20.6                 None
+335  20230520  2300  20.6                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 615
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.1
-1   2023-05-01  01:00:00  12.1
-2   2023-05-01  02:00:00  12.1
-3   2023-05-01  03:00:00  11.8
-4   2023-05-01  04:00:00  11.6
-..         ...       ...   ...
-907 2023-06-07  19:00:00  22.3
-908 2023-06-07  20:00:00  20.0
-909 2023-06-07  21:00:00  20.8
-910 2023-06-07  22:00:00  22.2
-911 2023-06-07  23:00:00  21.1
+         Date  Time   Val             datetime
+0    20230507     0  12.2  2023-05-07 00:00:00
+1    20230507   100  12.7  2023-05-07 01:00:00
+2    20230507   200  11.7  2023-05-07 02:00:00
+3    20230507   300  11.5  2023-05-07 03:00:00
+4    20230507   400  11.5  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  17.1                 None
+332  20230520  2000  17.5                 None
+333  20230520  2100  18.1                 None
+334  20230520  2200  18.9                 None
+335  20230520  2300  18.4                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3578
     Now on station 625
     Now on station 607
-    Now on station 513/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-
+    Now on station 513
     Now on station 641
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.4
-1   2023-05-01  01:00:00  14.5
-2   2023-05-01  02:00:00  12.7
-3   2023-05-01  03:00:00  12.8
-4   2023-05-01  04:00:00  12.7
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.8
-908 2023-06-07  20:00:00  28.3
-909 2023-06-07  21:00:00  30.1
-910 2023-06-07  22:00:00  30.5
-911 2023-06-07  23:00:00  31.0
+         Date  Time   Val             datetime
+0    20230507     0  11.9  2023-05-07 00:00:00
+1    20230507   100  12.4  2023-05-07 01:00:00
+2    20230507   200  12.7  2023-05-07 02:00:00
+3    20230507   300  12.2  2023-05-07 03:00:00
+4    20230507   400  11.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.2                 None
+332  20230520  2000  23.1                 None
+333  20230520  2100  23.8                 None
+334  20230520  2200  24.4                 None
+335  20230520  2300  24.4                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 654
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.8
-1   2023-05-01  01:00:00  12.2
-2   2023-05-01  02:00:00  12.2
-3   2023-05-01  03:00:00  12.1
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-907 2023-06-07  19:00:00  17.3
-908 2023-06-07  20:00:00  17.4
-909 2023-06-07  21:00:00  19.4
-910 2023-06-07  22:00:00  19.4
-911 2023-06-07  23:00:00  19.7
+         Date  Time   Val             datetime
+0    20230507     0  12.3  2023-05-07 00:00:00
+1    20230507   100  12.5  2023-05-07 01:00:00
+2    20230507   200  12.4  2023-05-07 02:00:00
+3    20230507   300  12.3  2023-05-07 03:00:00
+4    20230507   400  12.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  15.4                 None
+332  20230520  2000  16.2                 None
+333  20230520  2100  17.0                 None
+334  20230520  2200  17.7                 None
+335  20230520  2300  17.7                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 649
-          Date      Time   Val
-0   2023-05-01  00:00:00  14.4
-1   2023-05-01  01:00:00  13.8
-2   2023-05-01  02:00:00  13.3
-3   2023-05-01  03:00:00  12.0
-4   2023-05-01  04:00:00  10.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.8
-908 2023-06-07  20:00:00  29.8
-909 2023-06-07  21:00:00  30.7
-910 2023-06-07  22:00:00  31.7
-911 2023-06-07  23:00:00  31.6
+         Date  Time   Val             datetime
+0    20230507     0  13.2  2023-05-07 00:00:00
+1    20230507   100  13.0  2023-05-07 01:00:00
+2    20230507   200  12.8  2023-05-07 02:00:00
+3    20230507   300  11.8  2023-05-07 03:00:00
+4    20230507   400  10.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.7                 None
+332  20230520  2000  23.6                 None
+333  20230520  2100  24.9                 None
+334  20230520  2200  26.8                 None
+335  20230520  2300  26.8                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 610
     Now on station 3557
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.3
-1   2023-05-01  01:00:00  11.4
-2   2023-05-01  02:00:00  11.5
-3   2023-05-01  03:00:00  10.9
-4   2023-05-01  04:00:00  11.1
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.3
-908 2023-06-07  20:00:00  26.9
-909 2023-06-07  21:00:00  27.5
-910 2023-06-07  22:00:00  28.4
-911 2023-06-07  23:00:00  28.3
+         Date  Time   Val             datetime
+0    20230507     0  11.4  2023-05-07 00:00:00
+1    20230507   100  11.2  2023-05-07 01:00:00
+2    20230507   200  10.9  2023-05-07 02:00:00
+3    20230507   300  10.7  2023-05-07 03:00:00
+4    20230507   400  10.5  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.0                 None
+332  20230520  2000  21.6                 None
+333  20230520  2100  22.7                 None
+334  20230520  2200  23.6                 None
+335  20230520  2300  24.4                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3559
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.7
-1   2023-05-01  01:00:00  11.8
-2   2023-05-01  02:00:00  11.3
-3   2023-05-01  03:00:00  11.3
-4   2023-05-01  04:00:00  10.6
-..         ...       ...   ...
-907 2023-06-07  19:00:00  19.7
-908 2023-06-07  20:00:00  22.4
-909 2023-06-07  21:00:00  23.9
-910 2023-06-07  22:00:00  26.9
-911 2023-06-07  23:00:00  27.6
+         Date  Time   Val             datetime
+0    20230507     0  13.1  2023-05-07 00:00:00
+1    20230507   100  12.1  2023-05-07 01:00:00
+2    20230507   200  11.3  2023-05-07 02:00:00
+3    20230507   300  10.8  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  18.7                 None
+332  20230520  2000  19.6                 None
+333  20230520  2100  21.2                 None
+334  20230520  2200  22.5                 None
+335  20230520  2300  23.4                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 593
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.6
-1   2023-05-01  01:00:00  11.7
-2   2023-05-01  02:00:00  11.2
-3   2023-05-01  03:00:00  11.1
-4   2023-05-01  04:00:00  10.3
-..         ...       ...   ...
-907 2023-06-07  19:00:00  20.8
-908 2023-06-07  20:00:00  22.7
-909 2023-06-07  21:00:00  25.1
-910 2023-06-07  22:00:00  27.3
-911 2023-06-07  23:00:00  28.7
+         Date  Time   Val             datetime
+0    20230507     0  13.4  2023-05-07 00:00:00
+1    20230507   100  11.9  2023-05-07 01:00:00
+2    20230507   200  11.2  2023-05-07 02:00:00
+3    20230507   300  10.6  2023-05-07 03:00:00
+4    20230507   400  10.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.0                 None
+332  20230520  2000  20.0                 None
+333  20230520  2100  21.4                 None
+334  20230520  2200  22.9                 None
+335  20230520  2300  23.7                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3571
     Now on station 602
     Now on station 3563
@@ -1119,268 +1011,517 @@ Reading observational dataframe for SFCTC..
     Now on station 646
     Now on station 647
     Now on station 3560
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.0
-1   2023-05-01  01:00:00  13.4
-2   2023-05-01  02:00:00  12.7
-3   2023-05-01  03:00:00  11.4
-4   2023-05-01  04:00:00  10.4
-..         ...       ...   ...
-904 2023-06-07  19:00:00  20.9
-905 2023-06-07  20:00:00  22.5
-906 2023-06-07  21:00:00  24.9
-907 2023-06-07  22:00:00  26.5
-908 2023-06-07  23:00:00  27.7
+         Date  Time   Val             datetime
+0    20230507     0  12.3  2023-05-07 00:00:00
+1    20230507   100  12.5  2023-05-07 01:00:00
+2    20230507   200  12.1  2023-05-07 02:00:00
+3    20230507   300  11.6  2023-05-07 03:00:00
+4    20230507   400  10.9  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.2                 None
+332  20230520  2000  20.2                 None
+333  20230520  2100  21.4                 None
+334  20230520  2200  22.4                 None
+335  20230520  2300  22.9                 None
 
-[909 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3564
     Now on station 595
     Now on station 650
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.6
-1   2023-05-01  01:00:00  12.7
-2   2023-05-01  02:00:00  11.8
-3   2023-05-01  03:00:00  11.9
-4   2023-05-01  04:00:00  11.7
-..         ...       ...   ...
-907 2023-06-07  19:00:00  18.2
-908 2023-06-07  20:00:00  19.5
-909 2023-06-07  21:00:00  19.7
-910 2023-06-07  22:00:00  17.1
-911 2023-06-07  23:00:00  15.1
+         Date  Time   Val             datetime
+0    20230507     0   9.5  2023-05-07 00:00:00
+1    20230507   100   9.5  2023-05-07 01:00:00
+2    20230507   200   9.6  2023-05-07 02:00:00
+3    20230507   300   9.6  2023-05-07 03:00:00
+4    20230507   400   9.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  12.9                 None
+332  20230520  2000  13.4                 None
+333  20230520  2100  13.4                 None
+334  20230520  2200  11.8                 None
+335  20230520  2300  15.0                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3565
     Now on station 596
     Now on station 399
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.9
-1   2023-05-01  01:00:00  12.0
-2   2023-05-01  02:00:00  12.1
-3   2023-05-01  03:00:00  11.9
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-868 2023-06-07  19:00:00  23.2
-869 2023-06-07  20:00:00  24.9
-870 2023-06-07  21:00:00  26.4
-871 2023-06-07  22:00:00  26.9
-872 2023-06-07  23:00:00  26.8
+         Date  Time   Val             datetime
+0    20230507     0  12.6  2023-05-07 00:00:00
+1    20230507   100  13.0  2023-05-07 01:00:00
+2    20230507   200  13.0  2023-05-07 02:00:00
+3    20230507   300  12.4  2023-05-07 03:00:00
+4    20230507   400  11.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.2                 None
+332  20230520  2000  20.8                 None
+333  20230520  2100  22.2                 None
+334  20230520  2200  22.3                 None
+335  20230520  2300  22.7                 None
 
-[873 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 652
     Now on station 656
     Now on station 671
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.2
-1   2023-05-01  01:00:00  11.3
-2   2023-05-01  02:00:00  11.1
-3   2023-05-01  03:00:00  11.6
-4   2023-05-01  04:00:00  11.5
-..         ...       ...   ...
-907 2023-06-07  19:00:00  15.7
-908 2023-06-07  20:00:00  16.3
-909 2023-06-07  21:00:00  17.2
-910 2023-06-07  22:00:00  17.5
-911 2023-06-07  23:00:00  17.2
+         Date  Time   Val             datetime
+0    20230507     0  11.7  2023-05-07 00:00:00
+1    20230507   100  11.8  2023-05-07 01:00:00
+2    20230507   200  11.7  2023-05-07 02:00:00
+3    20230507   300  11.4  2023-05-07 03:00:00
+4    20230507   400  11.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  14.1                 None
+332  20230520  2000  13.5                 None
+333  20230520  2100  14.3                 None
+334  20230520  2200  15.6                 None
+335  20230520  2300  16.5                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3574
     Now on station 609
     Now on station 622
     Now on station 3568
-          Date      Time   Val
-0   2023-05-01  00:00:00  10.8
-1   2023-05-01  01:00:00  11.5
-2   2023-05-01  02:00:00  11.2
-3   2023-05-01  03:00:00  10.2
-4   2023-05-01  04:00:00   9.9
-..         ...       ...   ...
-895 2023-06-07  19:00:00  23.8
-896 2023-06-07  20:00:00  25.2
-897 2023-06-07  21:00:00  25.4
-898 2023-06-07  22:00:00  25.5
-899 2023-06-07  23:00:00  26.6
+         Date  Time   Val             datetime
+0    20230507     0  12.1  2023-05-07 00:00:00
+1    20230507   100  10.9  2023-05-07 01:00:00
+2    20230507   200   9.9  2023-05-07 02:00:00
+3    20230507   300   9.3  2023-05-07 03:00:00
+4    20230507   400   8.5  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+321  20230520  1900  19.8                 None
+322  20230520  2000  20.0                 None
+323  20230520  2100  20.2                 None
+324  20230520  2200  20.9                 None
+325  20230520  2300  21.4                 None
 
-[900 rows x 3 columns]
+[326 rows x 4 columns]
     Now on station 2632
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.8
-1   2023-05-01  01:00:00  12.2
-2   2023-05-01  02:00:00  11.9
-3   2023-05-01  03:00:00  11.6
-4   2023-05-01  04:00:00  11.8
-..         ...       ...   ...
-895 2023-06-07  19:00:00  21.4
-896 2023-06-07  20:00:00  21.7
-897 2023-06-07  21:00:00  21.4
-898 2023-06-07  22:00:00  21.5
-899 2023-06-07  23:00:00  24.4
+         Date  Time   Val             datetime
+0    20230507     0  12.2  2023-05-07 00:00:00
+1    20230507   100  11.3  2023-05-07 01:00:00
+2    20230507   200  10.7  2023-05-07 02:00:00
+3    20230507   300  10.5  2023-05-07 03:00:00
+4    20230507   400   9.9  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+321  20230520  1900  14.6                 None
+322  20230520  2000  18.7                 None
+323  20230520  2100  15.3                 None
+324  20230520  2200  17.6                 None
+325  20230520  2300  19.4                 None
 
-[900 rows x 3 columns]
+[326 rows x 4 columns]
     Now on station 2172
     Now on station 3561
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.7
-1   2023-05-01  01:00:00  11.5
-2   2023-05-01  02:00:00  11.0
-3   2023-05-01  03:00:00  11.0
-4   2023-05-01  04:00:00  10.9
-..         ...       ...   ...
-907 2023-06-07  19:00:00  23.8
-908 2023-06-07  20:00:00  26.6
-909 2023-06-07  21:00:00  25.0
-910 2023-06-07  22:00:00  27.5
-911 2023-06-07  23:00:00  25.6
+         Date  Time   Val             datetime
+0    20230507     0  12.1  2023-05-07 00:00:00
+1    20230507   100  11.6  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300  11.3  2023-05-07 03:00:00
+4    20230507   400  11.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.3                 None
+332  20230520  2000  22.2                 None
+333  20230520  2100  21.9                 None
+334  20230520  2200  21.8                 None
+335  20230520  2300  21.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 657
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.8
-1   2023-05-01  01:00:00  10.0
-2   2023-05-01  02:00:00  10.9
-3   2023-05-01  03:00:00  12.1
-4   2023-05-01  04:00:00  10.7
-..         ...       ...   ...
-907 2023-06-07  19:00:00  17.7
-908 2023-06-07  20:00:00  18.6
-909 2023-06-07  21:00:00  15.7
-910 2023-06-07  22:00:00  14.1
-911 2023-06-07  23:00:00  14.7
+         Date  Time   Val             datetime
+0    20230507     0   9.9  2023-05-07 00:00:00
+1    20230507   100   9.7  2023-05-07 01:00:00
+2    20230507   200   9.9  2023-05-07 02:00:00
+3    20230507   300   9.7  2023-05-07 03:00:00
+4    20230507   400   9.5  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  10.8                 None
+332  20230520  2000  10.6                 None
+333  20230520  2100  11.2                 None
+334  20230520  2200  11.1                 None
+335  20230520  2300  10.7                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 626
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.5
-1   2023-05-01  01:00:00  13.3
-2   2023-05-01  02:00:00  13.1
-3   2023-05-01  03:00:00  12.3
-4   2023-05-01  04:00:00  13.0
-..         ...       ...   ...
-907 2023-06-07  19:00:00  21.6
-908 2023-06-07  20:00:00  20.6
-909 2023-06-07  21:00:00  22.3
-910 2023-06-07  22:00:00  20.5
-911 2023-06-07  23:00:00  23.3
+         Date  Time   Val             datetime
+0    20230507     0  11.5  2023-05-07 00:00:00
+1    20230507   100  11.6  2023-05-07 01:00:00
+2    20230507   200  11.7  2023-05-07 02:00:00
+3    20230507   300  11.6  2023-05-07 03:00:00
+4    20230507   400  11.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.0                 None
+332  20230520  2000  21.8                 None
+333  20230520  2100  21.9                 None
+334  20230520  2200  19.7                 None
+335  20230520  2300  21.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 3573
     Now on station 605
     Now on station 653
     Now on station 627
     Now on station 571
     Now on station 655
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.7
-1   2023-05-01  01:00:00  12.5
-2   2023-05-01  02:00:00  12.4
-3   2023-05-01  03:00:00  11.7
-4   2023-05-01  04:00:00  11.1
-..         ...       ...   ...
-893 2023-06-07  12:00:00  11.1
-894 2023-06-07  13:00:00  10.8
-895 2023-06-07  14:00:00  13.0
-896 2023-06-07  15:00:00  16.2
-897 2023-06-07  16:00:00  19.7
+         Date  Time   Val             datetime
+0    20230507     0  12.1  2023-05-07 00:00:00
+1    20230507   100  11.9  2023-05-07 01:00:00
+2    20230507   200  11.9  2023-05-07 02:00:00
+3    20230507   300  11.4  2023-05-07 03:00:00
+4    20230507   400  10.9  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.7                 None
+332  20230520  2000  23.5                 None
+333  20230520  2100  24.4                 None
+334  20230520  2200  24.6                 None
+335  20230520  2300  25.8                 None
 
-[898 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 419
-          Date      Time   Val
-0   2023-05-01  00:00:00  11.1
-1   2023-05-01  01:00:00   9.9
-2   2023-05-01  02:00:00   9.6
-3   2023-05-01  03:00:00   8.8
-4   2023-05-01  04:00:00   8.4
-..         ...       ...   ...
-907 2023-06-07  19:00:00  30.6
-908 2023-06-07  20:00:00  32.3
-909 2023-06-07  21:00:00  32.7
-910 2023-06-07  22:00:00  33.7
-911 2023-06-07  23:00:00  33.1
+         Date  Time   Val             datetime
+0    20230507     0   9.3  2023-05-07 00:00:00
+1    20230507   100   9.5  2023-05-07 01:00:00
+2    20230507   200   8.7  2023-05-07 02:00:00
+3    20230507   300   7.8  2023-05-07 03:00:00
+4    20230507   400   7.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  27.0                 None
+332  20230520  2000  28.2                 None
+333  20230520  2100  28.9                 None
+334  20230520  2200  28.6                 None
+335  20230520  2300  28.3                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 420
-          Date      Time   Val
-0   2023-05-01  00:00:00   9.7
-1   2023-05-01  01:00:00   8.5
-2   2023-05-01  02:00:00   7.2
-3   2023-05-01  03:00:00   6.8
-4   2023-05-01  04:00:00   6.4
-..         ...       ...   ...
-907 2023-06-07  19:00:00  26.8
-908 2023-06-07  20:00:00  27.5
-909 2023-06-07  21:00:00  28.6
-910 2023-06-07  22:00:00  28.4
-911 2023-06-07  23:00:00  28.8
+         Date  Time   Val             datetime
+0    20230507     0   5.3  2023-05-07 00:00:00
+1    20230507   100   5.1  2023-05-07 01:00:00
+2    20230507   200   5.0  2023-05-07 02:00:00
+3    20230507   300   4.5  2023-05-07 03:00:00
+4    20230507   400   4.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.1                 None
+332  20230520  2000  23.4                 None
+333  20230520  2100  24.3                 None
+334  20230520  2200  24.0                 None
+335  20230520  2300  24.1                 None
 
-[912 rows x 3 columns]
+[336 rows x 4 columns]
     Now on station 612
     Now on station 460
     Now on station 670
     Now on station 398
-          Date      Time   Val
-0   2023-05-01  00:00:00  12.7
-1   2023-05-01  01:00:00  11.7
-2   2023-05-01  02:00:00  11.6
-3   2023-05-01  03:00:00  11.7
-4   2023-05-01  04:00:00  11.6
-..         ...       ...   ...
-907 2023-06-07  19:00:00  25.3
-908 2023-06-07  20:00:00  26.4
-909 2023-06-07  21:00:00  27.3
-910 2023-06-07  22:00:00  27.6
-911 2023-06-07  23:00:00  27.9
+         Date  Time   Val             datetime
+0    20230507     0  11.7  2023-05-07 00:00:00
+1    20230507   100  11.9  2023-05-07 01:00:00
+2    20230507   200  11.9  2023-05-07 02:00:00
+3    20230507   300  11.0  2023-05-07 03:00:00
+4    20230507   400  10.6  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  20.0                 None
+332  20230520  2000  20.8                 None
+333  20230520  2100  21.4                 None
+334  20230520  2200  21.6                 None
+335  20230520  2300  22.5                 None
 
-[912 rows x 3 columns]/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
-/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:231: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
+[336 rows x 4 columns]
+    Now on station 684
+    Now on station 603
+    Now on station 579
+         Date  Time   Val             datetime
+0    20230507     0  12.0  2023-05-07 00:00:00
+1    20230507   100  11.7  2023-05-07 01:00:00
+2    20230507   200  11.0  2023-05-07 02:00:00
+3    20230507   300   9.9  2023-05-07 03:00:00
+4    20230507   400   8.5  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+330  20230520  1900  13.9                 None
+331  20230520  2000  14.1                 None
+332  20230520  2100  15.1                 None
+333  20230520  2200  14.8                 None
+334  20230520  2300  14.7                 None
+
+[335 rows x 4 columns]
+    Now on station 2738
+         Date  Time   Val             datetime
+0    20230507     0  13.2  2023-05-07 00:00:00
+1    20230507   100  13.4  2023-05-07 01:00:00
+2    20230507   200  13.5  2023-05-07 02:00:00
+3    20230507   300  12.3  2023-05-07 03:00:00
+4    20230507   400  12.1  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.1                 None
+332  20230520  2000  21.0                 None
+333  20230520  2100  21.6                 None
+334  20230520  2200  22.4                 None
+335  20230520  2300  22.9                 None
+
+[336 rows x 4 columns]
+    Now on station 4014
+    Now on station 3510
+         Date  Time   Val             datetime
+0    20230507     0  12.4  2023-05-07 00:00:00
+1    20230507   100  13.0  2023-05-07 01:00:00
+2    20230507   200  12.6  2023-05-07 02:00:00
+3    20230507   300  12.3  2023-05-07 03:00:00
+4    20230507   400  11.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  17.6                 None
+332  20230520  2000  18.8                 None
+333  20230520  2100  20.0                 None
+334  20230520  2200  21.5                 None
+335  20230520  2300  21.3                 None
+
+[336 rows x 4 columns]
+    Now on station 428
+         Date  Time   Val             datetime
+0    20230507     0   8.0  2023-05-07 00:00:00
+1    20230507   100   7.1  2023-05-07 01:00:00
+2    20230507   200   6.9  2023-05-07 02:00:00
+3    20230507   300   6.4  2023-05-07 03:00:00
+4    20230507   400   4.9  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.2                 None
+332  20230520  2000  23.6                 None
+333  20230520  2100  23.6                 None
+334  20230520  2200  23.4                 None
+335  20230520  2300  24.2                 None
+
+[336 rows x 4 columns]
+    Now on station 628
+         Date  Time   Val             datetime
+0    20230507     0  11.5  2023-05-07 00:00:00
+1    20230507   100  11.8  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300  11.2  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  21.1                 None
+332  20230520  2000  21.1                 None
+333  20230520  2100  21.1                 None
+334  20230520  2200  21.5                 None
+335  20230520  2300  21.7                 None
+
+[336 rows x 4 columns]
+    Now on station 411
+         Date  Time   Val             datetime
+0    20230507     0  11.8  2023-05-07 00:00:00
+1    20230507   100  12.0  2023-05-07 01:00:00
+2    20230507   200  12.1  2023-05-07 02:00:00
+3    20230507   300  11.8  2023-05-07 03:00:00
+4    20230507   400  11.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.1                 None
+332  20230520  2000  18.1                 None
+333  20230520  2100  18.9                 None
+334  20230520  2200  19.5                 None
+335  20230520  2300  19.8                 None
+
+[336 rows x 4 columns]
+    Now on station 597
+         Date  Time   Val             datetime
+0    20230507     0  12.9  2023-05-07 00:00:00
+1    20230507   100  12.6  2023-05-07 01:00:00
+2    20230507   200  12.6  2023-05-07 02:00:00
+3    20230507   300  11.9  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+330  20230520  1900  17.8                 None
+331  20230520  2000  18.2                 None
+332  20230520  2100  18.7                 None
+333  20230520  2200  19.6                 None
+334  20230520  2300  19.1                 None
+
+[335 rows x 4 columns]
+    Now on station 3569
+         Date  Time   Val             datetime
+0    20230507     0  13.2  2023-05-07 00:00:00
+1    20230507   100  12.9  2023-05-07 01:00:00
+2    20230507   200  13.1  2023-05-07 02:00:00
+3    20230507   300  12.3  2023-05-07 03:00:00
+4    20230507   400  10.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  18.2                 None
+332  20230520  2000  18.8                 None
+333  20230520  2100  18.5                 None
+334  20230520  2200  20.1                 None
+335  20230520  2300  19.6                 None
+
+[336 rows x 4 columns]
+    Now on station 633
+    Now on station 2157
+         Date  Time   Val             datetime
+0    20230507     0  13.0  2023-05-07 00:00:00
+1    20230507   100  12.0  2023-05-07 01:00:00
+2    20230507   200  12.0  2023-05-07 02:00:00
+3    20230507   300  12.0  2023-05-07 03:00:00
+4    20230507   400  11.0  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  19.0                 None
+332  20230520  2000  20.0                 None
+333  20230520  2100  22.0                 None
+334  20230520  2200  23.0                 None
+335  20230520  2300  23.0                 None
+
+[336 rows x 4 columns]
+    Now on station 638
+         Date  Time   Val             datetime
+0    20230507     0  10.3  2023-05-07 00:00:00
+1    20230507   100  10.1  2023-05-07 01:00:00
+2    20230507   200  10.1  2023-05-07 02:00:00
+3    20230507   300  10.6  2023-05-07 03:00:00
+4    20230507   400  10.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+326  20230520  1900  17.5                 None
+327  20230520  2000  17.8                 None
+328  20230520  2100  19.2                 None
+329  20230520  2200  19.7                 None
+330  20230520  2300  19.1                 None
+
+[331 rows x 4 columns]
+    Now on station 598
+         Date  Time   Val             datetime
+0    20230507     0  10.7  2023-05-07 00:00:00
+1    20230507   100  10.7  2023-05-07 01:00:00
+2    20230507   200  10.8  2023-05-07 02:00:00
+3    20230507   300  10.7  2023-05-07 03:00:00
+4    20230507   400  10.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+325  20230520  1900  15.5                 None
+326  20230520  2000  15.4                 None
+327  20230520  2100  16.3                 None
+328  20230520  2200  18.7                 None
+329  20230520  2300  17.9                 None
+
+[330 rows x 4 columns]
+    Now on station 608
+         Date  Time   Val             datetime
+0    20230507     0  12.2  2023-05-07 00:00:00
+1    20230507   100  13.2  2023-05-07 01:00:00
+2    20230507   200  12.8  2023-05-07 02:00:00
+3    20230507   300  12.1  2023-05-07 03:00:00
+4    20230507   400  11.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  17.0                 None
+332  20230520  2000  18.0                 None
+333  20230520  2100  19.4                 None
+334  20230520  2200  19.7                 None
+335  20230520  2300  20.7                 None
+
+[336 rows x 4 columns]
+    Now on station 676
+         Date  Time   Val             datetime
+0    20230507     0  12.6  2023-05-07 00:00:00
+1    20230507   100  12.1  2023-05-07 01:00:00
+2    20230507   200  11.8  2023-05-07 02:00:00
+3    20230507   300  11.8  2023-05-07 03:00:00
+4    20230507   400  11.2  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  18.9                 None
+332  20230520  2000  20.2                 None
+333  20230520  2100  21.7                 None
+334  20230520  2200  22.7                 None
+335  20230520  2300  23.4                 None
+
+[336 rows x 4 columns]
+    Now on station 421
+    Now on station 685
+    Now on station 3580
+    Now on station 673
+         Date  Time   Val             datetime
+0    20230507     0  10.8  2023-05-07 00:00:00
+1    20230507   100  11.4  2023-05-07 01:00:00
+2    20230507   200  11.3  2023-05-07 02:00:00
+3    20230507   300  10.8  2023-05-07 03:00:00
+4    20230507   400  10.3  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  18.6                 None
+332  20230520  2000  18.3                 None
+333  20230520  2100  21.1                 None
+334  20230520  2200  21.8                 None
+335  20230520  2300  22.5                 None
+
+[336 rows x 4 columns]
+    Now on station 3572
+    Now on station 674
+         Date  Time   Val             datetime
+0    20230507     0  13.2  2023-05-07 00:00:00
+1    20230507   100  13.3  2023-05-07 01:00:00
+2    20230507   200  13.5  2023-05-07 02:00:00
+3    20230507   300  12.6  2023-05-07 03:00:00
+4    20230507   400  11.4  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  17.9                 None
+332  20230520  2000  18.4                 None
+333  20230520  2100  18.7                 None
+334  20230520  2200  19.4                 None
+335  20230520  2300  20.0                 None
+
+[336 rows x 4 columns]
+    Now on station 599
+    Now on station 463
+    Now on station 519
+    Now on station 677
+    Now on station 3011
+    Now on station 1725
+    Now on station 2174
+    Now on station 714
+    Now on station 721
+    Now on station 2358
+    Now on station 2069
+    Now on station 2235
+    Now on station 2215
+    Now on station 2322
+    Now on station 2782
+    Now on station 2801
+    Now on station 2220
+    Now on station 2303
+    Now on station 440
+         Date  Time   Val             datetime
+0    20230507     0  12.9  2023-05-07 00:00:00
+1    20230507   100  12.4  2023-05-07 01:00:00
+2    20230507   200  11.6  2023-05-07 02:00:00
+3    20230507   300   8.4  2023-05-07 03:00:00
+4    20230507   400   6.8  2023-05-07 04:00:00
+..        ...   ...   ...                  ...
+331  20230520  1900  22.4                 None
+332  20230520  2000  24.5                 None
+333  20230520  2100  25.1                 None
+334  20230520  2200  24.2                 None
+335  20230520  2300  23.8                 None
+
+[336 rows x 4 columns]
+    Now on station 693
+    Now on station 688
+    Now on station 705
+    Now on station 2946
+    Now on station 3003
+    Now on station 2972
+    Now on station 2974
+    Now on station 2745
+    Now on station 3001
+    Now on station 2990
+    Now on station 701
+    Now on station 696
+    Now on station 703
+    Now on station 698
+    Now on station 699
+    Now on station 700
+    Now on station 686
+    Now on station 689
+    Now on station 706
+    Now on station 702
+    Now on station 692
+    Now on station 695
+    Now on station 704
+    Now on station 691
+    Now on station 694
+Now on.. MM5_g2 for SFCTC_KF
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 571, in get_rankings
+    all_fcst = get_fcst(station, filepath, variable, date_list,filehours, date_entry1, date_entry2)    #goes to maxhour       
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 291, in get_fcst
+    fcst.loc[x-1, 'datetime'] = pd.to_datetime(start_date, format='%y%m%d') + timedelta(hours=int(x))
+KeyboardInterrupt

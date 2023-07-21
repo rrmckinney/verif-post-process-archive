@@ -182,8 +182,6 @@ def main(args):
                filepath = fcst_filepath + model + '/' + grid + '/' + file_var + '/fcst.t/'
                gridname = "_" + grid
            
-           print(filepath)
-           
            if check_dates(start_date, delta, filepath, input_variable, station='3510') == False:
                print("   Skipping model " + model + gridname + " (check_dates flag)")
                continue

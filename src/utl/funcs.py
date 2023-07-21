@@ -223,12 +223,12 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
         sql_con = sqlite3.connect(obs_filepath + variable + "/" + station + ".sqlite")
         sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" +str(date_list_obs[0]) + " AND 20" + str(date_list_obs[len(date_list_obs)-1])       
         obs = pd.read_sql_query(sql_query, sql_con)
+        obs['datetime'] = None
         
-        obs['Time'] = obs['Time'].astype(str).str.zfill(4)
-        obs['Time'] = pd.to_datetime(obs['Time'], format='%H%M').dt.time
-        obs['Date'] = pd.to_datetime(obs['Date'], format='%Y%m%d') 
-        print(obs)
-        obs['datetime'] = obs.apply(lambda r : pd.datetime.combine(r['Date'], r['Time']),1)
+        for y in range(len(obs['Time'])):
+            hour = int(obs['Time'][y])/100
+            obs.loc[y,'datetime'] = pd.to_datetime(obs.loc[y,'Date'], format='%Y%m%d') + timedelta(hours=hour)
+        
         obs = obs.set_index('datetime')
         
         df_all = df_new.join(obs, on='datetime')
@@ -279,16 +279,14 @@ def get_fcst(station, filepath, variable, date_list,filehours, start_date, end_d
 
     if "PCPT" in variable:
         variable = "PCPTOT"
-    fcst_all = []
     # pulls out a list of the files for the given station+variable+hour wanted   
-
     sql_con = sqlite3.connect(filepath + station + ".sqlite")
     sql_query = "SELECT * from 'All' WHERE date BETWEEN 20" + str(date_list[0]) + " AND 20" + str(date_list[len(date_list)-1])
     fcst = pd.read_sql_query(sql_query, sql_con)
     
     fcst['datetime'] = None 
-    for x in fcst['Offset']:
-        fcst.loc[x, 'datetime'] = pd.to_datetime(start_date, format='%y%m%d') + timedelta(hours=int(fcst.loc[x,'Offset']))
+    for x in range(len(fcst['Offset'])):
+        fcst.loc[x, 'datetime'] = pd.to_datetime(start_date, format='%y%m%d') + timedelta(hours=int(x))
     
     fcst = fcst.set_index('datetime')
     df_all = df_new.join(fcst, on='datetime')
@@ -309,7 +307,7 @@ def remove_missing_data(fcst, obs):
 
 def make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2, time_domain, variable, filepath, MAE, RMSE, corr, len_fcst, numstations):
    
-    wm = 'w'
+    wm = 'a'
     if "ENS" in model:
         modelpath= model + '/'
     else:
@@ -468,7 +466,9 @@ def model_not_available(model, grid, delta, input_domain, date_entry1, date_entr
                 
         len_fcst = "0/" + str(total_length)
         numstations = "0/" + str(totalstations)
-        wm = 'w'
+        
+        wm = 'a'
+        
         f1 = open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
         read_f1 = np.loadtxt(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f1 and date_entry2 not in read_f1:
@@ -550,7 +550,8 @@ def get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savety
         
         # total stations that should be included in each model/grid
         totalstations = totalstations+1
-         
+        
+        '''
         #when using the "small" domain, only include raw data if KF data also exists at that hour
         if input_domain == "small" and variable in ["SFCTC","SFCWSPD"]:
             all_fcst_KF = get_fcst(station, filepath, variable + '_KF', date_list,filehours, date_entry1, date_entry2)
@@ -565,7 +566,9 @@ def get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savety
                 print(station + " " + model + grid + " fcst KF missing")
 
         else:
-            all_fcst_KF = False
+        '''
+        
+        all_fcst_KF = False
             
         all_fcst = get_fcst(station, filepath, variable, date_list,filehours, date_entry1, date_entry2)    #goes to maxhour       
        

@@ -90,15 +90,15 @@ for i in range(len(model_names)):
 #colors to plot, must be same length (or longer) than models list
 model_colors = ['C0','C1','C2','C3','C4','C5','C6','C7','C8','C9','#ffc219','#CDB7F6','#65fe08','#fc3232','#754200','#00FFFF','#fc23ba','#a1a1a1','#000000','#000000','#000000','#000000']
 
-date_test_file = textfile_folder + '/ENS/MAE_' + str(savetype) + '_SFCTC_60hr_' + input_domain + '.txt'
+date_test_file = textfile_folder + 'ENS/small/SFCTC/MAE_' + str(savetype) + '_SFCTC_60hr_' + input_domain + '.txt'
 
-startdate = np.loadtxt(date_test_file,usecols=0,dtype='str')[0]
-enddate = np.loadtxt(date_test_file,usecols=1,dtype='str')[-1]
+startdate = np.loadtxt(date_test_file,usecols=0,dtype='str')
+enddate = np.loadtxt(date_test_file,usecols=1,dtype='str')
 
-input_startdate = datetime.datetime.strptime(startdate, "%y%m%d").date()
+input_startdate = datetime.datetime.strptime(str(startdate), "%y%m%d").date()
 print_startdate = datetime.datetime.strftime(input_startdate,"%m/%d/%y")
 
-input_enddate = datetime.datetime.strptime(enddate, "%y%m%d").date()
+input_enddate = datetime.datetime.strptime(str(enddate), "%y%m%d").date()
 print_enddate = datetime.datetime.strftime(input_enddate,"%m/%d/%y")
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
@@ -120,12 +120,12 @@ def get_rankings(variable,time_domain):
         
             #ENS only has one grid (and its not saved in a g folder)
             if "ENS" in model:
-                modelpath = model + '/' + input_domain + '/' + savetype + '/' + variable + '/' 
+                modelpath = model + '/' + input_domain +  '/' + variable + '/' 
             else:
-                modelpath = model + '/' + grid + '/'+ input_domain + '/' + savetype + '/' + variable + '/'
+                modelpath = model + '/' + grid + '/'+ input_domain +  '/' + variable + '/'
                 
             MAE_file = textfile_folder +  modelpath + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt"
-           
+            print(MAE_file)           
             #skips time_domains that dont exist for this model
             if os.path.isfile(MAE_file):
 
@@ -138,7 +138,7 @@ def get_rankings(variable,time_domain):
 
                 if count+1 > 1:
 
-                    RMSE_file = textfile_folder +  modelpath + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt"
+                    RMSE_file = textfile_folder +  modelpath  + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt"
                     RMSE_list = np.loadtxt(RMSE_file,usecols=2,dtype=float)
                     
                     corr_file = textfile_folder +  modelpath + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt"
@@ -298,8 +298,7 @@ def get_obs_dates(time_domain):
     return(obs_dates)     
 
 def make_leaderboard_sorted(var, var_name, var_unit, time_domain, time_label,MAE,RMSE,corr,num_weeks,missing_weeks,edited_modelnames,modelnames,stat_type):     
-
-
+    print(MAE)
     MAE_sorted, modelnames_MAE, colors_MAE = zip(*sorted(zip(MAE[0], MAE['edited_names'],MAE['colors']),reverse=True))
     RMSE_sorted, modelnames_RMSE, colors_RMSE = zip(*sorted(zip(RMSE[0], RMSE['edited_names'], RMSE['colors']),reverse=True))
     corr_sorted, modelnames_corr, colors_corr = zip(*sorted(zip(corr[0], corr['edited_names'], corr['colors']),reverse=True))
@@ -386,10 +385,10 @@ def main(args):
         
             #these returned variables are lists that contain one stat for each model (so length=#num of models)
             MAE,RMSE,corr,modelnames,modelcolors = get_rankings(var,time_domain)
-
+            
             MAE_avg,RMSE_avg,corr_avg,num_weeks_avg,missing_weeks_avg,edited_modelnames_avg = get_ranking_mean(MAE,RMSE,corr,modelnames,modelcolors)
             MAE_med,RMSE_med,corr_med,num_weeks_med,missing_weeks_med,edited_modelnames_med = get_ranking_med(MAE,RMSE,corr,modelnames,modelcolors)
-
+            
             make_leaderboard_sorted(var, variable_names[var_i], variable_units[var_i], time_domain,time_label, MAE_avg,RMSE_avg,corr_avg,num_weeks_avg,missing_weeks_avg,edited_modelnames_avg, modelnames,"average")
             make_leaderboard_sorted(var, variable_names[var_i], variable_units[var_i], time_domain,time_label, MAE_med,RMSE_med,corr_med,num_weeks_med,missing_weeks_med,edited_modelnames_med, modelnames,"median")
 
