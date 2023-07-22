@@ -51,6 +51,11 @@ textfile_folder = '/verification/Statistics/'
 domain = 'small' # choose small or large domain
 variables = ['SFCTC', 'SFCWSPD', 'PCPTOT']
 
+precip_threshold = 100
+wind_threshold = 100
+temp_min = -60
+temp_max = 60 
+
 station_df = pd.read_csv(station_file)
 
 stations_with_SFCTC = np.array(station_df.query("SFCTC==1")["Station ID"],dtype=str)
@@ -103,11 +108,15 @@ def plot_station_data(obs_all, variable, station_list):
     plot = ax.boxplot(obs_all)
     ax.set(title = variable + " distribution for all stations " + domain + " domain")
     ax.set_xticklabels(station_list, rotation=90)
+    
     if variable == 'SFCTC':
-        plt.ylim([-60,60])
+        plt.ylim([temp_min,temp_max])
 
-    else:
-        plt.ylim([0,100])
+    elif variable == 'PCPTOT':
+        plt.ylim([0,precip_threshold])
+    
+    elif variable == 'SFCWSPD':
+        plt.ylim([0,wind_threshold])
 
     plt.savefig('img/'+variable+'.png')
 
@@ -117,8 +126,24 @@ def data_quantity(station_list, len_all):
         if percent_of_data < 90:
             print(station_list[x] + " contains " + str(percent_of_data) + "% data")
 
-#def contains_outliers(station_list, variable):
+def contains_outliers(station_list, variable, obs_all):
     
+    for x in range(len(obs_all)):
+        if variable == 'SFCTC':
+            if obs_all[x] > temp_max:
+                print(station_list[x] + "recorded a temperature of " + obs_all[x] + "which exceeds the threshold")
+
+            elif obs_all[x] < temp_min:
+                  print(station_list[x] + "recorded a temperature of " + obs_all[x] + "which exceeds the threshold")
+        
+        elif variable == 'SFCWSPD':
+            if obs_all[x] > wind_threshold:
+                print(station_list[x] + "recorded a wind speed of " + obs_all[x] + "which exceeds the threshold")
+
+        elif variable == 'PCPTOT':
+            if obs_all[x] > precip_threshold:
+                print(station_list[x] + "recorded a precipitation total of " + obs_all[x] + "which exceeds the threshold")
+
 def main(args):
 
     for variable in variables:
@@ -126,6 +151,7 @@ def main(args):
         obs_all, station_list, len_all = get_station_data(variable)
         plot_station_data(obs_all, variable, station_list)
         data_quantity(station_list, len_all)
+        contains_outliers(station_list, variable, obs_all)
 
 if __name__ == "__main__":
     main(sys.argv)
