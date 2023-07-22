@@ -103,7 +103,12 @@ def plot_station_data(obs_all, variable, station_list):
     plot = ax.boxplot(obs_all)
     ax.set(title = variable + " distribution for all stations " + domain + " domain")
     ax.set_xticklabels(station_list, rotation=90)
-    plt.ylim([-60,60])
+    if variable == 'SFCTC':
+        plt.ylim([-60,60])
+
+    else:
+        plt.ylim([0,100])
+
     plt.savefig('img/'+variable+'.png')
 
 def data_quantity(station_list, len_all):
