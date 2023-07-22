@@ -99,22 +99,25 @@ def get_station_data(variable):
 
 def plot_station_data(obs_all, variable, station_list):
 
-    fig, ax = plt.subplots(figsize=(40,6))
+    fig, ax = plt.subplots(figsize=(50,6))
     plot = ax.boxplot(obs_all)
     ax.set(title = variable + " distribution for all stations " + domain + " domain")
     ax.set_xticklabels(station_list, rotation=90)
-    plt.ylim([-50,50])
+    plt.ylim([-60,60])
     plt.savefig('img/'+variable+'.png')
 
 def data_quantity(station_list, len_all):
-    for x in len_all:
-        if x/tot_hours < 0.9:
-            print
-            print(station_list[x] + "contains less than 90%' of data")
+    for x in range(len(len_all)):
+        percent_of_data = int(len_all[x]/tot_hours * 100)
+        if percent_of_data < 90:
+            print(station_list[x] + " contains " + str(percent_of_data) + "% data")
 
+#def contains_outliers(station_list, variable):
+    
 def main(args):
 
     for variable in variables:
+        print("Now on ...... " + variable)
         obs_all, station_list, len_all = get_station_data(variable)
         plot_station_data(obs_all, variable, station_list)
         data_quantity(station_list, len_all)
