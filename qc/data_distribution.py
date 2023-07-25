@@ -51,10 +51,10 @@ textfile_folder = '/verification/Statistics/'
 domain = 'small' # choose small or large domain
 variables = ['SFCTC', 'SFCWSPD', 'PCPTOT']
 
-precip_threshold = 100
-wind_threshold = 100
-temp_min = -60
-temp_max = 60 
+precip_threshold = 250 #recorded at Buffalo Gap 1961 https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/floods/events-prairie-provinces.html
+wind_threshold = 400 #recorded Edmonton, AB 1987 http://wayback.archive-it.org/7084/20170925152846/https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=6A4A3AC5-1#tab5
+temp_min = -63 #recorded in Snag, YT 1947 http://wayback.archive-it.org/7084/20170925152846/https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=6A4A3AC5-1#tab5
+temp_max = 49.6 #recorded in Lytton, BC 2021 https://www.canada.ca/en/environment-climate-change/services/top-ten-weather-stories/2021.html#toc2
 
 station_df = pd.read_csv(station_file)
 
@@ -130,19 +130,19 @@ def contains_outliers(station_list, variable, obs_all):
     
     for x in range(len(obs_all)):
         if variable == 'SFCTC':
-            if obs_all[x] > temp_max:
-                print(station_list[x] + "recorded a temperature of " + obs_all[x] + "which exceeds the threshold")
+            if max(obs_all[x]) > temp_max:
+                print(station_list[x] + " recorded a temperature of " + str(max(obs_all[x])) + " which exceeds the threshold")
 
-            elif obs_all[x] < temp_min:
-                  print(station_list[x] + "recorded a temperature of " + obs_all[x] + "which exceeds the threshold")
+            elif max(obs_all[x]) < temp_min:
+                  print(station_list[x] + " recorded a temperature of " + str(max(obs_all[x])) + " which exceeds the threshold")
         
         elif variable == 'SFCWSPD':
-            if obs_all[x] > wind_threshold:
-                print(station_list[x] + "recorded a wind speed of " + obs_all[x] + "which exceeds the threshold")
+            if max(obs_all[x]) > wind_threshold:
+                print(station_list[x] + " recorded a wind speed of " + str(max(obs_all[x])) + " which exceeds the threshold")
 
         elif variable == 'PCPTOT':
-            if obs_all[x] > precip_threshold:
-                print(station_list[x] + "recorded a precipitation total of " + obs_all[x] + "which exceeds the threshold")
+            if max(obs_all[x]) > precip_threshold:
+                print(station_list[x] + " recorded a precipitation total of " + str(max(obs_all[x])) + " which exceeds the threshold")
 
 def main(args):
 

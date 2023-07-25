@@ -1,4 +1,4 @@
-Performing WEEKLY calculation for 211029 to 211104
+Performing WEEKLY calculation for 220121 to 220127
 Reading observational dataframe for PCPTOT.. 
     Now on station 3320
     Now on station 679
@@ -186,12 +186,9 @@ Now on.. WRF3ARPEGE_g2 for PCPTOT
 Now on.. WRF3ARPEGE_g3 for PCPTOT
 Now on.. WRF4ICON_g2 for PCPTOT
 Now on.. WRF4ICON_g3 for PCPTOT
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g2 (check_dates flag)
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g3 (check_dates flag)
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g4 (check_dates flag)
+Now on.. WRF4NAM_g2 for PCPTOT
+Now on.. WRF4NAM_g3 for PCPTOT
+Now on.. WRF4NAM_g4 for PCPTOT
 Now on.. NMM3NAM_g2 for PCPTOT
 Now on.. NMM3NAM_g3 for PCPTOT
 Now on.. NMM3NAM_g4 for PCPTOT

@@ -1,4 +1,4 @@
-Performing WEEKLY calculation for 211029 to 211104
+Performing WEEKLY calculation for 220121 to 220127
 Reading observational dataframe for SFCWSPD_KF.. 
     Now on station 2162
     Now on station 1972
@@ -276,136 +276,25 @@ Now on.. MM5G_g5 for SFCWSPD_KF
 Now on.. WRF3GEM_g2 for SFCWSPD_KF
 Now on.. WRF3GEM_g3 for SFCWSPD_KF
 Now on.. WRF3GEM_g4 for SFCWSPD_KF
-   Skipping station 0402 (No forecast data)
-   Skipping station 0397 (No forecast data)
-   Skipping station 0404 (No forecast data)
-   Skipping station 0400 (No forecast data)
-   Skipping station 0403 (No forecast data)
-   Skipping station 0413 (No forecast data)
-   Skipping station 0395 (No forecast data)
-   Skipping station 0412 (No forecast data)
-   Skipping station 0410 (No forecast data)
-   Skipping station 3341 (No forecast data)
-   Skipping station 0392 (No forecast data)
-   Skipping station 0407 (No forecast data)
-   Skipping station 0406 (No forecast data)
-   Skipping station 0401 (No forecast data)
-   Skipping station 0396 (No forecast data)
-   Skipping station 0399 (No forecast data)
-   Skipping station 0398 (No forecast data)
-   Skipping station 0411 (No forecast data)
 Now on.. WRF3NAM_g2 for SFCWSPD_KF
 Now on.. WRF3NAM_g3 for SFCWSPD_KF
 Now on.. WRF3NAM_g4 for SFCWSPD_KF
 Now on.. WRF3GFS_g2 for SFCWSPD_KF
 Now on.. WRF3GFS_g3 for SFCWSPD_KF
 Now on.. WRF3GFS_g4 for SFCWSPD_KF
-   Skipping station 0402 (No forecast data)
-   Skipping station 0397 (No forecast data)
-   Skipping station 0404 (No forecast data)
-   Skipping station 0400 (No forecast data)
-   Skipping station 0403 (No forecast data)
-   Skipping station 0413 (No forecast data)
-   Skipping station 0395 (No forecast data)
-   Skipping station 0412 (No forecast data)
-   Skipping station 0410 (No forecast data)
-   Skipping station 3341 (No forecast data)
-   Skipping station 0392 (No forecast data)
-   Skipping station 0407 (No forecast data)
-   Skipping station 0406 (No forecast data)
-   Skipping station 0401 (No forecast data)
-   Skipping station 0396 (No forecast data)
-   Skipping station 0399 (No forecast data)
-   Skipping station 0398 (No forecast data)
-   Skipping station 0411 (No forecast data)
 Now on.. WRF3GFS_g5 for SFCWSPD_KF
-   Skipping station 0402 (No forecast data)
-   Skipping station 0397 (No forecast data)
-   Skipping station 0404 (No forecast data)
-   Skipping station 0400 (No forecast data)
-   Skipping station 0403 (No forecast data)
-   Skipping station 0413 (No forecast data)
-   Skipping station 0395 (No forecast data)
-   Skipping station 0412 (No forecast data)
-   Skipping station 0410 (No forecast data)
-   Skipping station 3341 (No forecast data)
-   Skipping station 0392 (No forecast data)
-   Skipping station 0407 (No forecast data)
-   Skipping station 0406 (No forecast data)
-   Skipping station 0401 (No forecast data)
-   Skipping station 0396 (No forecast data)
-   Skipping station 0399 (No forecast data)
-   Skipping station 0398 (No forecast data)
-   Skipping station 0411 (No forecast data)
 Now on.. WRF3NAVGEM_g2 for SFCWSPD_KF
-   Skipping station 0402 (No forecast data)
-   Skipping station 0397 (No forecast data)
-   Skipping station 0404 (No forecast data)
-   Skipping station 0400 (No forecast data)
-   Skipping station 0403 (No forecast data)
-   Skipping station 0413 (No forecast data)
-   Skipping station 0395 (No forecast data)
-   Skipping station 0412 (No forecast data)
-   Skipping station 0410 (No forecast data)
-   Skipping station 3341 (No forecast data)
-   Skipping station 0392 (No forecast data)
-   Skipping station 0407 (No forecast data)
-   Skipping station 0406 (No forecast data)
-   Skipping station 0401 (No forecast data)
-   Skipping station 0396 (No forecast data)
-   Skipping station 0399 (No forecast data)
-   Skipping station 0398 (No forecast data)
-   Skipping station 0411 (No forecast data)
 Now on.. WRF3NAVGEM_g3 for SFCWSPD_KF
-   Skipping station 0402 (No forecast data)
-   Skipping station 0397 (No forecast data)
-   Skipping station 0404 (No forecast data)
-   Skipping station 0400 (No forecast data)
-   Skipping station 0403 (No forecast data)
-   Skipping station 0413 (No forecast data)
-   Skipping station 0395 (No forecast data)
-   Skipping station 0412 (No forecast data)
-   Skipping station 0410 (No forecast data)
-   Skipping station 3341 (No forecast data)
-   Skipping station 0392 (No forecast data)
-   Skipping station 0407 (No forecast data)
-   Skipping station 0406 (No forecast data)
-   Skipping station 0401 (No forecast data)
-   Skipping station 0396 (No forecast data)
-   Skipping station 0399 (No forecast data)
-   Skipping station 0398 (No forecast data)
-   Skipping station 0411 (No forecast data)
 Now on.. WRF3NAVGEM_g4 for SFCWSPD_KF
-   Skipping station 0402 (No forecast data)
-   Skipping station 0397 (No forecast data)
-   Skipping station 0404 (No forecast data)
-   Skipping station 0400 (No forecast data)
-   Skipping station 0403 (No forecast data)
-   Skipping station 0413 (No forecast data)
-   Skipping station 0395 (No forecast data)
-   Skipping station 0412 (No forecast data)
-   Skipping station 0410 (No forecast data)
-   Skipping station 3341 (No forecast data)
-   Skipping station 0392 (No forecast data)
-   Skipping station 0407 (No forecast data)
-   Skipping station 0406 (No forecast data)
-   Skipping station 0401 (No forecast data)
-   Skipping station 0396 (No forecast data)
-   Skipping station 0399 (No forecast data)
-   Skipping station 0398 (No forecast data)
-   Skipping station 0411 (No forecast data)
 Now on.. WRF3GFSgc01_g2 for SFCWSPD_KF
 Now on.. WRF3GFSgc01_g3 for SFCWSPD_KF
 Now on.. WRF3ARPEGE_g2 for SFCWSPD_KF
 Now on.. WRF3ARPEGE_g3 for SFCWSPD_KF
 Now on.. WRF4ICON_g2 for SFCWSPD_KF
 Now on.. WRF4ICON_g3 for SFCWSPD_KF
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g2 (check_dates flag)
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g3 (check_dates flag)
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g4 (check_dates flag)
+Now on.. WRF4NAM_g2 for SFCWSPD_KF
+Now on.. WRF4NAM_g3 for SFCWSPD_KF
+Now on.. WRF4NAM_g4 for SFCWSPD_KF
 Now on.. NMM3NAM_g2 for SFCWSPD_KF
 Now on.. NMM3NAM_g3 for SFCWSPD_KF
 Now on.. NMM3NAM_g4 for SFCWSPD_KF

@@ -1,4 +1,4 @@
-Performing WEEKLY calculation for 211029 to 211104
+Performing WEEKLY calculation for 220121 to 220127
 Reading observational dataframe for SFCTC.. 
     Now on station 2162
     Now on station 1972
@@ -70,8 +70,6 @@ Reading observational dataframe for SFCTC..
     Now on station 584
     Now on station 658
     Now on station 675
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
     Now on station 402
     Now on station 397
     Now on station 404
@@ -111,11 +109,7 @@ Reading observational dataframe for SFCTC..
     Now on station 587
     Now on station 3583
     Now on station 636
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
     Now on station 2065
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
     Now on station 3545
     Now on station 3591
     Now on station 3599
@@ -162,8 +156,6 @@ Reading observational dataframe for SFCTC..
     Now on station 634
     Now on station 637
     Now on station 567
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
     Now on station 3554
     Now on station 3575
     Now on station 611
@@ -305,358 +297,185 @@ Reading observational dataframe for SFCTC..
     Now on station 691
     Now on station 694
 Now on.. MM5_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. MM5_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. MM5_g4 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. MM5G_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. MM5G_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. MM5G_g4 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 0639 (No obs data)
 Now on.. MM5G_g5 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
 Now on.. WRF3GEM_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GEM_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GEM_g4 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3NAM_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3NAM_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3NAM_g4 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GFS_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GFS_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GFS_g4 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GFS_g5 for SFCTC
 Now on.. WRF3NAVGEM_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3NAVGEM_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3NAVGEM_g4 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GFSgc01_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3GFSgc01_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3ARPEGE_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF3ARPEGE_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF4ICON_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF4ICON_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g2 (check_dates flag)
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g3 (check_dates flag)
-    Model collection started 20211108, which is after input start_date
-   Skipping model WRF4NAM_g4 (check_dates flag)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+Now on.. WRF4NAM_g2 for SFCTC
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
+Now on.. WRF4NAM_g3 for SFCTC
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
+Now on.. WRF4NAM_g4 for SFCTC
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. NMM3NAM_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. NMM3NAM_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. NMM3NAM_g4 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. NMM3GFS_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. NMM3GFS_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2NAM_g1 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. WRF2NAM_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2NAM_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2NAM81_g1 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. WRF2NAM81_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2NAM81_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2GFS_g1 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. WRF2GFS_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2GFS_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2GFS81_g1 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. WRF2GFS81_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. WRF2GFS81_g3 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
     Model collection started 20220306, which is after input start_date
    Skipping model WRF4RDPS_g3 (check_dates flag)
     Model collection started 20220306, which is after input start_date
@@ -664,72 +483,31 @@ Now on.. WRF2GFS81_g3 for SFCTC
     Model collection started 20220306, which is after input start_date
    Skipping model WRF4RDPS_g5 (check_dates flag)
 Now on.. MPAS25_g1 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. MPAS25_g2 for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. ENS for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. ENS_lr for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
 Now on.. ENS_hr for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 3547 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 3572 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0688 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0705 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2745 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0696 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0703 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0698 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
 Now on.. ENS_LR for SFCTC
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0675 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0636 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 2065 (not enough dates yet)
-    Model collection started 20211203, which is after input start_date
-   Skipping station 0567 (not enough dates yet)
+   Skipping station 3004 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0639 (No obs data)
+   Skipping station 2972 (No obs data)
