@@ -129,20 +129,21 @@ def data_quantity(station_list, len_all):
 def contains_outliers(station_list, variable, obs_all):
     
     for x in range(len(obs_all)):
-        if variable == 'SFCTC':
-            if max(obs_all[x]) > temp_max:
-                print(station_list[x] + " recorded a temperature of " + str(max(obs_all[x])) + " which exceeds the threshold")
+        for i in range(len(obs_all)):
+            if variable == 'SFCTC':
+                if obs_all[x][i] > temp_max:
+                    print(station_list[x] + " recorded a temperature of " + str(max(obs_all[x])) + " which exceeds the threshold")
 
-            elif max(obs_all[x]) < temp_min:
-                  print(station_list[x] + " recorded a temperature of " + str(max(obs_all[x])) + " which exceeds the threshold")
-        
-        elif variable == 'SFCWSPD':
-            if max(obs_all[x]) > wind_threshold:
-                print(station_list[x] + " recorded a wind speed of " + str(max(obs_all[x])) + " which exceeds the threshold")
+                elif obs_all[x][i] < temp_min:
+                    print(station_list[x] + " recorded a temperature of " + str(max(obs_all[x])) + " which exceeds the threshold")
+            
+            elif variable == 'SFCWSPD':
+                if obs_all[x][i] > wind_threshold:
+                    print(station_list[x] + " recorded a wind speed of " + str(max(obs_all[x])) + " which exceeds the threshold")
 
-        elif variable == 'PCPTOT':
-            if max(obs_all[x]) > precip_threshold:
-                print(station_list[x] + " recorded a precipitation total of " + str(max(obs_all[x])) + " which exceeds the threshold")
+            elif variable == 'PCPTOT':
+                if obs_all[x][i] > precip_threshold:
+                    print(station_list[x] + " recorded a precipitation total of " + str(max(obs_all[x])) + " which exceeds the threshold")
 
 def main(args):
 
