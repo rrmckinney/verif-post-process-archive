@@ -1,0 +1,20 @@
+402,BC,Burmount,GVRD
+397,BC,Burnaby Mountain,GVRD
+404,BC,Burnaby North,GVRD
+400,BC,Burnaby South,GVRD
+403,BC,Capitol Hill,GVRD
+413,BC,Central Abbotsford,GVRD
+395,BC,Chilliwack Airport,GVRD
+412,BC,Douglas College,GVRD
+410,BC,Golden Ears Elementary School,GVRD
+409,BC,Hope Airport,GVRD
+3341,BC,Horseshoe Bay,GVRD
+392,BC,Kensington Park,GVRD
+407,BC,Langley Central,GVRD
+406,BC,Mahon Park,GVRD
+401,BC,Meadowlands Elementary School,GVRD
+396,BC,North Delta,GVRD
+399,BC,Richmond South,GVRD
+398,BC,Surrey East,GVRD
+411,BC,Vancouver International Airport,GVRD
+

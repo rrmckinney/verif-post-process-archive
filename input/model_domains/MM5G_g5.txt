@@ -1,0 +1,120 @@
+3320,BC,29th Ave Station,CMBC
+604,BC,Abbotsford Airport (ATI),NAVCAN
+3163,BC,Agassiz,BCHydro
+679,BC,Agassiz CDA (AU8),EC
+414,BC,Alouette Lake forebay,BCHydro
+3544,BC,Ashcroft,EC
+624,BC,Ballenas Island (AU8),EC
+2899,BC,Blackcomb Mountain Base (AU8),EC
+3316,BC,Blanca Loop,CMBC
+431,BC,Bralorne Upper,BCHydro
+434,BC,Bridge R. below Glacier,BCHydro
+402,BC,Burmount,GVRD
+397,BC,Burnaby Mountain,GVRD
+404,BC,Burnaby North,GVRD
+400,BC,Burnaby South,GVRD
+2900,BC,Callaghan Valley (AU8),EC
+581,BC,Campbell River Airport (ATI),NAVCAN
+403,BC,Capitol Hill,GVRD
+413,BC,Central Abbotsford,GVRD
+395,BC,Chilliwack Airport,GVRD
+3584,BC,Clinton A,NAVCAN
+3543,BC,Clinton RCS,EC
+424,BC,Clowhom Falls,BCHydro
+442,BC,Comox Dam forebay,BCHydro
+594,BC,Comox,EC
+415,BC,Coquitlam Lake forebay,BCHydro
+416,BC,Coquitlam R. above Lake,BCHydro
+444,BC,Cruickshank R. near the Mouth,BCHydro
+3548,BC,Cultus Lake,EC
+2795,BC,CWAS,NCEP
+2007,BC,CWEZ,NCEP
+2793,BC,CWQC,NCEP
+426,BC,Daisy Lake Dam,BCHydro
+3545,BC,Delta Burns Bog,EC
+3591,BC,Delta City Hall,UBC_RS
+3599,BC,Delta Firehall no. 3,UBC_RS
+617,BC,Discovery Island CS,EC
+412,BC,Douglas College,GVRD
+445,BC,Elk R. above Campbell Lk.,BCHydro
+446,BC,Elsie Lk. forebay,BCHydro
+2631,BC,Entrance Island,EC
+447,BC,Eric Ck.,BCHydro
+2094,BC,Esquimalt CWPF,NCEP
+645,BC,Esquimalt Harbour (AU8),EC
+417,BC,Gold Ck.,BCHydro
+410,BC,Golden Ears Elementary School,GVRD
+448,BC,Gold River,BCHydro
+3576,BC,Grief Point,EC
+451,BC,Heber River,BCHydro
+3562,BC,Hoep Airport Auto,EC
+409,BC,Hope Airport,GVRD
+589,BC,Hope Airport (AU5),NAVCAN
+3341,BC,Horseshoe Bay,GVRD
+2014,BC,Island Lake,NCEP
+681,BC,Kelp Reef CS,EC
+392,BC,Kensington Park,GVRD
+3522,BC,Kootenay Loop,CMBC
+437,BC,LaJoie Upper,BCHydro
+407,BC,Langley Central,GVRD
+634,BC,Lillooet,EC
+567,BC,Lytton (AU5),NAVCAN
+3554,BC,Lytton,EC
+406,BC,Mahon Park,GVRD
+635,BC,Malahat (AU8),EC
+2061,BC,Malahat CWKH,NCEP
+401,BC,Meadowlands Elementary School,GVRD
+3555,BC,Merritt,EC
+2104,BC,Metchosin CWQK,NCEP
+438,BC,Mission Ridge,BCHydro
+582,BC,Nanaimo Airport (ATI),NAVCAN
+3558,BC,North Cowichan,EC
+396,BC,North Delta,GVRD
+439,BC,North Tyaughton Ck.,BCHydro
+3317,BC,OTC,CMBC
+615,BC,Pam Rocks (AU8),EC
+3578,BC,Pemberton Airport (Wind),EC
+625,BC,Pemberton Airport CS (AU8),NAVCAN
+641,BC,Pitt Meadows (AU8),EC
+654,BC,Point Atkinson CS (AU8),EC
+649,BC,Port Alberni (AU2),EC
+3557,BC,Port Mellon,EC
+3559,BC,Powell River Airport,EC
+593,BC,Powell River Airport (CON),NAVCAN
+586,BC,Princeton Airport (CON),NAVCAN
+646,BC,Princeton (AU8),EC
+3560,BC,Qualicum Beach Airport,EC
+650,BC,Race Rocks (AU8),EC
+399,BC,Richmond South,GVRD
+671,BC,Sand Heads CS (AU8),EC
+3568,BC,Saturna Capmon CS,EC
+2632,BC,Saturna Island,EC
+3561,BC,Sechelt Airport,EC
+3161,BC,Shalalth,BCHydro
+657,BC,Sheringham Pt. (AU8),EC
+626,BC,Sisters Island (AU8),EC
+655,BC,Squamish Airport (AU8),EC
+419,BC,Stave R. above Stave Lk.,BCHydro
+420,BC,Stave R. Upper,BCHydro
+460,BC,Strathcona Dam,BCHydro
+398,BC,Surrey East,GVRD
+579,BC,Tofino Airport (CON),NAVCAN
+3567,BC,Tsawwassen Ferry Auto,EC
+2738,BC,Tsawwassen Firehall (Rooftop),UBC_RS
+4014,BC,UBC Delta Firehall no. 7,UBC_RS
+3510,BC,UBC ESB Rooftop,UBC_RS
+428,BC,Upper Cheakamus,BCHydro
+628,BC,Vancouver Harbour (AU8),EC
+411,BC,Vancouver International Airport,GVRD
+597,BC,Vancouver International Airport (WS3),NAVCAN
+3569,BC,Vancouver Sea Island CCG,EC
+2157,BC,Victoria CWYJ,NCEP
+638,BC,Victoria Gonzales (AU8),EC
+598,BC,Victoria Harbour,NAVCAN
+608,BC,Victoria International Airport,NAVCAN
+676,BC,Victoria University (AU8),EC
+421,BC,Wahleach (Jones) Res.,BCHydro
+673,BC,West Vancouver (AU8),EC
+674,BC,White Rock (AU8),EC
+463,BC,Wolf R. Upper,BCHydro
+440,BC,Bear Ck. Reservoir,BCHydro

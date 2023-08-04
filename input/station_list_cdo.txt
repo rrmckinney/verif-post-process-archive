@@ -1,0 +1,35 @@
+3510,UBC ESB Rooftop,UBC_RS
+3546,Bella Coola,EC
+658,Blue River,EC
+424,Clowhom Falls,BCHydro
+416,Coquitlam,BCHydro
+3583,Dease Lake,NAVCAN
+3551,Fort St James,EC
+417,Gold Creek,BCHydro
+3552,Golden,EC
+3581,Kamloops,EC
+591,Kelowna,NAVCAN
+3555,Merritt,EC
+592,Prince Rupert,NAVCAN
+595,Quesnel,NAVCAN
+597,Vancouver,NAVCAN
+604,Abbotsford,NAVCAN
+679,Agassiz,EC
+583,Castlegar,NAVCAN
+600,Cranbrook,NAVCAN
+631,Creston,EC
+2629,Estevan Point,EC
+606,Fort Nelson,NAVCAN
+601,Fort St John's,NAVCAN
+632,Langara,EC
+607,Penticton,NAVCAN
+610,Port Hardy,NAVCAN
+602,Prince George,NAVCAN
+646,Princeton,EC
+609,Sandspit,NAVCAN
+605,Smithers,NAVCAN
+612,Upper Stewart,NAVCAN
+603,Terrace,NAVCAN
+633,Vernon,EC
+721,Yellowknife NT,NCEP
+

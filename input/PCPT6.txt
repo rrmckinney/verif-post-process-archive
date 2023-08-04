@@ -1,0 +1,121 @@
+604,BC,Abbotsford Airport (ATI),NAVCAN
+679,BC,Agassiz CDA (AU8),EC
+3544,BC,Ashcroft,EC
+624,BC,Ballenas Island (AU8),EC
+3582,BC,Bella Bella Campbell Island,NAVCAN
+3546,BC,Bella Coola Airport,EC
+580,BC,Bella Coola Airport (CON),NAVCAN
+2899,BC,Blackcomb Mountain Base (AU8),EC
+658,BC,Blue River (AU8),EC
+675,BC,Bonilla Island (AU4),EC
+648,BC,Burns Lake CS (AU8),EC
+3547,BC,Burwash RCS,EC
+2900,BC,Callaghan Valley (AU8),EC
+583,BC,Castlegar Airport (W04ATO),NAVCAN
+640,BC,Cathedral Pt. (AU4),EC
+3549,BC,Clearwater Auto,EC
+3584,BC,Clinton A,NAVCAN
+3543,BC,Clinton RCS,EC
+594,BC,Comox,EC
+3570,BC,Cranbrook Airport Auto,EC
+600,BC,Cranbrook Airport (ATI),NAVCAN
+631,BC,Creston,EC
+3548,BC,Cultus Lake,EC
+680,BC,Cumshewa Island (CU8),EC
+587,BC,Dawson Creek Airport (ATI),NAVCAN
+3583,BC,Dease Lake A,NAVCAN
+636,BC,Dease Lake (AU8),NAVCAN
+3545,BC,Delta Burns Bog,EC
+2631,BC,Entrance Island,EC
+645,BC,Esquimalt Harbour (AU8),EC
+683,BC,Fanny Island,EC
+606,BC,Fort Nelson Airport (ATI),NAVCAN
+3550,BC,Fort Nelson,EC
+3551,BC,Fort St. James Auto,EC
+601,BC,Fort St. John Airport (W04ATO),NAVCAN
+3552,BC,Golden Airport,EC
+2630,BC,Grey Islet,EC
+639,BC,Herbert Island (AU4),EC
+629,BC,Holland Rock,EC
+3562,BC,Hoep Airport Auto,EC
+589,BC,Hope Airport (AU5),NAVCAN
+590,BC,Kamloops Airport,NAVCAN
+3581,BC,Kamloops Aut,EC
+591,BC,Kelowna Airport,NAVCAN
+3553,BC,Kelowna UBCO,EC
+651,BC,Kindakun Rocks,EC
+634,BC,Lillooet,EC
+567,BC,Lytton (AU5),NAVCAN
+3554,BC,Lytton,EC
+3575,BC,Mackenzie Airport RCS,EC
+611,BC,Mackenzie Airport (AU5),NAVCAN
+3577,YT,MacMillian Pass,EC
+635,BC,Malahat (AU8),EC
+3579,BC,Margaret Lake,EC
+3585,BC,Massett,NAVCAN
+3555,BC,Merritt,EC
+643,BC,Nakusp (AU8),EC
+642,BC,Nelson (AU8),EC
+3558,BC,North Cowichan,EC
+3566,BC,Ootsa Lakeskins Lake Climate,EC
+678,BC,Osoyoos (AU8),EC
+615,BC,Pam Rocks (AU8),EC
+625,BC,Pemberton Airport CS (AU8),NAVCAN
+607,BC,Penticton Airport (WS3/ATO),NAVCAN
+641,BC,Pitt Meadows (AU8),EC
+610,BC,Port Hardy Airport (W04/ATO),NAVCAN
+3557,BC,Port Mellon,EC
+3559,BC,Powell River Airport,EC
+3571,BC,Prince George Airport Auto,EC
+602,BC,Prince George Airport (WO4),NAVCAN
+3563,BC,Prince George Massey Auto,EC
+592,BC,Prince Rupert Airprot (ATI),NAVCAN
+646,BC,Princeton (AU8),EC
+647,BC,Puntzi Mountain (AU2),EC
+3560,BC,Qualicum Beach Airport,EC
+3564,BC,Quesnel Airport Auto,EC
+595,BC,Quesnel Airport (ATI),NAVCAN
+3565,BC,Revelstoke Airport Auto,EC
+596,BC,Revelstoke Airport (AU5),NAVCAN
+656,BC,Salmon Arm (AU8),EC
+609,BC,Sandspit Airport (AU5),NAVCAN
+622,BC,Sartine Island (AU4),EC
+3568,BC,Saturna Capmon CS,EC
+2632,BC,Saturna Island,EC
+3561,BC,Sechelt Airport,EC
+657,BC,Sheringham Pt. (AU8),EC
+3573,BC,Smithers Airport Auto,EC
+605,BC,Smithers Airport (ATI),NAVCAN
+653,BC,Solander Island (AU4),EC
+627,BC,Sparwood (AU8),EC
+655,BC,Squamish Airport (AU8),EC
+612,BC,Stewart Airport (CON),NAVCAN
+670,BC,Summerland (AU8),EC
+684,BC,Tatlayoko Lake RCS,EC
+603,BC,Terrace Airport (W04/ATO),NAVCAN
+628,BC,Vancouver Harbour (AU8),EC
+597,BC,Vancouver International Airport (WS3),NAVCAN
+3569,BC,Vancouver Sea Island CCG,EC
+633,BC,Vernon (AU8),EC
+638,BC,Victoria Gonzales (AU8),EC
+608,BC,Victoria International Airport,NAVCAN
+676,BC,Victoria University (AU8),EC
+685,BC,Warfield RCS,EC
+3580,YT,Watson Lake Airport,EC
+673,BC,West Vancouver (AU8),EC
+3572,YT,Whitehouse Auto,EC
+674,BC,White Rock (AU8),EC
+599,BC,Williams Lake Airport,NAVCAN
+677,BC,Yoho Park (AU8),EC
+688,YT,Burwash Airport (AWS),NAVCAN
+705,YT,Carmacks (AU7),EC
+701,YT,Dawson City (AU8),EC
+703,YT,Faro (AU2/AWS),EC
+699,YT,Herschel Island (AU8),EC
+700,YT,Ivvavik National Park (AU8),EC
+689,YT,Mayo Airport (AWS),NAVCAN
+706,YT,Old Crow (AU8),EC
+702,YT,Rock River (AU8),EC
+704,YT,Teslin (AU2),EC
+691,YT,Watson Lake Airport,NAVCAN
+

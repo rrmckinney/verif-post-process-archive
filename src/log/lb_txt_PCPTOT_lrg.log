@@ -1,4 +1,4 @@
-Performing WEEKLY calculation for 220114 to 220120
+Performing WEEKLY calculation for 220415 to 220421
 Reading observational dataframe for PCPTOT.. 
     Now on station 3320
     Now on station 679
@@ -164,25 +164,27 @@ Now on.. MM5_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. MM5_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. MM5_g4 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. MM5G_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. MM5G_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. MM5G_g4 for PCPTOT
    Skipping station 0431 (No obs data)
 Now on.. MM5G_g5 for PCPTOT
@@ -191,10 +193,12 @@ Now on.. WRF3GEM_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3GEM_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3GEM_g4 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
@@ -202,23 +206,27 @@ Now on.. WRF3NAM_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3NAM_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3NAM_g4 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3GFS_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3GFS_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3GFS_g4 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
@@ -227,10 +235,12 @@ Now on.. WRF3NAVGEM_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3NAVGEM_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3NAVGEM_g4 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
@@ -238,157 +248,171 @@ Now on.. WRF3GFSgc01_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3GFSgc01_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3ARPEGE_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF3ARPEGE_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF4ICON_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF4ICON_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF4NAM_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF4NAM_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF4NAM_g4 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. NMM3NAM_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. NMM3NAM_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. NMM3NAM_g4 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. NMM3GFS_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. NMM3GFS_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2NAM_g1 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2NAM_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2NAM_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2NAM81_g1 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2NAM81_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2NAM81_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2GFS_g1 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2GFS_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2GFS_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2GFS81_g1 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2GFS81_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. WRF2GFS81_g3 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-    Model collection started 20220306, which is after input start_date
-   Skipping model WRF4RDPS_g3 (check_dates flag)
-    Model collection started 20220306, which is after input start_date
-   Skipping model WRF4RDPS_g4 (check_dates flag)
-    Model collection started 20220306, which is after input start_date
-   Skipping model WRF4RDPS_g5 (check_dates flag)
+   Skipping station 0629 (No obs data)
+Now on.. WRF4RDPS_g3 for PCPTOT
+   Skipping station 0431 (No obs data)
+   Skipping station 0680 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
+Now on.. WRF4RDPS_g4 for PCPTOT
+   Skipping station 0431 (No obs data)
+   Skipping station 0680 (No obs data)
+   Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
+Now on.. WRF4RDPS_g5 for PCPTOT
+   Skipping station 0431 (No obs data)
 Now on.. MPAS25_g1 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. MPAS25_g2 for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. ENS for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. ENS_lr for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. ENS_hr for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
+   Skipping station 0629 (No obs data)
 Now on.. ENS_LR for PCPTOT
    Skipping station 0431 (No obs data)
    Skipping station 0680 (No obs data)
    Skipping station 2630 (No obs data)
-   Skipping station 3579 (No obs data)
-   Skipping station 0702 (No obs data)
+   Skipping station 0629 (No obs data)

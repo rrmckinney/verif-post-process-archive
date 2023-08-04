@@ -9,10 +9,10 @@ conda activate verification
 
 cd /home/verif/verif-post-process/src/
 
-start_date='211008'
-end_date='211014'
+start_date='220204'
+end_date='220210'
 
-while [ $((start_date)) -lt 230724 ] 
+while [ $((start_date)) -lt 230731 ] 
 do
 
         python3 leaderboards-txt-sqlite2.py $start_date $end_date SFCTC small > log/lb_txt_SFCTC_sm.log

@@ -1,0 +1,23 @@
+MM5             g2,g3,g4        36,12,4         60,60,60        MM5NAM
+MM5G            g2,g3,g4,g5     36,12,4,1.3     84,84,84,84     MM5GFS
+WRF3GEM         g2,g3,g4        36,12,4         168,168,84      WRF3GEM
+WRF3NAM         g2,g3,g4        36,12,4         84,84,60        WRF3NAM
+WRF3GFS         g2,g3,g4,g5     36,12,4,1.3     180,180,84,84   WRF3GFS
+WRF3NAVGEM      g2,g3,g4        36,12,4         120,120,84      WRF3NAVGEM
+WRF3GFSgc01     g2,g3           27,9            180,180         WRF3GFSgc
+WRF3ARPEGE      g2,g3           27,9            102,102         WRF3ARPEGE
+WRF4ICON        g2,g3           27,9            180,180         WRF4ICON
+WRF4NAM         g2,g3,g4        36,12,4         84,84,60        WRF4NAM
+NMM3NAM         g2,g3,g4        36,12,4         84,84,84        NMM3NAM
+NMM3GFS         g2,g3           36,12           180,180         NMM3GFS
+WRF2NAM         g1,g2,g3        108,36,12       84,84,84        WRF2NAM
+WRF2NAM81       g1,g2,g3        81,27,9         84,84,84        WRF2NAM
+WRF2GFS         g1,g2,g3        108,36,12       180,180,180     WRF2GFS
+WRF2GFS81       g1,g2,g3        81,27,9         180,180,180     WRF2GFS
+WRF4RDPS        g3,g4,g5        9,3,1           84,84,60        WRF4RDPS
+MPAS25          g1,g2           g1,g2           120,120         MPAS25
+ENS             /               /               180             ENS_(short_range)
+ENS_lr          /               /               180             ENS_(low-res)
+ENS_hr          /               /               84              ENS_(high-res)
+ENS_LR          /               /               180             ENS_(long_range)
+

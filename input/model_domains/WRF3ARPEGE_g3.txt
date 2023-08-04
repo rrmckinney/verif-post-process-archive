@@ -1,0 +1,287 @@
+2162,AB,Banff (Mars),NCEP
+1972,AB,Banff,NCEP
+2155,AB,Bow Valley,NCEP
+1975,AB,Brooks CWBO,NCEP
+2339,AB,Calgary International Airport,NCEP
+2197,AB,Calgary CYBW,NCEP
+2011,AB,Cardston CWFJ,NCEP
+1991,AB,Claresholm CWDK,NCEP
+2265,AB,Cold Lake CYOD,NCEP
+1986,AB,Coronation CWCT,NCEP
+2113,AB,Crowsnest Pass CWRT,NCEP
+2799,AB,CWDU,NCEP
+2019,AB,CWGM,NCEP
+2775,AB,CWNP,NCEP
+3004,AB,CWNR,NCEP
+2962,AB,CWQL,NCEP
+2964,AB,CWQQ,NCEP
+2967,AB,CWRD,NCEP
+2969,AB,CWRV,NCEP
+2791,AB,CWSV,NCEP
+2979,AB,CWVO,NCEP
+2983,AB,CWWO,NCEP
+2992,AB,CZWN,NCEP
+1995,AB,Drumheller CWDZ,NCEP
+2209,AB,Edmonton CYED,NCEP
+2210,AB,Edmonton International Airport,NCEP
+2214,AB,Edson,NCEP
+2027,AB,Esther CWGY,NCEP
+2156,AB,Foremost CWXL,NCEP
+2274,AB,Fort Chipewyan CYPY,NCEP
+2177,AB,Fort McMurray CXMM,NCEP
+2286,AB,Grand Prairie,NCEP
+2266,AB,High Level,NCEP
+2058,AB,Jasper Warden,NCEP
+2066,AB,Lac La Biche CWLB,NCEP
+2282,AB,Lethbridge Airport,NCEP
+2252,AB,Lloydminster CYLL,NCEP
+2332,AB,Medicine Hat Airport,NCEP
+2116,AB,Milk River CWRY,NCEP
+2088,AB,Onefour CWOE,NCEP
+2269,AB,Peace River,NCEP
+2576,AB,Pincher Creek CZPC,NCEP
+2278,AB,Red Deer CYQF,NCEP
+2110,AB,Rocky Mountain House CWRM,NCEP
+2008,AB,Sandy Beach CWFE,NCEP
+2352,AB,Slave Lake CYZH,NCEP
+1971,AB,Sundre CWAV,NCEP
+2032,AB,Three Hills CWHI,NCEP
+2139,AB,Vegreville CWVI,NCEP
+2961,NWT,CWQF,NCEP
+3320,BC,29th Ave Station,CMBC
+604,BC,Abbotsford Airport (ATI),NAVCAN
+3163,BC,Agassiz,BCHydro
+679,BC,Agassiz CDA (AU8),EC
+1969,BC,Alert Bay,NCEP
+414,BC,Alouette Lake forebay,BCHydro
+3544,BC,Ashcroft,EC
+624,BC,Ballenas Island (AU8),EC
+467,BC,Barnes Ck.,BCHydro
+3582,BC,Bella Bella Campbell Island,NAVCAN
+3546,BC,Bella Coola Airport,EC
+580,BC,Bella Coola Airport (CON),NAVCAN
+2899,BC,Blackcomb Mountain Base (AU8),EC
+3316,BC,Blanca Loop,CMBC
+584,BC,Blue River (AU2),NAVCAN
+658,BC,Blue River (AU8),EC
+675,BC,Bonilla Island (AU4),EC
+431,BC,Bralorne Upper,BCHydro
+434,BC,Bridge R. below Glacier,BCHydro
+402,BC,Burmount,GVRD
+397,BC,Burnaby Mountain,GVRD
+404,BC,Burnaby North,GVRD
+400,BC,Burnaby South,GVRD
+648,BC,Burns Lake CS (AU8),EC
+2102,BC,Burns Lake,NCEP
+2900,BC,Callaghan Valley (AU8),EC
+581,BC,Campbell River Airport (ATI),NAVCAN
+3508,BC,Cape Scott Wind,BCHydro
+403,BC,Capitol Hill,GVRD
+583,BC,Castlegar Airport (W04ATO),NAVCAN
+640,BC,Cathedral Pt. (AU4),EC
+413,BC,Central Abbotsford,GVRD
+585,BC,Chetwynd Airport (CON),NAVCAN
+395,BC,Chilliwack Airport,GVRD
+3549,BC,Clearwater Auto,EC
+3584,BC,Clinton A,NAVCAN
+3543,BC,Clinton RCS,EC
+424,BC,Clowhom Falls,BCHydro
+442,BC,Comox Dam forebay,BCHydro
+594,BC,Comox,EC
+415,BC,Coquitlam Lake forebay,BCHydro
+416,BC,Coquitlam R. above Lake,BCHydro
+3570,BC,Cranbrook Airport Auto,EC
+600,BC,Cranbrook Airport (ATI),NAVCAN
+631,BC,Creston,EC
+3156,BC,Creston,BCHydro
+444,BC,Cruickshank R. near the Mouth,BCHydro
+3548,BC,Cultus Lake,EC
+680,BC,Cumshewa Island (CU8),EC
+2795,BC,CWAS,NCEP
+2007,BC,CWEZ,NCEP
+2793,BC,CWQC,NCEP
+2106,BC,CWQS,NCEP
+2114,BC,CWRU,NCEP
+2746,BC,CYDQ,NCEP
+426,BC,Daisy Lake Dam,BCHydro
+587,BC,Dawson Creek Airport (ATI),NAVCAN
+3583,BC,Dease Lake A,NAVCAN
+636,BC,Dease Lake (AU8),NAVCAN
+2065,BC,Dease Lake,NCEP
+3545,BC,Delta Burns Bog,EC
+3591,BC,Delta City Hall,UBC_RS
+3599,BC,Delta Firehall no. 3,UBC_RS
+617,BC,Discovery Island CS,EC
+412,BC,Douglas College,GVRD
+3157,BC,Duncan Lake Dam,BCHydro
+445,BC,Elk R. above Campbell Lk.,BCHydro
+446,BC,Elsie Lk. forebay,BCHydro
+2631,BC,Entrance Island,EC
+447,BC,Eric Ck.,BCHydro
+2094,BC,Esquimalt CWPF,NCEP
+645,BC,Esquimalt Harbour (AU8),EC
+2629,BC,Estevan Point,EC
+683,BC,Fanny Island,EC
+3158,BC,Fauquier,BCHydro
+495,BC,Finlay R. above Akie R.,BCHydro
+606,BC,Fort Nelson Airport (ATI),NAVCAN
+3550,BC,Fort Nelson,EC
+3551,BC,Fort St. James Auto,EC
+601,BC,Fort St. John Airport (W04ATO),NAVCAN
+3164,BC,Germansen Landing,BCHydro
+496,BC,GMS Hudson's Hope,BCHydro
+417,BC,Gold Ck.,BCHydro
+3552,BC,Golden Airport,EC
+588,BC,Golden Airport (CON),NAVCAN
+3162,BC,Golden,BCHydro
+410,BC,Golden Ears Elementary School,GVRD
+448,BC,Gold River,BCHydro
+2630,BC,Grey Islet,EC
+3576,BC,Grief Point,EC
+497,BC,Halfway R. at Farrell Ck.,BCHydro
+451,BC,Heber River,BCHydro
+2033,BC,Helca Island,NCEP
+639,BC,Herbert Island (AU4),EC
+629,BC,Holland Rock,EC
+3562,BC,Hoep Airport Auto,EC
+409,BC,Hope Airport,GVRD
+589,BC,Hope Airport (AU5),NAVCAN
+498,BC,Horn Ck.,BCHydro
+3341,BC,Horseshoe Bay,GVRD
+499,BC,Ingenika R. above Swannell R.,BCHydro
+2014,BC,Island Lake,NCEP
+590,BC,Kamloops Airport,NAVCAN
+3581,BC,Kamloops Aut,EC
+591,BC,Kelowna Airport,NAVCAN
+3553,BC,Kelowna UBCO,EC
+681,BC,Kelp Reef CS,EC
+392,BC,Kensington Park,GVRD
+651,BC,Kindakun Rocks,EC
+3522,BC,Kootenay Loop,CMBC
+3310,BC,Kootenay NP West Gate,BCHydro
+500,BC,Kwadacha North,BCHydro
+437,BC,LaJoie Upper,BCHydro
+632,BC,Langara CS (AU8),EC
+407,BC,Langley Central,GVRD
+634,BC,Lillooet,EC
+637,BC,Lucy Island (AU8),EC
+567,BC,Lytton (AU5),NAVCAN
+3554,BC,Lytton,EC
+3575,BC,Mackenzie Airport RCS,EC
+611,BC,Mackenzie Airport (AU5),NAVCAN
+406,BC,Mahon Park,GVRD
+635,BC,Malahat (AU8),EC
+2061,BC,Malahat CWKH,NCEP
+3585,BC,Massett,NAVCAN
+502,BC,McQue Terrace,BCHydro
+401,BC,Meadowlands Elementary School,GVRD
+3555,BC,Merritt,EC
+2104,BC,Metchosin CWQK,NCEP
+3311,BC,Mica Dam,BCHydro
+438,BC,Mission Ridge,BCHydro
+486,BC,Molson Creek,BCHydro
+487,BC,Morrissey Ridge,BCHydro
+488,BC,Mount Revelstoke,BCHydro
+643,BC,Nakusp (AU8),EC
+582,BC,Nanaimo Airport (ATI),NAVCAN
+642,BC,Nelson (AU8),EC
+3558,BC,North Cowichan,EC
+396,BC,North Delta,GVRD
+439,BC,North Tyaughton Ck.,BCHydro
+2074,BC,Ocean Falls CWME,NCEP
+3566,BC,Ootsa Lakeskins Lake Climate,EC
+678,BC,Osoyoos (AU8),EC
+3317,BC,OTC,CMBC
+615,BC,Pam Rocks (AU8),EC
+3578,BC,Pemberton Airport (Wind),EC
+625,BC,Pemberton Airport CS (AU8),NAVCAN
+607,BC,Penticton Airport (WS3/ATO),NAVCAN
+513,BC,Pine Pass,BCHydro
+641,BC,Pitt Meadows (AU8),EC
+654,BC,Point Atkinson CS (AU8),EC
+649,BC,Port Alberni (AU2),EC
+610,BC,Port Hardy Airport (W04/ATO),NAVCAN
+3557,BC,Port Mellon,EC
+3559,BC,Powell River Airport,EC
+593,BC,Powell River Airport (CON),NAVCAN
+3571,BC,Prince George Airport Auto,EC
+602,BC,Prince George Airport (WO4),NAVCAN
+3563,BC,Prince George Massey Auto,EC
+592,BC,Prince Rupert Airprot (ATI),NAVCAN
+586,BC,Princeton Airport (CON),NAVCAN
+646,BC,Princeton (AU8),EC
+647,BC,Puntzi Mountain (AU2),EC
+3560,BC,Qualicum Beach Airport,EC
+3507,BC,Quality Wind,BCHydro
+3564,BC,Quesnel Airport Auto,EC
+595,BC,Quesnel Airport (ATI),NAVCAN
+650,BC,Race Rocks (AU8),EC
+3565,BC,Revelstoke Airport Auto,EC
+596,BC,Revelstoke Airport (AU5),NAVCAN
+399,BC,Richmond South,GVRD
+3160,BC,Roger's Pass,BCHydro
+652,BC,Rose Spit (AU4),EC
+656,BC,Salmon Arm (AU8),EC
+671,BC,Sand Heads CS (AU8),EC
+3574,BC,Sandspit Airport Auto,EC
+609,BC,Sandspit Airport (AU5),NAVCAN
+622,BC,Sartine Island (AU4),EC
+3568,BC,Saturna Capmon CS,EC
+2632,BC,Saturna Island,EC
+2172,BC,Sayward CXFA,NCEP
+3561,BC,Sechelt Airport,EC
+3161,BC,Shalalth,BCHydro
+657,BC,Sheringham Pt. (AU8),EC
+626,BC,Sisters Island (AU8),EC
+3573,BC,Smithers Airport Auto,EC
+605,BC,Smithers Airport (ATI),NAVCAN
+653,BC,Solander Island (AU4),EC
+627,BC,Sparwood (AU8),EC
+571,BC,Sparwood/Elk Valley (CON),NAVCAN
+655,BC,Squamish Airport (AU8),EC
+419,BC,Stave R. above Stave Lk.,BCHydro
+420,BC,Stave R. Upper,BCHydro
+612,BC,Stewart Airport (CON),NAVCAN
+460,BC,Strathcona Dam,BCHydro
+670,BC,Summerland (AU8),EC
+398,BC,Surrey East,GVRD
+684,BC,Tatlayoko Lake RCS,EC
+603,BC,Terrace Airport (W04/ATO),NAVCAN
+579,BC,Tofino Airport (CON),NAVCAN
+3567,BC,Tsawwassen Ferry Auto,EC
+2738,BC,Tsawwassen Firehall (Rooftop),UBC_RS
+4014,BC,UBC Delta Firehall no. 7,UBC_RS
+3510,BC,UBC ESB Rooftop,UBC_RS
+428,BC,Upper Cheakamus,BCHydro
+628,BC,Vancouver Harbour (AU8),EC
+411,BC,Vancouver International Airport,GVRD
+597,BC,Vancouver International Airport (WS3),NAVCAN
+3569,BC,Vancouver Sea Island CCG,EC
+633,BC,Vernon (AU8),EC
+2157,BC,Victoria CWYJ,NCEP
+638,BC,Victoria Gonzales (AU8),EC
+598,BC,Victoria Harbour,NAVCAN
+608,BC,Victoria International Airport,NAVCAN
+676,BC,Victoria University (AU8),EC
+421,BC,Wahleach (Jones) Res.,BCHydro
+685,BC,Warfield RCS,EC
+3580,YT,Watson Lake Airport,EC
+673,BC,West Vancouver (AU8),EC
+674,BC,White Rock (AU8),EC
+599,BC,Williams Lake Airport,NAVCAN
+463,BC,Wolf R. Upper,BCHydro
+519,BC,Wonowon,BCHydro
+677,BC,Yoho Park (AU8),EC
+1725,NWT,Fort Providence CWID,NCEP
+721,NWT,Yellowknife CYZF,NCEP
+2235,NWT,Hay River CYHY,NCEP
+2782,NWT,CWBJ,NCEP
+2801,NWT,CWMT,NCEP
+2220,NWT,Fort Simpson,NCEP
+2303,NWT,Fort Smith Airport,NCEP
+440,BC,Bear Ck. Reservoir,BCHydro
+2946,NWT,CWJL,NCEP
+2974,NWT,CWTE,NCEP
+695,YT,Teslin Airport (AWS),NAVCAN
+704,YT,Teslin (AU2),EC
+691,YT,Watson Lake Airport,NAVCAN

@@ -34,13 +34,26 @@ obs_filepath = "/verification/Observations/"
 fcst_filepath = "/verification/Forecasts/"
 
 #description file for stations
-station_file = '/home/verif/verif-get-data/input/station_list_master.txt'
+station_file = '/home/verif/verif-post-process/input/station_list_master.txt'
 
 #description file for models
-models_file = '/home/verif/verif-get-data/input/model_list.txt'
+models_file = '/home/verif/verif-post-process/input/model_list.txt'
 
 #folder where the stats save
 textfile_folder = '/verification/Statistics/'
+
+#editting mode for textfile
+
+wm = 'a'
+###########################################################
+### -------------------- INPUTS -- ------------------------
+###########################################################
+
+# thresholds for discluding erroneous data 
+precip_threshold = 250 #recorded at Buffalo Gap 1961 https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/floods/events-prairie-provinces.html
+wind_threshold = 400 #recorded Edmonton, AB 1987 http://wayback.archive-it.org/7084/20170925152846/https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=6A4A3AC5-1#tab5
+temp_min = -63 #recorded in Snag, YT 1947 http://wayback.archive-it.org/7084/20170925152846/https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=6A4A3AC5-1#tab5
+temp_max = 49.6 #recorded in Lytton, BC 2021 https://www.canada.ca/en/environment-climate-change/services/top-ten-weather-stories/2021.html#toc2
 
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
@@ -234,6 +247,23 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
         df_all = df_new.join(obs, on='datetime')
         
         obs_all = df_all['Val']
+        # remove data that falls outside the physical bounds (higher than the verified records for Canada
+        for i in range(len(obs_all)):
+            
+            if variable == 'SFCTC_KF' or variable == 'SFCTC':
+                if obs_all[i] > temp_max:
+                    obs_all[i] = np.nan
+                if obs_all[i] < temp_min:
+                    obs_all[i] = np.nan
+            
+            if variable == 'SFCWSPD_KF' or variable == 'SFCWSPD':
+                if obs_all[i] > wind_threshold:
+                    obs_all[i] = np.nan
+            
+            if variable == 'PCPTOT':
+                if obs_all[i] > precip_threshold:
+                    obs_all[i] = np.nan
+ 
         hr60_obs = obs_all[:60]     #84 x 7   (30) 
         hr84_obs = obs_all[:84]     #84 x 7   (30)     
         hr120_obs = obs_all[:120]   #120 x 7  (30) 
@@ -307,7 +337,6 @@ def remove_missing_data(fcst, obs):
 
 def make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2, time_domain, variable, filepath, MAE, RMSE, corr, len_fcst, numstations):
    
-    wm = 'a'
     if "ENS" in model:
         modelpath= model + '/'
     else:
@@ -467,7 +496,6 @@ def model_not_available(model, grid, delta, input_domain, date_entry1, date_entr
         len_fcst = "0/" + str(total_length)
         numstations = "0/" + str(totalstations)
         
-        wm = 'a'
         
         f1 = open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
         read_f1 = np.loadtxt(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
