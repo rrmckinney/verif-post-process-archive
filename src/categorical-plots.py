@@ -30,13 +30,13 @@ warnings.filterwarnings("ignore",category=RuntimeWarning)
 #save_folder = '/www/results/verification/images/leaderboards/'
 
 #location to save the images internally
-save_folder = "/home/verif/verif-post-process/src/img"
+save_folder = "/home/verif/verif-post-process/src/img/"
 
 #description file for stations
 station_file = '/home/verif/verif-post-process/input/station_list.txt'
 
 #description file for models
-models_file = '/home/verif/verif-get-data/input/model_list.txt'
+models_file = '/home/verif/verif-post-process/input/model_list.txt'
 
 textfile_folder = '/verification/Statistics/'
 
@@ -88,9 +88,9 @@ time_labels = ['outlook hours 1-60','outlook hours 1-84','outlook hours 1-120','
 
 #stations = np.loadtxt(station_file,usecols=0,delimiter=',',dtype='str')
 
-variables = ['PCPTOT', 'SFCWSPD_KF', 'SFCWSPD', 'PCPT6','PCPT24']
-variable_names = ['Hourly Precipitation', 'Wind Speed-KF ', 'Wind Speed-Raw', '6-Hour Accumulated Precipitation', '24-Hour Accumulated Precipitation']
-variable_units = ['[mm/hr]','[km/hr]','[km/hr]', '[mm/6hr]','[mm/day]']
+variables = ['PCPTOT', 'SFCWSPD_KF', 'SFCWSPD', 'PCPT6']
+variable_names = ['Hourly Precipitation', 'Wind Speed-KF ', 'Wind Speed-Raw', '6-Hour Accumulated Precipitation']
+variable_units = ['[mm/hr]','[km/hr]','[km/hr]', '[mm/6hr]']
 
 # list of model names as strings (names as they are saved in www_oper and my output folders)
 models = np.loadtxt(models_file,usecols=0,dtype='str')
@@ -274,7 +274,7 @@ def make_leaderboard_sorted(var, var_name, var_unit, time_domain, time_label,POD
     x = np.arange(len(modelnames))
     width = 0.6
        
-    fig, (ax1, ax2, ax3, ax4, ax5, ax6) = plt.subplots(2, 3,figsize=(25,25),dpi=150)
+    fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(2, 3,figsize=(25,25),dpi=150)
     plt.tight_layout(w_pad=20)
     plt.subplots_adjust(top=0.9)
     
@@ -361,7 +361,7 @@ def make_leaderboard_unsorted(var, var_name, var_unit, time_domain):
     x = np.arange(len(modelnames))
     width = 0.6
        
-    fig, (ax1, ax2, ax3, ax4, ax5, ax6) = plt.subplots(2, 3,figsize=(25,25),dpi=150)
+    fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(2, 3,figsize=(25,25),dpi=150)
     plt.tight_layout(w_pad=20)
     plt.subplots_adjust(top=0.9)
     
@@ -454,7 +454,7 @@ def make_leaderboard_gridsize(var, var_name, var_unit, time_domain):
     x = np.arange(len(modelnames))
     width = 0.6
        
-    fig, (ax1, ax2, ax3, ax4, ax5, ax6) = plt.subplots(2, 3,figsize=(25,25),dpi=150)
+    fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(2, 3,figsize=(25,25),dpi=150)
     plt.tight_layout(w_pad=20)
     plt.subplots_adjust(top=0.9)
     

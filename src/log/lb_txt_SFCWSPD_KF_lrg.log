@@ -475,3 +475,71 @@ Now on.. WRF2GFS_g3 for SFCWSPD_KF
     Model collection started 20230323, which is after input start_date
    Skipping station 0622 (not enough dates yet)
    Skipping station 0684 (No forecast data)
+Now on.. WRF2GFS81_g1 for SFCWSPD_KF
+    Model collection started 20230323, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+   Skipping station 3003 (No forecast data)
+   Skipping station 0699 (No forecast data)
+Now on.. WRF2GFS81_g2 for SFCWSPD_KF
+    Model collection started 20230323, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+Now on.. WRF2GFS81_g3 for SFCWSPD_KF
+    Model collection started 20230323, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+Now on.. WRF4RDPS_g3 for SFCWSPD_KF
+    Model collection started 20230323, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+Now on.. WRF4RDPS_g4 for SFCWSPD_KF
+    Model collection started 20230322, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+Now on.. WRF4RDPS_g5 for SFCWSPD_KF
+   Skipping station 0684 (No forecast data)
+Now on.. MPAS25_g1 for SFCWSPD_KF
+    Model collection started 20230323, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+   Skipping station 3003 (No forecast data)
+   Skipping station 0699 (No forecast data)
+Now on.. MPAS25_g2 for SFCWSPD_KF
+    Model collection started 20230323, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+   Skipping station 3003 (No forecast data)
+   Skipping station 0699 (No forecast data)
+Now on.. ENS for SFCWSPD_KF
+    Model collection started 20230322, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+   Skipping station 3003 (No forecast data)
+   Skipping station 0699 (No forecast data)
+Now on.. ENS_lr for SFCWSPD_KF
+    Model collection started 20230322, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+   Skipping station 3003 (No forecast data)
+   Skipping station 0699 (No forecast data)
+Now on.. ENS_hr for SFCWSPD_KF
+    Model collection started 20230322, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+Now on.. ENS_LR for SFCWSPD_KF
+    Model collection started 20230322, which is after input start_date
+   Skipping station 0622 (not enough dates yet)
+   Skipping station 0684 (No forecast data)
+   Skipping station 1725 (No forecast data)
+   Skipping station 3003 (No forecast data)
+   Skipping station 0699 (No forecast data)

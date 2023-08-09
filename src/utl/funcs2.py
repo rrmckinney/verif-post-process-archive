@@ -835,7 +835,7 @@ def PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCWSPD, 
     _,_,_,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = \
         get_all_obs(delta, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, \
                     all_stations, "PCPTOT", start_date, end_date, date_list_obs)
-            
+    print(delta)        
     # grab the extra hour on the last outlook day
     obs_df_day1_1 = obs_df_day1_1.append(obs_df_180hr_1.iloc[180*delta + 24],ignore_index=True)
     obs_df_day2_1 = obs_df_day2_1.append(obs_df_180hr_1.iloc[180*delta + 48],ignore_index=True)
