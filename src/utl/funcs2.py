@@ -60,8 +60,8 @@ dry = 0.2 #mm
 precip_percentile = 66
 
 #thresholds for calm(<0.2mm), light(>0.2mm & <66th percentile) and strong (>66th percentile) wind based on WMO stanards
-calm = 2 #kph
-wind_percentile = 75 
+calm = 10 #kph
+wind_percentile = 66 
 
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
@@ -493,16 +493,16 @@ def get_statistics(delta, model,grid, input_domain, savetype, date_entry1, date_
             
             if variable == "PCPT6":
                 if int(maxhour) == int(hour):
-                    total_length = int(((length*(delta+1))/6)-(delta+1))
+                    length = int(((length*(delta+1))/6)-(delta+1))
                 else:
-                    total_length = int((length*(delta+1))/6)
+                    length = int((length*(delta+1))/6)
             elif variable == "PCPT24":
                 if int(maxhour) == int(hour):
-                    total_length = int(((length*(delta+1))/24)-(delta+1))
+                    length = int(((length*(delta+1))/24)-(delta+1))
                 else:
-                    total_length = int((length*(delta+1))/24)
+                    length = int((length*(delta+1))/24)
             else:
-                total_length = int(length*(delta+1))
+                length = int(length*(delta+1))
             
             
             len_fcst = str(len(fcst_noNaNs)) + "/" + str(length)   
