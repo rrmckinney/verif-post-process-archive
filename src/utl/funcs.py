@@ -189,11 +189,9 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
     
     elif variable == "PCPT6":
         station_list = copy.deepcopy(stations_with_PCPT6) 
-        variable = "PCPT6"
     
     elif variable == "PCPT24":
         station_list = copy.deepcopy(stations_with_PCPT24) 
-        variable = "PCPT24"
         
     #KF variables are the same as raw for obs
     if "_KF" in variable:
@@ -263,7 +261,7 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
             if variable == 'PCPTOT':
                 if obs_all[i] > precip_threshold:
                     obs_all[i] = np.nan
- 
+
         hr60_obs = obs_all[:60]     #84 x 7   (30) 
         hr84_obs = obs_all[:84]     #84 x 7   (30)     
         hr120_obs = obs_all[:120]   #120 x 7  (30) 
@@ -286,7 +284,7 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
         final_obs_day5 = np.array(day5_obs).T
         final_obs_day6 = np.array(day6_obs).T
         final_obs_day7 = np.array(day7_obs).T
-            
+
         obs_df_180hr[station] = final_obs_180hr.flatten() # 1260 (180x7) for each station for weekly
         obs_df_60hr[station] = final_obs_60hr.flatten()
         obs_df_84hr[station] = final_obs_84hr.flatten()   # 588 (84x7)
@@ -298,6 +296,7 @@ def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with
         obs_df_day5[station] = final_obs_day5.flatten()   # 168 (24x7) 
         obs_df_day6[station] = final_obs_day6.flatten()   # 168 (24x7) 
         obs_df_day7[station] = final_obs_day7.flatten()   # 168 (24x7) 
+        
         #extra_point_df[station] = np.array([extra_point])
         # output is a dataframe with the column names as the station, with 420 rows for 60x7 or 60x30
     return(obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7)
@@ -401,8 +400,10 @@ def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,file
     if variable == "PCPT24":
         fcst_flat = np.reshape(fcst_flat, (-1, 24)).sum(axis=-1) #must be divisible by 6
         
-    
     obs_flat = np.array(obs_df[station])
+    if len(np.shape(obs_flat)) > 1:
+        obs_flat = obs_flat[:,1]
+    
     ''' was removing entire days from obs so I got rid of it............. 
     f "PCPT" in variable:
         #removes the last point from every day if its at the maxhour, since it doesnt exist for fcst
@@ -418,7 +419,7 @@ def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,file
     # removes (NaNs) fcst data where there is no obs
     fcst_NaNs,obs_NaNs = remove_missing_data(fcst_flat, obs_flat)  
 
-    
+     
     if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
         trimmed_fcst_KF = all_fcst_KF[start:end]   
         fcst_final_KF = np.array(trimmed_fcst_KF).T
@@ -578,7 +579,6 @@ def get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savety
         
         # total stations that should be included in each model/grid
         totalstations = totalstations+1
-        
         '''
         #when using the "small" domain, only include raw data if KF data also exists at that hour
         if input_domain == "small" and variable in ["SFCTC","SFCWSPD"]:

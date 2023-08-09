@@ -6,7 +6,7 @@ Created in August 2023
 
 Input: start date (YYMMDD), end date (YYMMDD), variable, domain size
     Start and end date must be 7 or 28-31 day stretch
-    variable options: SFCTC_KF, SFCTC, PCPTOT, PCPT6, PCPT24, SFCWSPD_KF, SFCWSPD
+    variable options: PCPTOT, PCPT6, PCPT24, SFCWSPD_KF, SFCWSPD
     domain options: large, small
     
 The stats round the obs and forecasts to one decimal before doing statistics 
@@ -86,8 +86,8 @@ if len(sys.argv) == 5:
 
 
     input_variable = sys.argv[3]
-    if input_variable not in ['SFCTC_KF', 'SFCTC', 'PCPTOT', 'PCPT6', 'PCPT24', 'SFCWSPD_KF', 'SFCWSPD']:
-        raise Exception("Invalid variable input entries. Current options: SFCTC_KF, SFCTC, PCPTOT, PCPT6, PCPT24, SFCWSPD_KF, SFCWSPD. Case sensitive.")
+    if input_variable not in ['PCPTOT', 'PCPT6', 'PCPT24', 'SFCWSPD_KF', 'SFCWSPD']:
+        raise Exception("Invalid variable input entries. Current options: PCPTOT, PCPT6, PCPT24, SFCWSPD_KF, SFCWSPD. Case sensitive.")
 
     input_domain = sys.argv[4]
     if input_domain not in ['large','small']:

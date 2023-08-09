@@ -55,6 +55,14 @@ wind_threshold = 400 #recorded Edmonton, AB 1987 http://wayback.archive-it.org/7
 temp_min = -63 #recorded in Snag, YT 1947 http://wayback.archive-it.org/7084/20170925152846/https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=6A4A3AC5-1#tab5
 temp_max = 49.6 #recorded in Lytton, BC 2021 https://www.canada.ca/en/environment-climate-change/services/top-ten-weather-stories/2021.html#toc2
 
+#thresholds for dry(<0.2mm), light(>0.2mm & <66th percentile) and heavy (>66th percentile) precip based on WMO stanards
+dry = 0.2 #mm
+precip_percentile = 66
+
+#thresholds for calm(<0.2mm), light(>0.2mm & <66th percentile) and strong (>66th percentile) wind based on WMO stanards
+calm = 2 #kph
+wind_percentile = 66 
+
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
 ###########################################################
@@ -95,7 +103,7 @@ def get_filehours(hour1,hour2):
     return(hours_list)
 
 
-def check_variable(variable, station, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24):
+def check_variable(variable, station, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24):
 
     flag = False
     
@@ -168,7 +176,7 @@ def make_df(date_list_obs, start_date, end_date):
     df_new = df_new.set_index('datetime') 
     return(df_new)
 
-def get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, variable, start_date, end_date, date_list_obs):
+def get_all_obs(delta, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, variable, start_date, end_date, date_list_obs):
     
     print("Reading observational dataframe for " + variable + ".. ")
     
@@ -335,48 +343,33 @@ def remove_missing_data(fcst, obs):
                 
     return(fcst,obs) 
 
-def make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2, time_domain, variable, filepath, MAE, RMSE, corr, len_fcst, numstations):
+def make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2, time_domain, variable, filepath, FN, TN, FP, TP, POD, POFD, PSS, HSS, CSI, GSS, len_fcst, numstations):
    
     if "ENS" in model:
         modelpath= model + '/'
     else:
         modelpath = model + '/' + grid + '/'
-    f1 = open(textfile_folder + modelpath + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
-    read_f1 = np.loadtxt(textfile_folder +  modelpath + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+    f1 = open(textfile_folder + modelpath + input_domain + '/' + variable + '/' + "CAT_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
+    read_f1 = np.loadtxt(textfile_folder +  modelpath + input_domain + '/' + variable + '/' + "CAT_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
     if date_entry1 not in read_f1 and date_entry2 not in read_f1:
-        f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
+        f1.write(str(date_entry1) + " " + str(date_entry2) + "   ") 
         
-        f1.write("%3.3f   " % (MAE))
+        f1.write("%3.3f   " % (TN))
+        f1.write("%3.3f   " % (FN))
+        f1.write("%3.3f   " % (FP))
+        f1.write("%3.3f   " % (TP))
+        f1.write("%3.3f   " % (POD))
+        f1.write("%3.3f   " % (POFD))
+        f1.write("%3.3f   " % (PSS))
+        f1.write("%3.3f   " % (HSS))
+        f1.write("%3.3f   " % (CSI))
+        f1.write("%3.3f   " % (GSS))
         f1.write(len_fcst + "   ")
         f1.write(numstations + "\n")
     
         f1.close()    
             
     
-    f2 = open(textfile_folder +  modelpath + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
-    read_f2 = np.loadtxt(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
-    if date_entry1 not in read_f2 and date_entry2 not in read_f2:
-        f2.write(str(date_entry1) + " " + str(date_entry2) + "   ")
-        
-        f2.write("%3.3f   " % (RMSE))
-        f2.write(len_fcst + "   ")
-        f2.write(numstations + "\n")
-        
-        f2.close()  
-    
-    
-    f3 = open(textfile_folder +  modelpath + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+") 
-    read_f3 = np.loadtxt(textfile_folder +  modelpath + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
-    if date_entry1 not in read_f3 and date_entry2 not in read_f3:
-        f3.write(str(date_entry1) + " " + str(date_entry2) + "   ")
-        
-        f3.write("%3.3f   " % (corr))
-        f3.write(len_fcst + "   ")
-        f3.write(numstations + "\n")
-        
-        f3.close()  
-
-
 def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain):
 
     if variable == "PCPT6":
@@ -403,6 +396,8 @@ def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,file
         
     
     obs_flat = np.array(obs_df[station])
+    if len(np.shape(obs_flat)) > 1:
+        obs_flat = obs_flat[:,1]
     ''' was removing entire days from obs so I got rid of it............. 
     f "PCPT" in variable:
         #removes the last point from every day if its at the maxhour, since it doesnt exist for fcst
@@ -418,14 +413,14 @@ def trim_fcst(all_fcst,obs_df,station,start,end,variable,filepath,date_list,file
     # removes (NaNs) fcst data where there is no obs
     fcst_NaNs,obs_NaNs = remove_missing_data(fcst_flat, obs_flat)  
 
-    
+    '''
     if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
         trimmed_fcst_KF = all_fcst_KF[start:end]   
         fcst_final_KF = np.array(trimmed_fcst_KF).T
         fcst_flat_KF = fcst_final_KF.flatten() 
-        
+      
         fcst_NaNs,_ = remove_missing_data(fcst_flat, fcst_flat_KF) 
-    
+    ''' 
 
     return(fcst_NaNs, obs_NaNs)
 
@@ -444,15 +439,57 @@ def get_statistics(delta, model,grid, input_domain, savetype, date_entry1, date_
         # rounds each forecast and obs to one decimal
         obs_rounded = np.round(obs_noNaNs,1)
         fcst_rounded = np.round(fcst_noNaNs,1)
+        N = len(obs_rounded)
+
+        #sets percentile thresholds based on variable being used
+        if "WSPD" in variable:
+            percentile = wind_percentile
+            base = calm
+        elif "PCPT" in variable:
+            percentile = precip_percentile
+            base = dry
         
+        #converts values of fcst and obs to categories for categorical comparison 
+        for i in range(len(obs_rounded)):
+            if obs_rounded[i] < base:
+                obs_rounded[i] = 0
+            elif obs_rounded[i] > base and obs_rounded[i] < percentile:
+                obs_rounded[i] = 1
+            elif obs_rounded[i] > percentile:
+                obs_rounded[i] = 2
+            else:
+                obs_rounded[i] = None
+
+        for i in range(len(fcst_rounded)):
+            if fcst_rounded[i] < base:
+                fcst_rounded[i] = 0
+            elif fcst_rounded[i] > base and fcst_rounded[i] < percentile:
+                fcst_rounded[i] = 1
+            elif fcst_rounded[i] > percentile:
+                fcst_rounded[i] = 2
+            else:
+                fcst_rounded[i] = None
+
+
         if len(fcst_rounded) == 0:
             model_not_available(model, grid, delta, input_domain, date_entry1, date_entry2, savetype, maxhour,hour,length,totalstations,time_domain,variable,filepath)
         
         else:
-            MAE = mean_absolute_error(obs_rounded,fcst_rounded)
-            MSE = mean_squared_error(obs_rounded,fcst_rounded)
-            RMSE = math.sqrt(MSE)
-            corr = stats.spearmanr(obs_rounded,fcst_rounded)[0]
+            FP = np.logical_and(obs_rounded != fcst_rounded, fcst_rounded != 0).sum()
+            FN = np.logical_and(obs_rounded != fcst_rounded, fcst_rounded == 0).sum()
+            TP = np.logical_and(obs_rounded == fcst_rounded, obs_rounded != 0).sum()
+            TN = np.logical_and(obs_rounded == fcst_rounded, obs_rounded == 0).sum()
+
+            POD = TP/(TP+FN)
+            POFD = FP/(TN+FP)
+
+            PSS = (TP/(TP+FN)) - (FP/(FP+TN))
+            HSS = POD - POFD
+
+            CSI = TP/(TP + FP + FN)
+
+            C = (TP + FP)*(TP + FN)/N
+            GSS = (TP - C)/(TP + FP + FN - C) 
             
             if variable == "PCPT6":
                 if int(maxhour) == int(hour):
@@ -471,7 +508,8 @@ def get_statistics(delta, model,grid, input_domain, savetype, date_entry1, date_
             len_fcst = str(len(fcst_noNaNs)) + "/" + str(length)   
             numstations = str(num_stations) + "/" + str(totalstations)
                 
-            make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2, time_domain, variable, filepath, MAE, RMSE, corr, len_fcst, numstations)
+
+        make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2, time_domain, variable, filepath, FN, TN, FP, TP, POD, POFD, PSS, HSS, CSI, GSS, len_fcst, numstations)
 
 def model_not_available(model, grid, delta, input_domain, date_entry1, date_entry2, savetype, maxhour,hour,length,totalstations,time_domain,variable,filepath):
     if "ENS" in model:
@@ -497,42 +535,27 @@ def model_not_available(model, grid, delta, input_domain, date_entry1, date_entr
         numstations = "0/" + str(totalstations)
         
         
-        f1 = open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
-        read_f1 = np.loadtxt(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "MAE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
+        f1 = open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "CAT_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
+        read_f1 = np.loadtxt(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "CAT_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
         if date_entry1 not in read_f1 and date_entry2 not in read_f1:
             f1.write(str(date_entry1) + " " + str(date_entry2) + "   ")
             
-            f1.write("nan   ") #MAE
+            f1.write("nan   ") 
+            f1.write("nan   ")
+            f1.write("nan   ")
+            f1.write("nan   ")
+            f1.write("nan   ")
+            f1.write("nan   ")
+            f1.write("nan   ")
+            f1.write("nan   ")
+            f1.write("nan   ")
+            f1.write("nan   ")
             f1.write(len_fcst + "   ")
             f1.write(numstations + "\n")
         
             f1.close()    
                 
-        
-        f2 = open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+")       
-        read_f2 = np.loadtxt(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "RMSE_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
-        if date_entry1 not in read_f2 and date_entry2 not in read_f2:
-            f2.write(str(date_entry1) + " " + str(date_entry2) + "   ")
-            
-            f2.write("nan   ") #RMSE
-            f2.write(len_fcst + "   ")
-            f2.write(numstations + "\n")
-            
-            f2.close()  
-            
-        
-        f3 = open(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",wm+"+") 
-        read_f3 = np.loadtxt(textfile_folder +  modelpath  + input_domain + '/' + variable + '/' + "spcorr_" + savetype + "_" + variable + "_" + time_domain + "_" + input_domain + ".txt",dtype=str)  
-        if date_entry1 not in read_f3 and date_entry2 not in read_f3:
-            f3.write(str(date_entry1) + " " + str(date_entry2) + "   ")
-            
-            f3.write("nan   ") #corr
-            f3.write(len_fcst + "   ")
-            f3.write(numstations + "\n")
-            
-            f3.close()  
-
-def get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24):
+def get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24):
     
   
     if os.path.isdir(textfile_folder +  filepath) == False:
@@ -564,7 +587,7 @@ def get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savety
             #print("   Skipping station " + station + ")
             continue
 
-        if check_variable(variable, station, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24) == False:                  
+        if check_variable(variable, station, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24) == False:                  
             #print("   Skipping station " + station + " (no " + variable + " data)")
             continue
         
@@ -708,12 +731,12 @@ def get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savety
         get_statistics(delta,model,grid, input_domain, savetype, date_entry1, date_entry2,maxhour,48,24,fcst_allstations_day2,obs_allstations_day2,num_stations,totalstations,'day2',variable,filepath)
         get_statistics(delta,model,grid, input_domain, savetype, date_entry1, date_entry2,maxhour,24,24,fcst_allstations_day1,obs_allstations_day1,num_stations,totalstations,'day1',variable,filepath)
 
-def PCPT_obs_df_6(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6,\
+def PCPT_obs_df_6(date_list_obs, delta, input_variable, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6,\
                   stations_with_PCPT24, all_stations, start_date, end_date):
 
     # get the hourly precip values
     obs_df_60hr_1,obs_df_84hr_1,obs_df_120hr_1,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = get_all_obs(delta, \
-        stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, "PCPTOT", \
+         stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, "PCPTOT", \
     start_date, end_date, date_list_obs)
     
     # grab the extra hour on the last outlook day
@@ -759,7 +782,7 @@ def PCPT_obs_df_6(date_list_obs, delta, input_variable, stations_with_SFCTC, sta
 
     #grab the 6-hr accum precip values
     obs_df_60hr_6,obs_df_84hr_6,obs_df_120hr_6,obs_df_180hr_6,obs_df_day1_6,obs_df_day2_6,obs_df_day3_6,obs_df_day4_6,obs_df_day5_6,\
-        obs_df_day6_6,obs_df_day7_6 = get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+        obs_df_day6_6,obs_df_day7_6 = get_all_obs(delta, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
                                                   stations_with_PCPT24, all_stations, "PCPT6", start_date, end_date, date_list_obs)
         
     # grab the extra hour on the last outlook day
@@ -805,12 +828,12 @@ def PCPT_obs_df_6(date_list_obs, delta, input_variable, stations_with_SFCTC, sta
     return(obs_df_60hr_all,obs_df_84hr_all,obs_df_120hr_all,obs_df_180hr_all,obs_df_day1_all,obs_df_day2_all,obs_df_day3_all,obs_df_day4_all,\
            obs_df_day5_all,obs_df_day6_all,obs_df_day7_all)
 
-def PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+def PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
                    stations_with_PCPT24,all_stations,start_date, end_date):
     
     # get the hourly precip values
     _,_,_,obs_df_180hr_1,obs_df_day1_1,obs_df_day2_1,obs_df_day3_1,obs_df_day4_1,obs_df_day5_1,obs_df_day6_1,obs_df_day7_1 = \
-        get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, \
+        get_all_obs(delta, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, \
                     all_stations, "PCPTOT", start_date, end_date, date_list_obs)
             
     # grab the extra hour on the last outlook day
@@ -845,7 +868,7 @@ def PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCTC, st
      
     #grab the 6-hr accum precip values
     _,_,_,obs_df_180hr_24,obs_df_day1_24,obs_df_day2_24,obs_df_day3_24,obs_df_day4_24,obs_df_day5_24,obs_df_day6_24,obs_df_day7_24 = \
-        get_all_obs(delta, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, \
+        get_all_obs(delta, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, \
                     all_stations, "PCPT24", start_date, end_date, date_list_obs)
         
     

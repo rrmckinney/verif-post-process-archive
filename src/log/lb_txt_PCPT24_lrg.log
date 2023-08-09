@@ -1,4 +1,4 @@
-Performing WEEKLY calculation for 220729 to 220804
+Performing WEEKLY calculation for 230428 to 230504
 Reading observational dataframe for PCPTOT.. 
     Now on station 3320
     Now on station 679
@@ -160,58 +160,3 @@ Reading observational dataframe for PCPTOT..
     Now on station 706
     Now on station 702
     Now on station 704
-Now on.. MM5_g2 for PCPTOT
-Now on.. MM5_g3 for PCPTOT
-Now on.. MM5_g4 for PCPTOT
-Now on.. MM5G_g2 for PCPTOT
-Now on.. MM5G_g3 for PCPTOT
-Now on.. MM5G_g4 for PCPTOT
-Now on.. MM5G_g5 for PCPTOT
-Now on.. WRF3GEM_g2 for PCPTOT
-Now on.. WRF3GEM_g3 for PCPTOT
-Now on.. WRF3GEM_g4 for PCPTOT
-Now on.. WRF3NAM_g2 for PCPTOT
-Now on.. WRF3NAM_g3 for PCPTOT
-Now on.. WRF3NAM_g4 for PCPTOT
-Now on.. WRF3GFS_g2 for PCPTOT
-Now on.. WRF3GFS_g3 for PCPTOT
-Now on.. WRF3GFS_g4 for PCPTOT
-Now on.. WRF3GFS_g5 for PCPTOT
-Now on.. WRF3NAVGEM_g2 for PCPTOT
-Now on.. WRF3NAVGEM_g3 for PCPTOT
-Now on.. WRF3NAVGEM_g4 for PCPTOT
-Now on.. WRF3GFSgc01_g2 for PCPTOT
-Now on.. WRF3GFSgc01_g3 for PCPTOT
-Now on.. WRF3ARPEGE_g2 for PCPTOT
-Now on.. WRF3ARPEGE_g3 for PCPTOT
-Now on.. WRF4ICON_g2 for PCPTOT
-Now on.. WRF4ICON_g3 for PCPTOT
-Now on.. WRF4NAM_g2 for PCPTOT
-Now on.. WRF4NAM_g3 for PCPTOT
-Now on.. WRF4NAM_g4 for PCPTOT
-Now on.. NMM3NAM_g2 for PCPTOT
-Now on.. NMM3NAM_g3 for PCPTOT
-Now on.. NMM3NAM_g4 for PCPTOT
-Now on.. NMM3GFS_g2 for PCPTOT
-Now on.. NMM3GFS_g3 for PCPTOT
-Now on.. WRF2NAM_g1 for PCPTOT
-Now on.. WRF2NAM_g2 for PCPTOT
-Now on.. WRF2NAM_g3 for PCPTOT
-Now on.. WRF2NAM81_g1 for PCPTOT
-Now on.. WRF2NAM81_g2 for PCPTOT
-Now on.. WRF2NAM81_g3 for PCPTOT
-Now on.. WRF2GFS_g1 for PCPTOT
-Now on.. WRF2GFS_g2 for PCPTOT
-Now on.. WRF2GFS_g3 for PCPTOT
-Now on.. WRF2GFS81_g1 for PCPTOT
-Now on.. WRF2GFS81_g2 for PCPTOT
-Now on.. WRF2GFS81_g3 for PCPTOT
-Now on.. WRF4RDPS_g3 for PCPTOT
-Now on.. WRF4RDPS_g4 for PCPTOT
-Now on.. WRF4RDPS_g5 for PCPTOT
-Now on.. MPAS25_g1 for PCPTOT
-Now on.. MPAS25_g2 for PCPTOT
-Now on.. ENS for PCPTOT
-Now on.. ENS_lr for PCPTOT
-Now on.. ENS_hr for PCPTOT
-Now on.. ENS_LR for PCPTOT

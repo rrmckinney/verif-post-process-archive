@@ -1066,3 +1066,343 @@ Traceback (most recent call last):
   File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 422, in trim_fcst
     if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
 AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 667, in get_rankings
+    obs_allstations_60hr.append(obs_flat_60hr)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 425, in trim_fcst
+    fcst_final_KF = np.array(trimmed_fcst_KF).T
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 665, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:253: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:255: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:255: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:255: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:255: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
