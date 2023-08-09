@@ -263,7 +263,7 @@ def get_obs_dates(time_domain):
 def make_leaderboard_sorted(var, var_name, var_unit, time_domain, time_label,POD,POFD,PSS, HSS, CSI, GSS,modelnames,modelcolors,edited_modelnames,skipped_modelnames,numofstations):     
 
     #sorts them greatest to least/least to greatest
-    POD_sorted, modelnames_sortedPOD,modelcolors_sortedPOD = zip(*sorted(zip(POD, modelnames,modelcolors),reverse=True))
+    POD_sorted, modelnames_sortedPOD,modelcolors_sortedPOD = zip(*sorted(zip(POD, modelnames,modelcolors)))
     POFD_sorted, modelnames_sortedPOFD,modelcolors_sortedPOFD = zip(*sorted(zip(POFD, modelnames,modelcolors),reverse=True))
     PSS_sorted, modelnames_sortedPSS,modelcolors_sortedPSS = zip(*sorted(zip(PSS, modelnames,modelcolors)))
     HSS_sorted, modelnames_sortedHSS,modelcolors_sortedHSS = zip(*sorted(zip(HSS, modelnames,modelcolors)))
@@ -275,7 +275,7 @@ def make_leaderboard_sorted(var, var_name, var_unit, time_domain, time_label,POD
     width = 0.6
        
     fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(2, 3,figsize=(25,25),dpi=150)
-    plt.tight_layout(w_pad=20)
+    plt.tight_layout(pad = 5.0, w_pad=20)
     plt.subplots_adjust(top=0.9)
     
     obs_dates = get_obs_dates(time_domain)
@@ -286,37 +286,42 @@ def make_leaderboard_sorted(var, var_name, var_unit, time_domain, time_label,POD
     ax1.set_yticks(x)
     ax1.set_yticklabels(modelnames_sortedPOD,fontsize=18)
     ax1.set_title("Probability of Detection (POD)",fontsize=18)
+    ax1.set_xlim(0,1)
     ax1.set_xlabel(var_name + " POD " + var_unit,fontsize=20)
     
     ax2.barh(x, POFD_sorted, width,color=modelcolors_sortedPOFD,edgecolor='k',linewidth=2.5)
     ax2.set_yticks(x)
     ax2.set_yticklabels(modelnames_sortedPOFD,fontsize=18)
     ax2.set_title("Probability of False Detection (POFD)",fontsize=18)
+    ax2.set_xlim(0,1)
     ax2.set_xlabel(var_name + " POFD " + var_unit,fontsize=20)
         
     ax3.barh(x, PSS_sorted, width,color=modelcolors_sortedPSS,edgecolor='k',linewidth=2.5)
     ax3.set_yticks(x)
     ax3.set_yticklabels(modelnames_sortedPSS,fontsize=18)
     ax3.set_title("Pierce Skill Score (PSS)",fontsize=18)
-    ax3.set_xlim(0,1)
+    ax3.set_xlim(-1,1)
     ax3.set_xlabel(var_name + " PSS ",fontsize=20)
     
     ax4.barh(x, HSS_sorted, width,color=modelcolors_sortedHSS,edgecolor='k',linewidth=2.5)
     ax4.set_yticks(x)
     ax4.set_yticklabels(modelnames_sortedHSS,fontsize=18)
     ax4.set_title("Heidke Skill Score (HSS)",fontsize=18)
+    ax4.set_xlim(-1, 1)
     ax4.set_xlabel(var_name + " HSS ",fontsize=20)
     
     ax5.barh(x, CSI_sorted, width,color=modelcolors_sortedCSI,edgecolor='k',linewidth=2.5)
     ax5.set_yticks(x)
     ax5.set_yticklabels(modelnames_sortedCSI,fontsize=18)
     ax5.set_title("Critical Success Index (CSI)",fontsize=18)
+    ax5.set_xlim(0,1)
     ax5.set_xlabel(var_name + " CSI ",fontsize=20)
     
     ax6.barh(x, GSS_sorted, width,color=modelcolors_sortedGSS,edgecolor='k',linewidth=2.5)
     ax6.set_yticks(x)
     ax6.set_yticklabels(modelnames_sortedGSS,fontsize=18)
     ax6.set_title("Gilbrt Skill Score (GSS)",fontsize=18)
+    ax6.set_xlim(-1,1)
     ax6.set_xlabel(var_name + " GSS ",fontsize=20)
 
     for ax in [ax1, ax2, ax3, ax4, ax5, ax6]:
