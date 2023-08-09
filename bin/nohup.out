@@ -1406,3 +1406,35 @@ Traceback (most recent call last):
   File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
     if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
 AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'
+Traceback (most recent call last):
+  File "precip_wind_verif.py", line 199, in <module>
+    main(sys.argv)
+  File "precip_wind_verif.py", line 137, in main
+    obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7 = get_all_obs(delta, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24, all_stations, input_variable, start_date, end_date, date_list_obs)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs2.py", line 250, in get_all_obs
+    hour = int(obs['Time'][y])/100
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/series.py", line 871, in __getitem__
+    result = self.index.get_value(self, key)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 4405, in get_value
+    return self._engine.get_value(s, k, tz=getattr(series.dtype, "tz", None))
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 196, in main
+    get_rankings(filepath, delta, input_domain, date_entry1, date_entry2, savetype, all_stations, station_df, input_variable, date_list, model, grid, maxhour, gridname, filehours, obs_df_60hr,obs_df_84hr,obs_df_120hr,obs_df_180hr,obs_df_day1,obs_df_day2,obs_df_day3,obs_df_day4,obs_df_day5,obs_df_day6,obs_df_day7, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, stations_with_PCPT24)
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 664, in get_rankings
+    fcst_NaNs_60hr,  obs_flat_60hr  = trim_fcst(all_fcst,obs_df_60hr,station,0,60,variable,filepath,date_list,filehours,all_fcst_KF,maxhour, delta, input_domain)  
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 423, in trim_fcst
+    if input_domain == "small" and variable in ["SFCTC","SFCWSPD"] and all_fcst_KF.any():
+AttributeError: 'bool' object has no attribute 'any'

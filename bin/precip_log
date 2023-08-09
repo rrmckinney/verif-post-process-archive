@@ -7260,3 +7260,55 @@ Traceback (most recent call last):
   File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
     raise IndexError("single positional indexer is out-of-bounds")
 IndexError: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 134, in main
+    PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 817, in PCPT_obs_df_24
+    obs_df_day1_1 = obs_df_day1_1.append(obs_df_180hr_1.iloc[180*delta + 24],ignore_index=True)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 1768, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 2138, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:263: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py:263: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  obs_all[i] = np.nan
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 134, in main
+    PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 817, in PCPT_obs_df_24
+    obs_df_day1_1 = obs_df_day1_1.append(obs_df_180hr_1.iloc[180*delta + 24],ignore_index=True)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 1768, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 2138, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "leaderboards-txt-sqlite2.py", line 199, in <module>
+    main(sys.argv)
+  File "leaderboards-txt-sqlite2.py", line 134, in main
+    PCPT_obs_df_24(date_list_obs, delta, input_variable, stations_with_SFCTC, stations_with_SFCWSPD, stations_with_PCPTOT, stations_with_PCPT6, \
+  File "/nfs/neltharion/oper_users/verif/verif-post-process/src/utl/funcs.py", line 817, in PCPT_obs_df_24
+    obs_df_day1_1 = obs_df_day1_1.append(obs_df_180hr_1.iloc[180*delta + 24],ignore_index=True)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 1768, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 2138, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/verif/.conda/envs/verification/lib/python3.8/site-packages/pandas/core/indexing.py", line 2063, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds

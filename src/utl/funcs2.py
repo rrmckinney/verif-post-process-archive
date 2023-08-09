@@ -44,7 +44,7 @@ textfile_folder = '/verification/Statistics/'
 
 #editting mode for textfile
 
-wm = 'a'
+wm = 'w'
 ###########################################################
 ### -------------------- INPUTS -- ------------------------
 ###########################################################
@@ -61,7 +61,7 @@ precip_percentile = 66
 
 #thresholds for calm(<0.2mm), light(>0.2mm & <66th percentile) and strong (>66th percentile) wind based on WMO stanards
 calm = 2 #kph
-wind_percentile = 66 
+wind_percentile = 75 
 
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
