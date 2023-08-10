@@ -492,15 +492,9 @@ def get_statistics(delta, model,grid, input_domain, savetype, date_entry1, date_
             GSS = (TP - C)/(TP + FP + FN - C) 
             
             if variable == "PCPT6":
-                if int(maxhour) == int(hour):
-                    length = int(((length*(delta+1))/6)-(delta+1))
-                else:
-                    length = int((length*(delta+1))/6)
+                length = int((length*(delta+1))/6)
             elif variable == "PCPT24":
-                if int(maxhour) == int(hour):
-                    length = int(((length*(delta+1))/24)-(delta+1))
-                else:
-                    length = int((length*(delta+1))/24)
+                length = int((length*(delta+1))/24)
             else:
                 length = int(length*(delta+1))
             
