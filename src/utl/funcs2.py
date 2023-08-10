@@ -61,7 +61,7 @@ precip_percentile = 66
 
 #thresholds for calm(<0.2mm), light(>0.2mm & <66th percentile) and strong (>66th percentile) wind based on WMO stanards
 calm = 10 #kph
-wind_percentile = 66 
+strong_wind = 40 
 
 ###########################################################
 ### -------------------- FUNCTIONS ------------------------
@@ -443,10 +443,10 @@ def get_statistics(delta, model,grid, input_domain, savetype, date_entry1, date_
 
         #sets percentile thresholds based on variable being used
         if "WSPD" in variable:
-            percentile = wind_percentile
+            percentile = strong_wind
             base = calm
         elif "PCPT" in variable:
-            percentile = precip_percentile
+            percentile = np.percentile(obs_rounded,precip_percentile)
             base = dry
         
         #converts values of fcst and obs to categories for categorical comparison 
