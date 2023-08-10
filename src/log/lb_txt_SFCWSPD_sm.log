@@ -1,4 +1,4 @@
-Performing WEEKLY calculation for 220819 to 220825
+Performing WEEKLY calculation for 211001 to 211007
 Reading observational dataframe for SFCWSPD.. 
     Now on station 2162
     Now on station 1972
@@ -267,3 +267,66 @@ Reading observational dataframe for SFCWSPD..
     Now on station 691
     Now on station 694
 Now on.. MM5_g2 for SFCWSPD
+Now on.. MM5_g3 for SFCWSPD
+Now on.. MM5_g4 for SFCWSPD
+Now on.. MM5G_g2 for SFCWSPD
+Now on.. MM5G_g3 for SFCWSPD
+Now on.. MM5G_g4 for SFCWSPD
+Now on.. MM5G_g5 for SFCWSPD
+Now on.. WRF3GEM_g2 for SFCWSPD
+Now on.. WRF3GEM_g3 for SFCWSPD
+Now on.. WRF3GEM_g4 for SFCWSPD
+Now on.. WRF3NAM_g2 for SFCWSPD
+Now on.. WRF3NAM_g3 for SFCWSPD
+Now on.. WRF3NAM_g4 for SFCWSPD
+Now on.. WRF3GFS_g2 for SFCWSPD
+Now on.. WRF3GFS_g3 for SFCWSPD
+Now on.. WRF3GFS_g4 for SFCWSPD
+Now on.. WRF3GFS_g5 for SFCWSPD
+    Model collection started 20211002, which is after input start_date
+   Skipping model WRF3NAVGEM_g2 (check_dates flag)
+    Model collection started 20211002, which is after input start_date
+   Skipping model WRF3NAVGEM_g3 (check_dates flag)
+    Model collection started 20211002, which is after input start_date
+   Skipping model WRF3NAVGEM_g4 (check_dates flag)
+Now on.. WRF3GFSgc01_g2 for SFCWSPD
+Now on.. WRF3GFSgc01_g3 for SFCWSPD
+Now on.. WRF3ARPEGE_g2 for SFCWSPD
+Now on.. WRF3ARPEGE_g3 for SFCWSPD
+Now on.. WRF4ICON_g2 for SFCWSPD
+Now on.. WRF4ICON_g3 for SFCWSPD
+    Model collection started 20211108, which is after input start_date
+   Skipping model WRF4NAM_g2 (check_dates flag)
+    Model collection started 20211108, which is after input start_date
+   Skipping model WRF4NAM_g3 (check_dates flag)
+    Model collection started 20211108, which is after input start_date
+   Skipping model WRF4NAM_g4 (check_dates flag)
+Now on.. NMM3NAM_g2 for SFCWSPD
+Now on.. NMM3NAM_g3 for SFCWSPD
+Now on.. NMM3NAM_g4 for SFCWSPD
+Now on.. NMM3GFS_g2 for SFCWSPD
+Now on.. NMM3GFS_g3 for SFCWSPD
+Now on.. WRF2NAM_g1 for SFCWSPD
+Now on.. WRF2NAM_g2 for SFCWSPD
+Now on.. WRF2NAM_g3 for SFCWSPD
+Now on.. WRF2NAM81_g1 for SFCWSPD
+Now on.. WRF2NAM81_g2 for SFCWSPD
+Now on.. WRF2NAM81_g3 for SFCWSPD
+Now on.. WRF2GFS_g1 for SFCWSPD
+Now on.. WRF2GFS_g2 for SFCWSPD
+Now on.. WRF2GFS_g3 for SFCWSPD
+Now on.. WRF2GFS81_g1 for SFCWSPD
+Now on.. WRF2GFS81_g2 for SFCWSPD
+Now on.. WRF2GFS81_g3 for SFCWSPD
+    Model collection started 20220306, which is after input start_date
+   Skipping model WRF4RDPS_g3 (check_dates flag)
+    Model collection started 20220306, which is after input start_date
+   Skipping model WRF4RDPS_g4 (check_dates flag)
+    Model collection started 20220306, which is after input start_date
+   Skipping model WRF4RDPS_g5 (check_dates flag)
+Now on.. MPAS25_g1 for SFCWSPD
+Now on.. MPAS25_g2 for SFCWSPD
+Now on.. ENS for SFCWSPD
+Now on.. ENS_lr for SFCWSPD
+Now on.. ENS_hr for SFCWSPD
+Now on.. ENS_LR for SFCWSPD
