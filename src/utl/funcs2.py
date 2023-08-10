@@ -492,16 +492,18 @@ def get_statistics(delta, model,grid, input_domain, savetype, date_entry1, date_
             GSS = (TP - C)/(TP + FP + FN - C) 
             
  
-            if variable == "PCPT6":
-                length = int(length/6)
-            elif variable == "PCPT24":
-                length = int(length/24)
-            else:
-                length = length
+        if variable == "PCPT6":
+            print(length)
+            length = int(length/6)
+            print(length)
+        elif variable == "PCPT24":
+            length = int(length/24)
+        else:
+            length = length
             
-            len_fcst = str(len(fcst_noNaNs)) + "/" + str(length)   
-            numstations = str(num_stations) + "/" + str(totalstations)
-                
+        len_fcst = str(len(fcst_noNaNs)) + "/" + str(length)   
+        numstations = str(num_stations) + "/" + str(totalstations)
+        print(len_fcst)
 
         make_textfile(model, grid, input_domain, savetype, date_entry1, date_entry2, time_domain, variable, filepath, FN, TN, FP, TP, POD, POFD, PSS, HSS, CSI, GSS, len_fcst, numstations)
 

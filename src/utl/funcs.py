@@ -456,18 +456,12 @@ def get_statistics(delta, model,grid, input_domain, savetype, date_entry1, date_
             corr = stats.spearmanr(obs_rounded,fcst_rounded)[0]
             
             if variable == "PCPT6":
-                if int(maxhour) == int(hour):
-                    total_length = int(((length*(delta+1))/6)-(delta+1))
-                else:
-                    total_length = int((length*(delta+1))/6)
-            elif variable == "PCPT24":
-                if int(maxhour) == int(hour):
-                    total_length = int(((length*(delta+1))/24)-(delta+1))
-                else:
-                    total_length = int((length*(delta+1))/24)
-            else:
-                total_length = int(length*(delta+1))
+                length = int(length/6)
             
+            elif variable == "PCPT24":
+                length = int(length/24)
+            else:
+                length = length            
             
             len_fcst = str(len(fcst_noNaNs)) + "/" + str(length)   
             numstations = str(num_stations) + "/" + str(totalstations)

@@ -1,4 +1,4 @@
-Performing WEEKLY calculation for 220812 to 220818
+Performing WEEKLY calculation for 220819 to 220825
 Reading observational dataframe for SFCTC_KF.. 
     Now on station 2162
     Now on station 1972
@@ -297,124 +297,172 @@ Reading observational dataframe for SFCTC_KF..
     Now on station 691
     Now on station 694
 Now on.. MM5_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. MM5_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. MM5_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. MM5G_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. MM5G_g3 for SFCTC_KF
 Now on.. MM5G_g4 for SFCTC_KF
 Now on.. MM5G_g5 for SFCTC_KF
 Now on.. WRF3GEM_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3GEM_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3GEM_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
 Now on.. WRF3NAM_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3NAM_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3NAM_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3GFS_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3GFS_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3GFS_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
 Now on.. WRF3GFS_g5 for SFCTC_KF
 Now on.. WRF3NAVGEM_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3NAVGEM_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3NAVGEM_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
 Now on.. WRF3GFSgc01_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3GFSgc01_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3ARPEGE_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF3ARPEGE_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF4ICON_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF4ICON_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF4NAM_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. WRF4NAM_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. WRF4NAM_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. NMM3NAM_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. NMM3NAM_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
 Now on.. NMM3NAM_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
 Now on.. NMM3GFS_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. NMM3GFS_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
 Now on.. WRF2NAM_g1 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. WRF2NAM_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF2NAM_g3 for SFCTC_KF
 Now on.. WRF2NAM81_g1 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. WRF2NAM81_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF2NAM81_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF2GFS_g1 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. WRF2GFS_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF2GFS_g3 for SFCTC_KF
 Now on.. WRF2GFS81_g1 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. WRF2GFS81_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF2GFS81_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF4RDPS_g3 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. WRF4RDPS_g4 for SFCTC_KF
+   Skipping station 2110 (No obs data)
 Now on.. WRF4RDPS_g5 for SFCTC_KF
 Now on.. MPAS25_g1 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. MPAS25_g2 for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. ENS for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. ENS_lr for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
 Now on.. ENS_hr for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
 Now on.. ENS_LR for SFCTC_KF
+   Skipping station 2110 (No obs data)
    Skipping station 1725 (No forecast data)
    Skipping station 3003 (No forecast data)
    Skipping station 0699 (No forecast data)
